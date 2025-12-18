@@ -1,0 +1,36 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Blockchain & Backend Developer Portfolio - Jinhyeok Kim",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "author": "Jinhyeok Kim",
+  "license": "MIT",
+  "dependencies": {
+    "@next/third-parties": "^16.0.7",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.24",
+    "lucide-react": "^0.555.0",
+    "next": "^14.2.33",
+    "next-intl": "^4.5.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^3.4.0",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
+    "autoprefixer": "^10.4.22",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.0.6",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17"
+  }
+}
