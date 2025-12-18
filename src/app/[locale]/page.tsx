@@ -163,6 +163,11 @@ export default function Home() {
             <div className="text-gray-300 text-sm leading-relaxed space-y-3">
               <p>
                 {locale === "ko"
+                  ? "12살 때 처음 프로그래밍을 시작했습니다. 게임을 만들고 싶었고, 그 호기심이 저를 여기까지 이끌었습니다."
+                  : "I started programming at age 12. I wanted to make games, and that curiosity led me here."}
+              </p>
+              <p>
+                {locale === "ko"
                   ? "저는 블록체인을 만들기 위해 커리어를 시작하지 않았습니다."
                   : "I didn't start my career wanting to build blockchain."}
               </p>

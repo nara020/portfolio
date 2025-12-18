@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"C:\\Users\\Kimjinhyeok\\Project\\github.com\\nara020\\portfolio\\private\"\" 2>/dev/null || dir \"C:UsersKimjinhyeokProjectgithub.comnara020portfolioprivate \")",
+      "Bash(dir:*)"
+    ]
+  }
+}
