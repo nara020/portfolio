@@ -9,7 +9,7 @@
 
 **A modern, etherscan-inspired portfolio website for blockchain developers**
 
-[Live Demo](https://jinhyeok.dev) · [Report Bug](https://github.com/nara020/portfolio/issues) · [Request Feature](https://github.com/nara020/portfolio/issues)
+[Live Demo](https://jinhyeok.vercel.app) · [Report Bug](https://github.com/nara020/portfolio/issues) · [Request Feature](https://github.com/nara020/portfolio/issues)
 
 </div>
 

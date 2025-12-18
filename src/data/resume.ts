@@ -77,34 +77,6 @@ export const experiences: Experience[] = [
     tech: ["Hyperledger Fabric", "Go", "TypeScript", "Docker", "React", "Grafana", "MariaDB", "Nginx", "JMeter"],
   },
   {
-    id: "global-experience",
-    company: { ko: "Career Break", en: "Career Break" },
-    role: { ko: "글로벌 경험 & 자기계발", en: "Global Experience & Self-Development" },
-    period: "2023.12 ~ 2025.02",
-    duration: { ko: "1년 3개월", en: "1 yr 3 mo" },
-    description: {
-      ko: "호주 워킹홀리데이, 필리핀 어학연수 + 필요한 툴은 직접 개발",
-      en: "Australia Working Holiday, Philippines Language School + Built personal tools",
-    },
-    achievements: {
-      ko: [
-        "OPIC IH 취득 - 영어 커뮤니케이션 역량 강화",
-        "호주/필리핀/인도네시아 - 글로벌 문화 경험 및 금융 시장 분석",
-        "필요에 따라 개인 툴 개발 (쉬면서도 개발 감각 유지)",
-        "여행사 예약 웹 (Next.js), 암호화폐 분석 대시보드 (Flask)",
-        "AI 웹서비스 (Teachable Machine), OCR 프로그램 (OpenCV) 등",
-      ],
-      en: [
-        "Achieved OPIc IH - Enhanced English communication skills",
-        "Australia/Philippines/Indonesia - Global culture & fintech market exposure",
-        "Built personal tools as needed (maintained dev skills during break)",
-        "Travel booking web (Next.js), Crypto dashboard (Flask/Binance API)",
-        "AI web services (Teachable Machine), OCR program (OpenCV), etc.",
-      ],
-    },
-    tech: ["Next.js", "TypeScript", "Python", "Flask", "PostgreSQL", "Docker", "OpenCV"],
-  },
-  {
     id: "suwon-university",
     company: { ko: "수원대학교 산학협력단", en: "Suwon University Industry-Academia Cooperation" },
     role: { ko: "TLO 부서 / 연구원", en: "Technology Licensing Researcher" },

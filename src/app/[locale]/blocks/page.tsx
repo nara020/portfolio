@@ -101,7 +101,7 @@ export default function BlocksPage() {
                 {/* Company */}
                 <div className="col-span-3">
                   <Link
-                    href={`/${locale}/address/${block.id}`}
+                    href={`/${locale}/blocks/${block.id}`}
                     className="flex items-center gap-2"
                   >
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-400 to-purple-500 flex items-center justify-center text-white text-xs font-bold">
