@@ -38,21 +38,5 @@ Thumbs.db
 *.tsbuildinfo
 next-env.d.ts
 
-# Personal files (not for public repo)
-*.pdf
-*JD*.txt
-PROMPTS/
-messages/
-recycle-core-api-fix-docker-script*/
-MASTER_PLAN*.md
-CAREER_ROADMAP.md
-BLOCKCHAIN_CAREER_ROADMAP.md
-MINI_AAVE_PROJECT_GUIDE.md
-.claude/
-
-# Korean named files
-넷마블*
-두나무*
-한화*
-김진혁*
-성과*
+# Private files
+private/
