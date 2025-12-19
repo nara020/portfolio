@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "title": "Jinhyeok Kim | Blockchain & Backend Developer",
+    "description": "Specialized in Hyperledger, ZKP, Node.js. Achieved 40x performance optimization."
+  },
+  "nav": {
+    "home": "Home",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello",
+    "name": "Jinhyeok Kim",
+    "role": "Blockchain & Backend Developer",
+    "tagline": "Building high-performance blockchain systems with measurable results.",
+    "cta": {
+      "contact": "Contact",
+      "resume": "Resume"
+    }
+  },
+  "metrics": {
+    "tps": { "value": "40x", "label": "TPS Boost", "desc": "Hyperledger Besu" },
+    "patents": { "value": "3+", "label": "Patents", "desc": "Filed/In Progress" },
+    "papers": { "value": "2", "label": "Papers", "desc": "ICBTA, KIPS" },
+    "exp": { "value": "3+", "label": "Experience", "desc": "Years" }
+  },
+  "sections": {
+    "experience": { "title": "Transaction History", "subtitle": "Experience" },
+    "projects": { "title": "Verified Contracts", "subtitle": "Projects" },
+    "skills": { "title": "Tech Stack", "subtitle": "Skills" }
+  },
+  "experience": {
+    "title": "Blocks",
+    "subtitle": "Career Experience Blocks"
+  },
+  "projects": {
+    "title": "Transactions",
+    "subtitle": "Project Transactions"
+  },
+  "address": {
+    "title": "Address",
+    "subtitle": "Developer Profile"
+  },
+  "footer": {
+    "copyright": "© 2025 Jinhyeok Kim"
+  }
+}

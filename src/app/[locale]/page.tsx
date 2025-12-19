@@ -92,6 +92,14 @@ export default function Home() {
                 <p className="text-xs text-gray-600">
                   Sponsored: Hire me for your next blockchain project!
                 </p>
+
+                {/* Etherscan 스타일 설명 */}
+                <div className="mt-4 p-3 bg-gray-800/50 border border-gray-700 rounded-lg text-xs text-gray-400">
+                  <span className="text-primary-400 font-medium">Navigation Guide: </span>
+                  {locale === "ko"
+                    ? "Blocks = 경력 | Transactions = 프로젝트 | Contract Calls = 성과"
+                    : "Blocks = Career | Transactions = Projects | Contract Calls = Achievements"}
+                </div>
               </div>
 
               {/* Profile Card */}

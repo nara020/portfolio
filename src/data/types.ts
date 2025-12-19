@@ -60,7 +60,8 @@ export interface Award {
   name: Localized<string>;
   issuer: Localized<string>;
   date: string;
-  type: "award" | "certification";
+  type: "award" | "certification" | "paper";
+  description?: Localized<string>;
 }
 
 export interface Education {

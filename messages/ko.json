@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "title": "김진혁 | 블록체인 & 백엔드 개발자",
+    "description": "Hyperledger, ZKP, Node.js 전문. 40배 성능 최적화 달성."
+  },
+  "nav": {
+    "home": "홈",
+    "experience": "경력",
+    "projects": "프로젝트",
+    "skills": "기술",
+    "contact": "연락"
+  },
+  "hero": {
+    "greeting": "안녕하세요",
+    "name": "김진혁",
+    "role": "블록체인 & 백엔드 개발자",
+    "tagline": "고성능 블록체인 시스템을 설계하고, 실질적인 성과를 만듭니다.",
+    "cta": {
+      "contact": "연락하기",
+      "resume": "이력서"
+    }
+  },
+  "metrics": {
+    "tps": { "value": "40x", "label": "TPS 향상", "desc": "Hyperledger Besu" },
+    "patents": { "value": "3+", "label": "특허", "desc": "출원/진행 중" },
+    "papers": { "value": "2", "label": "논문", "desc": "ICBTA, KIPS" },
+    "exp": { "value": "3+", "label": "경력", "desc": "년" }
+  },
+  "sections": {
+    "experience": { "title": "Transaction History", "subtitle": "경력" },
+    "projects": { "title": "Verified Contracts", "subtitle": "프로젝트" },
+    "skills": { "title": "Tech Stack", "subtitle": "기술 스택" }
+  },
+  "experience": {
+    "title": "Blocks",
+    "subtitle": "경력 블록"
+  },
+  "projects": {
+    "title": "Transactions",
+    "subtitle": "프로젝트 트랜잭션"
+  },
+  "address": {
+    "title": "Address",
+    "subtitle": "개발자 프로필"
+  },
+  "footer": {
+    "copyright": "© 2025 김진혁"
+  }
+}

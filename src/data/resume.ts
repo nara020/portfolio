@@ -368,6 +368,23 @@ export const awards: Award[] = [
     type: "certification",
   },
   {
+    id: "ieee-wsn-2020",
+    name: {
+      ko: "IEEE WSN 센서 노드 배치 최적화 논문",
+      en: "IEEE WSN Sensor Node Optimization Paper"
+    },
+    issuer: {
+      ko: "IEEE (국제학술대회)",
+      en: "IEEE International Conference"
+    },
+    date: "2020.02",
+    type: "paper",
+    description: {
+      ko: "차분 진화 알고리즘 기반 센서 노드 배치 최적화를 통한 커버리지 최대화 연구",
+      en: "Optimization of Sensor Nodes Deployment Based on An Improved Differential Evolution Algorithm for Coverage Area Maximization"
+    }
+  },
+  {
     id: "hanium-2020",
     name: { ko: "2020 한이음 ICT 공모전 장려상", en: "Encouragement Award" },
     issuer: { ko: "과학기술정보통신부", en: "Hanium ICT Competition (MSIT)" },

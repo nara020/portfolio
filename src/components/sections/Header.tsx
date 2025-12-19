@@ -182,6 +182,14 @@ export default function Header() {
 
             {/* 액션 */}
             <div className="flex items-center gap-2">
+              {/* Simple Version Link */}
+              <Link
+                href={`/${locale}/simple`}
+                className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white rounded-lg transition-colors"
+              >
+                {locale === "ko" ? "심플 보기" : "Simple View"}
+              </Link>
+
               {/* Resume Download Button */}
               <a
                 href={`/resume/resume-${locale}.pdf`}
@@ -263,8 +271,15 @@ export default function Header() {
                 Address (Profile)
               </Link>
 
-              {/* Mobile Resume Download */}
+              {/* Mobile Simple View & Resume Download */}
               <hr className="border-gray-800 my-2" />
+              <Link
+                href={`/${locale}/simple`}
+                onClick={() => setIsOpen(false)}
+                className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-white transition-colors"
+              >
+                {locale === "ko" ? "심플 버전 보기" : "View Simple Version"}
+              </Link>
               <a
                 href={`/resume/resume-${locale}.pdf`}
                 download={`Jinhyeok_Kim_Resume_${locale.toUpperCase()}.pdf`}
