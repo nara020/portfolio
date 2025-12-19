@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { locales, type Locale } from "@/config/i18n";
-import "@/styles/globals.css";
 
 // Google Analytics ID - 실제 ID로 변경하세요
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX";
-
-const inter = Inter({ subsets: ["latin"] });
 
 const siteUrl = "https://jinhyeok.dev"; // 실제 도메인으로 변경
 
@@ -98,18 +94,12 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="dark">
-      <body
-        className={`${inter.className} bg-gray-950 text-gray-100 antialiased`}
-      >
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-        {/* Google Analytics - production에서만 활성화 */}
-        {process.env.NODE_ENV === "production" && GA_ID !== "G-XXXXXXXXXX" && (
-          <GoogleAnalytics gaId={GA_ID} />
-        )}
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages}>
+      {children}
+      {/* Google Analytics - production에서만 활성화 */}
+      {process.env.NODE_ENV === "production" && GA_ID !== "G-XXXXXXXXXX" && (
+        <GoogleAnalytics gaId={GA_ID} />
+      )}
+    </NextIntlClientProvider>
   );
 }
