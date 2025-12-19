@@ -29,6 +29,36 @@ export default function IntroPage() {
   const rotateX = useTransform(smoothY, [0, 1], [8, -8]);
   const rotateY = useTransform(smoothX, [0, 1], [-8, 8]);
 
+  // 네뷸러 패럴랙스 (hooks must be at top level)
+  const nebulaX = useTransform(smoothX, [0, 1], [-20, 20]);
+  const nebulaY = useTransform(smoothY, [0, 1], [-20, 20]);
+
+  // 별 레이어 패럴랙스
+  const starLayer0X = useTransform(smoothX, [0, 1], [-30, 30]);
+  const starLayer0Y = useTransform(smoothY, [0, 1], [-30, 30]);
+  const starLayer1X = useTransform(smoothX, [0, 1], [-60, 60]);
+  const starLayer1Y = useTransform(smoothY, [0, 1], [-60, 60]);
+  const starLayer2X = useTransform(smoothX, [0, 1], [-90, 90]);
+  const starLayer2Y = useTransform(smoothY, [0, 1], [-90, 90]);
+  const starLayerTransforms = [
+    { x: starLayer0X, y: starLayer0Y },
+    { x: starLayer1X, y: starLayer1Y },
+    { x: starLayer2X, y: starLayer2Y },
+  ];
+
+  // 행성 패럴랙스 (size 기반: 80, 120, 50)
+  const planet0X = useTransform(smoothX, [0, 1], [-20, 20]);
+  const planet0Y = useTransform(smoothY, [0, 1], [-20, 20]);
+  const planet1X = useTransform(smoothX, [0, 1], [-30, 30]);
+  const planet1Y = useTransform(smoothY, [0, 1], [-30, 30]);
+  const planet2X = useTransform(smoothX, [0, 1], [-12.5, 12.5]);
+  const planet2Y = useTransform(smoothY, [0, 1], [-12.5, 12.5]);
+  const planetTransforms = [
+    { x: planet0X, y: planet0Y },
+    { x: planet1X, y: planet1Y },
+    { x: planet2X, y: planet2Y },
+  ];
+
   useEffect(() => {
     setMounted(true);
     // 로딩 → 리빌 → 콘텐츠
@@ -113,7 +143,7 @@ export default function IntroPage() {
         {/* 보라/파랑 네뷸러 */}
         <motion.div
           className="absolute inset-0"
-          style={{ x: useTransform(smoothX, [0, 1], [-20, 20]), y: useTransform(smoothY, [0, 1], [-20, 20]) }}
+          style={{ x: nebulaX, y: nebulaY }}
         >
           <div className="absolute top-0 left-1/4 w-[800px] h-[600px] bg-purple-600/20 rounded-full blur-[150px]" />
           <div className="absolute top-1/4 right-0 w-[600px] h-[500px] bg-blue-600/25 rounded-full blur-[120px]" />
@@ -126,7 +156,7 @@ export default function IntroPage() {
       </div>
 
       {/* 행성들 */}
-      {planets.map((planet) => (
+      {planets.map((planet, index) => (
         <motion.div
           key={planet.id}
           className={`absolute rounded-full bg-gradient-to-br ${planet.color}`}
@@ -136,8 +166,8 @@ export default function IntroPage() {
             left: `${planet.x}%`,
             top: `${planet.y}%`,
             filter: `blur(${planet.blur}px)`,
-            x: useTransform(smoothX, [0, 1], [-planet.size/4, planet.size/4]),
-            y: useTransform(smoothY, [0, 1], [-planet.size/4, planet.size/4]),
+            x: planetTransforms[index]?.x,
+            y: planetTransforms[index]?.y,
           }}
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -151,8 +181,8 @@ export default function IntroPage() {
           key={layer}
           className="absolute inset-0 pointer-events-none"
           style={{
-            x: useTransform(smoothX, [0, 1], [(layer + 1) * -30, (layer + 1) * 30]),
-            y: useTransform(smoothY, [0, 1], [(layer + 1) * -30, (layer + 1) * 30]),
+            x: starLayerTransforms[layer]?.x,
+            y: starLayerTransforms[layer]?.y,
           }}
         >
           {stars.filter((s) => s.layer === layer).map((star) => (
