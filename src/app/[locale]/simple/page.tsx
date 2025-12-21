@@ -10,11 +10,9 @@ import {
   MapPin,
   Calendar,
   ExternalLink,
-  ArrowLeft,
   FileText,
   Trophy,
   Award,
-  GraduationCap,
   ChevronDown,
   ChevronUp,
   Star,
@@ -67,13 +65,24 @@ export default function SimplePage() {
               {locale === "ko" ? "블록체인 개발자" : "Blockchain Developer"}
             </p>
           </div>
-          <Link
-            href={`/${locale}`}
-            className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            {locale === "ko" ? "Etherscan 스타일 보기" : "View Etherscan Style"}
-          </Link>
+          <div className="flex items-center gap-3">
+            {/* PDF Download */}
+            <a
+              href={locale === "ko" ? "/resume/JinhyeokKim_Resume_KR.pdf" : "/resume/JinhyeokKim_Resume_EN.pdf"}
+              download
+              className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-primary-600 hover:bg-primary-500 text-white rounded-lg transition-colors"
+            >
+              <FileText className="w-4 h-4" />
+              PDF
+            </a>
+            {/* Language Toggle */}
+            <Link
+              href={`/${locale === "ko" ? "en" : "ko"}/simple`}
+              className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-gray-400 hover:text-white transition-colors"
+            >
+              {locale === "ko" ? "🇺🇸 EN" : "🇰🇷 KO"}
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -510,6 +519,66 @@ export default function SimplePage() {
               )}
             </div>
           ))}
+        </section>
+
+        {/* Explore More - Interactive Portfolios */}
+        <section className="mb-12">
+          <h2 className="text-xl font-bold mb-6 pb-2 border-b-2 border-gray-200">
+            {locale === "ko" ? "더 알아보기" : "Explore More"}
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* Etherscan Style Portfolio */}
+            <Link
+              href={`/${locale}`}
+              className="group p-6 bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl border border-gray-700 hover:border-primary-500 transition-all hover:shadow-lg hover:shadow-primary-500/20"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-primary-600 flex items-center justify-center">
+                  <span className="text-white font-bold">JK</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-white group-hover:text-primary-400 transition-colors">
+                    {locale === "ko" ? "🔍 Etherscan 스타일로 탐험하기" : "🔍 Explore in Etherscan Style"}
+                  </h3>
+                  <p className="text-xs text-gray-400">JinhyeokScan</p>
+                </div>
+              </div>
+              <p className="text-sm text-gray-400">
+                {locale === "ko"
+                  ? "블록체인 익스플로러 UI로 제 경력과 프로젝트를 탐색해보세요. 블록 = 경력, 트랜잭션 = 프로젝트로 구성되어 있습니다."
+                  : "Explore my career and projects through a blockchain explorer UI. Blocks = Experience, Transactions = Projects."}
+              </p>
+            </Link>
+
+            {/* Consensus Lab */}
+            <a
+              href="https://consensus-lab.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-6 bg-gradient-to-br from-cyan-900/50 to-gray-900 rounded-xl border border-cyan-700/50 hover:border-cyan-500 transition-all hover:shadow-lg hover:shadow-cyan-500/20"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-cyan-600 flex items-center justify-center">
+                  <span className="text-white text-lg">🧪</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-white group-hover:text-cyan-400 transition-colors">
+                    {locale === "ko" ? "🧪 합의 알고리즘 시뮬레이터" : "🧪 Consensus Algorithm Simulator"}
+                  </h3>
+                  <p className="text-xs text-gray-400">Consensus Lab</p>
+                </div>
+              </div>
+              <p className="text-sm text-gray-400">
+                {locale === "ko"
+                  ? "PoW, PoS, PBFT 등 블록체인 합의 알고리즘을 3D로 시각화하고 직접 비교해볼 수 있는 인터랙티브 시뮬레이터입니다."
+                  : "Interactive 3D visualization of blockchain consensus algorithms including PoW, PoS, and PBFT."}
+              </p>
+              <div className="mt-3 flex items-center gap-1 text-xs text-cyan-400">
+                <ExternalLink className="w-3 h-3" />
+                consensus-lab.vercel.app
+              </div>
+            </a>
+          </div>
         </section>
       </main>
 
