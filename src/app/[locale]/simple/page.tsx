@@ -17,6 +17,9 @@ import {
   ChevronUp,
   Star,
   FolderOpen,
+  Download,
+  Globe,
+  Printer,
 } from "lucide-react";
 import {
   experiences,
@@ -55,33 +58,90 @@ export default function SimplePage() {
   const otherProjects = projects.filter(p => !p.featured);
 
   return (
-    <div className="min-h-screen bg-white text-gray-900">
-      {/* Header */}
-      <header className="bg-gray-900 text-white py-6">
-        <div className="max-w-4xl mx-auto px-6 flex justify-between items-center">
-          <div>
-            <h1 className="text-2xl font-bold">{personalInfo.name[locale]}</h1>
-            <p className="text-gray-400 text-sm">
-              {locale === "ko" ? "블록체인 개발자" : "Blockchain Developer"}
-            </p>
+    <div className="min-h-screen bg-white text-gray-900 print:bg-white">
+      {/* Header - Professional & Clean */}
+      <header className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-8 print:bg-white print:text-gray-900 print:py-4">
+        <div className="max-w-4xl mx-auto px-6">
+          {/* Top bar - Availability & Actions */}
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-700 print:hidden">
+            {/* Availability Status */}
+            <div className="flex items-center gap-2 text-sm">
+              <span className="flex items-center gap-1.5 text-green-400">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                {locale === "ko" ? "채용 가능" : "Available for Hire"}
+              </span>
+              <span className="text-gray-500">|</span>
+              <span className="text-gray-400">
+                {locale === "ko" ? "서울 (원격 가능)" : "Seoul (Remote OK)"}
+              </span>
+            </div>
+
+            {/* Actions */}
+            <div className="flex items-center gap-2">
+              {/* PDF Downloads */}
+              <div className="flex items-center bg-gray-800 rounded-lg overflow-hidden">
+                <a
+                  href="/resume/JinhyeokKim_Resume_KR.pdf"
+                  download
+                  className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium transition-colors ${
+                    locale === "ko"
+                      ? "bg-primary-600 text-white"
+                      : "text-gray-400 hover:text-white hover:bg-gray-700"
+                  }`}
+                  title="한국어 이력서 다운로드"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  🇰🇷 PDF
+                </a>
+                <a
+                  href="/resume/JinhyeokKim_Resume_EN.pdf"
+                  download
+                  className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium transition-colors ${
+                    locale === "en"
+                      ? "bg-primary-600 text-white"
+                      : "text-gray-400 hover:text-white hover:bg-gray-700"
+                  }`}
+                  title="Download English Resume"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  🇺🇸 PDF
+                </a>
+              </div>
+
+              {/* Print Button */}
+              <button
+                onClick={() => window.print()}
+                className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition-colors"
+                title={locale === "ko" ? "인쇄하기" : "Print"}
+              >
+                <Printer className="w-3.5 h-3.5" />
+              </button>
+
+              {/* Language Toggle */}
+              <Link
+                href={`/${locale === "ko" ? "en" : "ko"}/simple`}
+                className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition-colors"
+              >
+                <Globe className="w-3.5 h-3.5" />
+                {locale === "ko" ? "EN" : "KO"}
+              </Link>
+            </div>
           </div>
-          <div className="flex items-center gap-3">
-            {/* PDF Download */}
-            <a
-              href={locale === "ko" ? "/resume/JinhyeokKim_Resume_KR.pdf" : "/resume/JinhyeokKim_Resume_EN.pdf"}
-              download
-              className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-primary-600 hover:bg-primary-500 text-white rounded-lg transition-colors"
-            >
-              <FileText className="w-4 h-4" />
-              PDF
-            </a>
-            {/* Language Toggle */}
-            <Link
-              href={`/${locale === "ko" ? "en" : "ko"}/simple`}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-gray-400 hover:text-white transition-colors"
-            >
-              {locale === "ko" ? "🇺🇸 EN" : "🇰🇷 KO"}
-            </Link>
+
+          {/* Name & Title */}
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <div>
+              <h1 className="text-3xl font-bold tracking-tight">{personalInfo.name[locale]}</h1>
+              <p className="text-primary-400 font-medium mt-1 print:text-primary-600">
+                {locale === "ko" ? "블록체인 & 백엔드 개발자" : "Blockchain & Backend Developer"}
+              </p>
+            </div>
+            {/* Quick Stats - Print visible */}
+            <div className="hidden print:flex gap-4 text-sm text-gray-600">
+              <span>{contact.email}</span>
+              <span>|</span>
+              <span>github.com/nara020</span>
+            </div>
           </div>
         </div>
       </header>
@@ -521,8 +581,8 @@ export default function SimplePage() {
           ))}
         </section>
 
-        {/* Explore More - Interactive Portfolios */}
-        <section className="mb-12">
+        {/* Explore More - Interactive Portfolios (Hide on print) */}
+        <section className="mb-12 print:hidden">
           <h2 className="text-xl font-bold mb-6 pb-2 border-b-2 border-gray-200">
             {locale === "ko" ? "더 알아보기" : "Explore More"}
           </h2>
@@ -583,13 +643,43 @@ export default function SimplePage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-100 py-8 text-center text-sm text-gray-500">
-        <p>
-          {locale === "ko"
-            ? `${personalInfo.name[locale]} | 블록체인 개발자`
-            : `${personalInfo.name[locale]} | Blockchain Developer`}
-        </p>
-        <p className="mt-1">{contact.email}</p>
+      <footer className="bg-gray-50 border-t border-gray-200 py-8 print:py-4 print:bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+            <div className="flex items-center gap-4">
+              <span className="font-medium text-gray-700">{personalInfo.name[locale]}</span>
+              <span className="hidden sm:inline text-gray-300">|</span>
+              <a href={`mailto:${contact.email}`} className="hover:text-primary-600 transition-colors">
+                {contact.email}
+              </a>
+            </div>
+            <div className="flex items-center gap-4 text-xs text-gray-400 print:hidden">
+              <span>
+                {locale === "ko" ? "최종 업데이트: 2024.12" : "Last updated: Dec 2024"}
+              </span>
+              <a
+                href={contact.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 hover:text-gray-600 transition-colors"
+              >
+                <Github className="w-3.5 h-3.5" />
+                GitHub
+              </a>
+              {contact.linkedin && (
+                <a
+                  href={contact.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 hover:text-gray-600 transition-colors"
+                >
+                  <Linkedin className="w-3.5 h-3.5" />
+                  LinkedIn
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   );

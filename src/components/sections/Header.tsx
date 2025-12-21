@@ -148,13 +148,13 @@ export default function Header() {
 
             {/* 액션 버튼들 */}
             <div className="flex items-center gap-2">
-              {/* Simple Resume Link */}
+              {/* Back to Resume */}
               <Link
                 href={`/${locale}/simple`}
-                className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-gray-400 hover:text-white rounded transition-colors"
+                className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
               >
                 <FileText className="w-3.5 h-3.5" />
-                Simple
+                {locale === "ko" ? "이력서" : "Resume"}
               </Link>
 
               {/* Resume Download */}
@@ -250,7 +250,7 @@ export default function Header() {
                 className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-white transition-colors"
               >
                 <FileText className="w-4 h-4" />
-                Simple Resume
+                {locale === "ko" ? "이력서 보기" : "View Resume"}
               </Link>
               <a
                 href={locale === "ko" ? "/resume/JinhyeokKim_Resume_KR.pdf" : "/resume/JinhyeokKim_Resume_EN.pdf"}
