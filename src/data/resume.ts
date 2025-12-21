@@ -43,6 +43,7 @@ export const experiences: Experience[] = [
       ],
     },
     tech: ["Hyperledger Besu", "Solidity", "ZKP/Groth16", "Node.js", "TypeScript", "IPFS", "SpringBoot", "Python", "Docker", "Jenkins"],
+    type: "work",
   },
   {
     id: "global-experience",
@@ -71,6 +72,7 @@ export const experiences: Experience[] = [
       ],
     },
     tech: ["English", "Global Networking", "Cross-cultural Communication"],
+    type: "other",
   },
   {
     id: "smartm2m",
@@ -103,6 +105,7 @@ export const experiences: Experience[] = [
       ],
     },
     tech: ["Hyperledger Fabric", "Go", "TypeScript", "Docker", "React", "Grafana", "MariaDB", "Nginx", "JMeter"],
+    type: "work",
   },
   {
     id: "suwon-university",
@@ -129,6 +132,7 @@ export const experiences: Experience[] = [
       ],
     },
     tech: ["Android", "PHP", "Raspberry Pi", "Python", "Research"],
+    type: "work",
   },
   {
     id: "university",
@@ -161,6 +165,7 @@ export const experiences: Experience[] = [
       ],
     },
     tech: ["Python", "YOLO", "ROS", "Android", "Java", "PHP", "AWS", "Sensor Networks"],
+    type: "research",
   },
   {
     id: "bns-soft",
@@ -189,6 +194,7 @@ export const experiences: Experience[] = [
       ],
     },
     tech: ["Android", "Java", "Spring", "MySQL", "DialogFlow", "Git"],
+    type: "work",
   },
 ];
 

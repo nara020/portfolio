@@ -221,14 +221,14 @@ export default function SimplePage() {
           </div>
         </section>
 
-        {/* Experience */}
+        {/* Work Experience (IT 경력) */}
         <section className="mb-12">
           <h2 className="text-xl font-bold mb-6 pb-2 border-b-2 border-gray-200">
-            {locale === "ko" ? "경력" : "Experience"}
+            {locale === "ko" ? "경력" : "Work Experience"}
           </h2>
           <div className="space-y-8">
-            {experiences.map((exp) => (
-              <div key={exp.id} className="relative pl-6 border-l-2 border-gray-200">
+            {experiences.filter(exp => exp.type === "work").map((exp) => (
+              <div key={exp.id} className="relative pl-6 border-l-2 border-primary-200">
                 <div className="absolute -left-2 top-0 w-4 h-4 bg-primary-600 rounded-full" />
                 <div className="mb-2">
                   <h3 className="font-bold text-lg">{exp.company[locale]}</h3>
@@ -255,6 +255,73 @@ export default function SimplePage() {
             ))}
           </div>
         </section>
+
+        {/* Career Break / Other */}
+        {experiences.filter(exp => exp.type === "other").length > 0 && (
+          <section className="mb-12">
+            <h2 className="text-xl font-bold mb-6 pb-2 border-b-2 border-gray-200 text-gray-600">
+              {locale === "ko" ? "Career Break" : "Career Break"}
+            </h2>
+            <div className="space-y-6">
+              {experiences.filter(exp => exp.type === "other").map((exp) => (
+                <div key={exp.id} className="relative pl-6 border-l-2 border-gray-300 border-dashed">
+                  <div className="absolute -left-2 top-0 w-4 h-4 bg-gray-400 rounded-full" />
+                  <div className="mb-2">
+                    <h3 className="font-bold text-lg text-gray-700">{exp.company[locale]}</h3>
+                    <p className="text-gray-500 font-medium">{exp.role[locale]}</p>
+                    <p className="text-sm text-gray-400 flex items-center gap-1">
+                      <Calendar className="w-3 h-3" />
+                      {exp.period} ({exp.duration?.[locale]})
+                    </p>
+                  </div>
+                  <p className="text-gray-500 mb-3 text-sm">{exp.description[locale]}</p>
+                  <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
+                    {exp.achievements[locale].slice(0, 3).map((achievement, i) => (
+                      <li key={i}>{achievement}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Research Experience */}
+        {experiences.filter(exp => exp.type === "research").length > 0 && (
+          <section className="mb-12">
+            <h2 className="text-xl font-bold mb-6 pb-2 border-b-2 border-gray-200">
+              {locale === "ko" ? "연구 경험" : "Research Experience"}
+            </h2>
+            <div className="space-y-6">
+              {experiences.filter(exp => exp.type === "research").map((exp) => (
+                <div key={exp.id} className="relative pl-6 border-l-2 border-blue-200">
+                  <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-500 rounded-full" />
+                  <div className="mb-2">
+                    <h3 className="font-bold text-lg">{exp.company[locale]}</h3>
+                    <p className="text-blue-600 font-medium">{exp.role[locale]}</p>
+                    <p className="text-sm text-gray-500 flex items-center gap-1">
+                      <Calendar className="w-3 h-3" />
+                      {exp.period} ({exp.duration?.[locale]})
+                    </p>
+                  </div>
+                  <p className="text-gray-600 mb-3">{exp.description[locale]}</p>
+                  <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                    {exp.achievements[locale].map((achievement, i) => (
+                      <li key={i}>{achievement}</li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {exp.tech.map((tech) => (
+                      <span key={tech} className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Featured Projects */}
         <section className="mb-12">
