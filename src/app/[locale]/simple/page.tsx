@@ -726,33 +726,62 @@ export default function SimplePage() {
               </p>
             </Link>
 
-            {/* Consensus Lab */}
+            {/* Consensus Lab - Pokemon Holographic Card Style */}
             <a
               href="https://consensus-lab.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-6 bg-gradient-to-br from-cyan-900/50 to-gray-900 rounded-xl border border-cyan-700/50 hover:border-cyan-500 transition-all hover:shadow-lg hover:shadow-cyan-500/20"
+              className="group relative p-6 rounded-xl border-2 border-yellow-400/70 overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-yellow-500/30"
+              style={{
+                background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
+              }}
             >
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-cyan-600 flex items-center justify-center">
+              {/* Holographic shimmer overlay */}
+              <div
+                className="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity pointer-events-none"
+                style={{
+                  background: "linear-gradient(105deg, transparent 20%, rgba(255,215,0,0.3) 30%, rgba(255,255,255,0.4) 35%, rgba(255,215,0,0.3) 40%, transparent 50%, rgba(0,255,255,0.2) 60%, rgba(255,215,0,0.3) 70%, transparent 80%)",
+                  backgroundSize: "200% 100%",
+                  animation: "shimmer 3s ease-in-out infinite",
+                }}
+              />
+              {/* Sparkle particles */}
+              <div className="absolute top-2 right-3 text-yellow-300 animate-pulse text-xs">✦</div>
+              <div className="absolute top-4 right-8 text-cyan-300 animate-pulse text-[10px]" style={{ animationDelay: "0.5s" }}>✧</div>
+              <div className="absolute bottom-3 left-4 text-yellow-200 animate-pulse text-xs" style={{ animationDelay: "1s" }}>✦</div>
+              <div className="absolute top-1/2 right-2 text-white/60 animate-pulse text-[8px]" style={{ animationDelay: "1.5s" }}>✧</div>
+
+              {/* Golden border glow */}
+              <div className="absolute inset-0 rounded-xl border border-yellow-300/30 pointer-events-none" />
+
+              <div className="relative z-10 flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-yellow-500 to-amber-600 flex items-center justify-center shadow-lg shadow-yellow-500/30">
                   <span className="text-white text-lg">🧪</span>
                 </div>
                 <div>
-                  <h3 className="font-bold text-white group-hover:text-cyan-400 transition-colors">
+                  <h3 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-400 group-hover:from-yellow-200 group-hover:to-amber-300 transition-all">
                     {locale === "ko" ? "🧪 합의 알고리즘 시뮬레이터" : "🧪 Consensus Algorithm Simulator"}
                   </h3>
-                  <p className="text-xs text-gray-400">Consensus Lab</p>
+                  <p className="text-xs text-yellow-200/70">✨ Consensus Lab</p>
                 </div>
               </div>
-              <p className="text-sm text-gray-400">
+              <p className="relative z-10 text-sm text-gray-300">
                 {locale === "ko"
                   ? "PoW, PoS, PBFT 등 블록체인 합의 알고리즘을 3D로 시각화하고 직접 비교해볼 수 있는 인터랙티브 시뮬레이터입니다."
                   : "Interactive 3D visualization of blockchain consensus algorithms including PoW, PoS, and PBFT."}
               </p>
-              <div className="mt-3 flex items-center gap-1 text-xs text-cyan-400">
+              <div className="relative z-10 mt-3 flex items-center gap-1 text-xs text-yellow-400 font-medium">
                 <ExternalLink className="w-3 h-3" />
                 consensus-lab.vercel.app
               </div>
+
+              {/* CSS for shimmer animation */}
+              <style jsx>{`
+                @keyframes shimmer {
+                  0% { background-position: 200% 0; }
+                  100% { background-position: -200% 0; }
+                }
+              `}</style>
             </a>
           </div>
         </section>

@@ -1053,11 +1053,11 @@ export const skills: Skill[] = [
   {
     category: "Database",
     items: [
-      { name: "PostgreSQL", level: 80 },
-      { name: "MySQL", level: 75 },
-      { name: "MariaDB", level: 75 },
-      { name: "CouchDB", level: 65 },
-      { name: "MS SQL", level: 60 },
+      { name: "PostgreSQL", level: 70 },
+      { name: "MySQL", level: 65 },
+      { name: "MariaDB", level: 65 },
+      { name: "CouchDB", level: 60 },
+      { name: "MS SQL", level: 55 },
     ],
   },
   {
