@@ -138,8 +138,8 @@ export const experiences: Experience[] = [
     id: "university",
     company: { ko: "수원대학교 네트워크 연구실", en: "Suwon University Network Lab" },
     role: { ko: "정보통신공학과 / 학부 연구생", en: "Undergraduate Researcher" },
-    period: "2015.03 ~ 2021.08",
-    duration: { ko: "6년", en: "6 yrs" },
+    period: "2018.03 ~ 2021.08",
+    duration: { ko: "3년 6개월", en: "3 yrs 6 mo" },
     description: {
       ko: "네트워크/IoT 연구 참여, 캡스톤 프로젝트, 공모전, 학술논문 발표",
       en: "Network/IoT research, capstone projects, competitions, academic publications",
