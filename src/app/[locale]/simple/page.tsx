@@ -53,9 +53,16 @@ export default function SimplePage() {
   const awardsOnly = awards.filter(a => a.type === "award");
   const certificationsOnly = awards.filter(a => a.type === "certification");
 
-  // 프로젝트 분리
-  const featuredProjects = projects.filter(p => p.featured);
-  const otherProjects = projects.filter(p => !p.featured);
+  // 프로젝트 분리 및 최신순 정렬
+  const sortByPeriod = (a: typeof projects[0], b: typeof projects[0]) => {
+    const getYear = (period: string) => {
+      const match = period.match(/(\d{4})/);
+      return match ? parseInt(match[1]) : 0;
+    };
+    return getYear(b.period) - getYear(a.period);
+  };
+  const featuredProjects = projects.filter(p => p.featured).sort(sortByPeriod);
+  const otherProjects = projects.filter(p => !p.featured).sort(sortByPeriod);
 
   return (
     <div className="min-h-screen bg-white text-gray-900 print:bg-white">
@@ -189,6 +196,11 @@ export default function SimplePage() {
               {locale === "ko"
                 ? "CES Best Innovation Award 수상 기업(ZKP 전문)과 협업하며 영지식증명 기술을 습득했고, 이를 바탕으로 Groth16/snarkjs/circom 기반 개인 프로젝트를 설계·개발하고 있습니다. SpringBoot/Node.js 백엔드, Solidity 스마트컨트랙트, Private IPFS 클러스터 구축 등 블록체인 서비스 전 영역을 다룹니다."
                 : "Acquired ZKP expertise through collaboration with a CES Best Innovation Award-winning company, now designing and developing personal projects using Groth16/snarkjs/circom. Handle all areas of blockchain services including SpringBoot/Node.js backend, Solidity smart contracts, and Private IPFS cluster deployment."}
+            </p>
+            <p className="text-gray-500 text-sm italic">
+              {locale === "ko"
+                ? "* 중학생 때 첫 프로그램을 만들며 개발에 입문, 이후 꾸준히 성장해왔습니다."
+                : "* Started programming in middle school, continuously growing ever since."}
             </p>
             {/* 핵심 성과 하이라이트 */}
             <div className="mt-6 p-4 bg-gradient-to-r from-primary-50 to-blue-50 border border-primary-200 rounded-lg">
