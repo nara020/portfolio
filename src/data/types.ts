@@ -74,3 +74,21 @@ export interface Education {
   gpa?: string;
   thesis?: Localized<string>;
 }
+
+export interface Paper {
+  id: string;
+  title: Localized<string>;
+  authors?: string; // e.g., "Jinhyeok Kim, et al."
+  venue: Localized<string>; // Journal/Conference name
+  publisher?: string; // Springer, IEEE, KCI, etc.
+  date: string;
+  abstract: Localized<string>;
+  type: "journal" | "conference";
+  isFirstAuthor?: boolean;
+  award?: Localized<string>; // e.g., "Best Paper Award"
+  links?: {
+    doi?: string;
+    pdf?: string;
+    linkedin?: string;
+  };
+}

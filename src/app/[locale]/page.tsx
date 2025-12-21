@@ -23,8 +23,11 @@ import {
   Linkedin,
   BookOpen,
   Download,
+  ExternalLink,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
-import { experiences, projects, skills, contact, keyMetrics, awards, personalInfo } from "@/data/resume";
+import { experiences, projects, skills, contact, keyMetrics, awards, personalInfo, papers } from "@/data/resume";
 import { Header, Footer } from "@/components/sections";
 import SearchModal from "@/components/SearchModal";
 import BackgroundParticles from "@/components/ui/BackgroundParticles";
@@ -42,6 +45,13 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [blockIndex, setBlockIndex] = useState(0);
   const [txIndex, setTxIndex] = useState(0);
+  const [expandedPapers, setExpandedPapers] = useState<string[]>([]);
+
+  const togglePaper = (id: string) => {
+    setExpandedPapers(prev =>
+      prev.includes(id) ? prev.filter(p => p !== id) : [...prev, id]
+    );
+  };
 
   // Check if coming from intro
   useEffect(() => {
@@ -379,9 +389,9 @@ export default function Home() {
                   <div className="text-[9px] text-gray-600">Springer · IEEE · KCI</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl font-bold text-yellow-400">🏆</div>
-                  <div className="text-[10px] text-gray-500">CES 2025</div>
-                  <div className="text-[9px] text-gray-600">Best Innovation</div>
+                  <div className="text-xl font-bold text-yellow-400">9+</div>
+                  <div className="text-[10px] text-gray-500">{locale === "ko" ? "수상 경력" : "Awards"}</div>
+                  <div className="text-[9px] text-gray-600">Grand Prizes</div>
                 </div>
               </div>
 
@@ -673,6 +683,99 @@ export default function Home() {
               ))}
             </div>
 
+          </motion.div>
+        </section>
+
+        {/* Publications Section */}
+        <section className="max-w-6xl mx-auto px-4 pb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden"
+          >
+            <div className="px-6 py-4 border-b border-gray-800 flex justify-between items-center">
+              <h2 className="text-lg font-semibold text-white flex items-center gap-2">
+                <FileText className="w-5 h-5 text-primary-400" />
+                {locale === "ko" ? "논문 발표" : "Publications"}
+              </h2>
+              <span className="text-xs text-gray-500">
+                {papers.filter(p => p.isFirstAuthor).length} {locale === "ko" ? "편 1저자" : "First Author"} · {papers.length} {locale === "ko" ? "편 총" : "Total"}
+              </span>
+            </div>
+
+            <div className="divide-y divide-gray-800">
+              {papers.map((paper) => (
+                <div key={paper.id} className="hover:bg-gray-800/30 transition-colors">
+                  <div className="p-4">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-2 mb-1">
+                          {paper.isFirstAuthor && (
+                            <span className="px-1.5 py-0.5 text-[10px] font-medium bg-yellow-500/20 text-yellow-400 rounded">
+                              1st Author
+                            </span>
+                          )}
+                          {paper.award && (
+                            <span className="px-1.5 py-0.5 text-[10px] font-medium bg-purple-500/20 text-purple-400 rounded flex items-center gap-1">
+                              <Trophy className="w-3 h-3" />
+                              {paper.award[locale]}
+                            </span>
+                          )}
+                          <span className="px-1.5 py-0.5 text-[10px] font-medium bg-primary-500/20 text-primary-400 rounded">
+                            {paper.publisher}
+                          </span>
+                          <span className="text-[10px] text-gray-500">{paper.date}</span>
+                        </div>
+                        <h3 className="text-sm font-medium text-white mb-1">
+                          {paper.title[locale]}
+                        </h3>
+                        <p className="text-xs text-gray-400">
+                          {paper.venue[locale]}
+                        </p>
+                        <button
+                          onClick={() => togglePaper(paper.id)}
+                          className="mt-2 flex items-center gap-1 text-xs text-primary-400 hover:text-primary-300 transition-colors"
+                        >
+                          {expandedPapers.includes(paper.id) ? (
+                            <>
+                              <ChevronUp className="w-3 h-3" />
+                              {locale === "ko" ? "요약 접기" : "Hide Abstract"}
+                            </>
+                          ) : (
+                            <>
+                              <ChevronDown className="w-3 h-3" />
+                              {locale === "ko" ? "요약 보기" : "Show Abstract"}
+                            </>
+                          )}
+                        </button>
+                      </div>
+                      {paper.links?.linkedin && (
+                        <a
+                          href={paper.links.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 text-gray-400 hover:text-primary-400 transition-colors"
+                          title="View on LinkedIn"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  {expandedPapers.includes(paper.id) && (
+                    <div className="px-4 pb-4">
+                      <div className="p-3 bg-gray-800/50 rounded-lg border border-gray-700">
+                        <h4 className="text-[10px] font-bold text-gray-500 uppercase mb-2">Abstract</h4>
+                        <p className="text-xs text-gray-300 leading-relaxed">
+                          {paper.abstract[locale]}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </motion.div>
         </section>
       </main>

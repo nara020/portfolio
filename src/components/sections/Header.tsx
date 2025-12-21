@@ -5,7 +5,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Menu, X, Globe, Fuel, TrendingUp, Search, Box, FileText, User, ChevronDown, Download } from "lucide-react";
+import { Menu, X, Globe, TrendingUp, Search, Box, FileText, Download, Blocks } from "lucide-react";
 import { Button } from "@/components/ui";
 import SearchModal from "@/components/SearchModal";
 
@@ -15,7 +15,6 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const [blockchainOpen, setBlockchainOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
   // Cmd+K / Ctrl+K 단축키
@@ -46,18 +45,19 @@ export default function Header() {
           <div className="flex items-center gap-6 text-gray-400">
             <div className="flex items-center gap-1.5">
               <TrendingUp className="w-3.5 h-3.5 text-primary-400" />
-              <span>EXP Price:</span>
-              <span className="text-white font-medium">3+ yrs</span>
-              <span className="text-green-400">(+40x TPS)</span>
+              <span>Performance:</span>
+              <span className="text-white font-medium">27x TPS</span>
+              <span className="text-green-400">(25→678)</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Fuel className="w-3.5 h-3.5 text-yellow-400" />
-              <span>Gas:</span>
-              <span className="text-white font-medium">High Efficiency</span>
+              <FileText className="w-3.5 h-3.5 text-blue-400" />
+              <span>Papers:</span>
+              <span className="text-white font-medium">6</span>
+              <span className="text-gray-500">(5 First Author)</span>
             </div>
           </div>
           <div className="flex items-center gap-4 text-gray-500">
-            <span className="flex items-center gap-1">
+            <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
               Available for Hire
             </span>
@@ -84,7 +84,7 @@ export default function Header() {
               </div>
             </Link>
 
-            {/* 데스크톱 네비게이션 - 이더스캔 스타일 */}
+            {/* 데스크톱 네비게이션 - 심플하게 */}
             <nav className="hidden lg:flex items-center gap-1">
               <Link
                 href={`/${locale}`}
@@ -96,52 +96,6 @@ export default function Header() {
               >
                 Home
               </Link>
-
-              {/* Blockchain Dropdown */}
-              <div className="relative">
-                <button
-                  onClick={() => setBlockchainOpen(!blockchainOpen)}
-                  onBlur={() => setTimeout(() => setBlockchainOpen(false), 200)}
-                  className={`px-3 py-2 text-sm rounded transition-colors flex items-center gap-1 ${
-                    isActive("/blocks") || isActive("/txs")
-                      ? "text-white bg-gray-800/50"
-                      : "text-gray-400 hover:text-white hover:bg-gray-800/50"
-                  }`}
-                >
-                  Blockchain
-                  <ChevronDown className="w-3 h-3" />
-                </button>
-
-                {blockchainOpen && (
-                  <div className="absolute top-full left-0 mt-1 bg-gray-900 border border-gray-800 rounded-lg shadow-xl py-2 min-w-[200px]">
-                    <Link
-                      href={`/${locale}/blocks`}
-                      className="flex items-center gap-2 px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800/50"
-                    >
-                      <Box className="w-4 h-4" />
-                      View Blocks
-                      <span className="ml-auto text-xs text-gray-600">Experience</span>
-                    </Link>
-                    <Link
-                      href={`/${locale}/txs`}
-                      className="flex items-center gap-2 px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800/50"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Transactions
-                      <span className="ml-auto text-xs text-gray-600">Projects</span>
-                    </Link>
-                    <hr className="border-gray-800 my-2" />
-                    <Link
-                      href={`/${locale}/address`}
-                      className="flex items-center gap-2 px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800/50"
-                    >
-                      <User className="w-4 h-4" />
-                      Address
-                      <span className="ml-auto text-xs text-gray-600">Profile</span>
-                    </Link>
-                  </div>
-                )}
-              </div>
 
               <Link
                 href={`/${locale}/blocks`}
@@ -162,8 +116,20 @@ export default function Header() {
                     : "text-gray-400 hover:text-white hover:bg-gray-800/50"
                 }`}
               >
-                Transactions
+                Txs
               </Link>
+
+              {/* Consensus Lab - Featured Project */}
+              <a
+                href="https://consensus-lab.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1.5 text-sm rounded-lg transition-all text-cyan-400 hover:text-white bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-400/50 flex items-center gap-1.5"
+                title={locale === "ko" ? "합의 알고리즘 3D 시각화" : "Interactive Consensus Visualization"}
+              >
+                <Blocks className="w-4 h-4" />
+                <span>Lab</span>
+              </a>
             </nav>
 
             {/* 검색창 */}
@@ -180,26 +146,28 @@ export default function Header() {
               </button>
             </div>
 
-            {/* 액션 */}
+            {/* 액션 버튼들 */}
             <div className="flex items-center gap-2">
-              {/* Simple Version Link */}
+              {/* Simple Resume Link */}
               <Link
                 href={`/${locale}/simple`}
-                className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white rounded-lg transition-colors"
+                className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-gray-400 hover:text-white rounded transition-colors"
               >
-                {locale === "ko" ? "심플 보기" : "Simple View"}
+                <FileText className="w-3.5 h-3.5" />
+                Simple
               </Link>
 
-              {/* Resume Download Button */}
+              {/* Resume Download */}
               <a
-                href={`/resume/resume-${locale}.pdf`}
-                download={`Jinhyeok_Kim_Resume_${locale.toUpperCase()}.pdf`}
+                href={locale === "ko" ? "/resume/JinhyeokKim_Resume_KR.pdf" : "/resume/JinhyeokKim_Resume_EN.pdf"}
+                download
                 className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-primary-600 hover:bg-primary-500 text-white rounded-lg transition-colors"
               >
                 <Download className="w-3.5 h-3.5" />
-                {locale === "ko" ? "이력서" : "Resume"}
+                PDF
               </a>
 
+              {/* Language Toggle */}
               <Button
                 variant="ghost"
                 size="sm"
@@ -210,6 +178,7 @@ export default function Header() {
                 {locale.toUpperCase()}
               </Button>
 
+              {/* Mobile Menu Toggle */}
               <Button
                 variant="ghost"
                 size="sm"
@@ -231,7 +200,7 @@ export default function Header() {
               <div className="flex items-center gap-4 px-4 pb-4 mb-4 border-b border-gray-800 text-xs text-gray-400">
                 <div className="flex items-center gap-1.5">
                   <TrendingUp className="w-3.5 h-3.5 text-primary-400" />
-                  <span>EXP: 3+ yrs</span>
+                  <span>27x TPS</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
@@ -252,7 +221,7 @@ export default function Header() {
                 className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-white transition-colors"
               >
                 <Box className="w-4 h-4" />
-                Blocks (Experience)
+                Blocks
               </Link>
               <Link
                 href={`/${locale}/txs`}
@@ -260,33 +229,36 @@ export default function Header() {
                 className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-white transition-colors"
               >
                 <FileText className="w-4 h-4" />
-                Transactions (Projects)
+                Transactions
               </Link>
-              <Link
-                href={`/${locale}/address`}
+              <a
+                href="https://consensus-lab.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-white transition-colors"
+                className="flex items-center gap-2 px-4 py-2 text-cyan-400 hover:text-cyan-300 transition-colors"
               >
-                <User className="w-4 h-4" />
-                Address (Profile)
-              </Link>
+                <Blocks className="w-4 h-4" />
+                Consensus Lab
+              </a>
 
-              {/* Mobile Simple View & Resume Download */}
               <hr className="border-gray-800 my-2" />
+
               <Link
                 href={`/${locale}/simple`}
                 onClick={() => setIsOpen(false)}
                 className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-white transition-colors"
               >
-                {locale === "ko" ? "심플 버전 보기" : "View Simple Version"}
+                <FileText className="w-4 h-4" />
+                Simple Resume
               </Link>
               <a
-                href={`/resume/resume-${locale}.pdf`}
-                download={`Jinhyeok_Kim_Resume_${locale.toUpperCase()}.pdf`}
+                href={locale === "ko" ? "/resume/JinhyeokKim_Resume_KR.pdf" : "/resume/JinhyeokKim_Resume_EN.pdf"}
+                download
                 className="flex items-center gap-2 px-4 py-2 text-primary-400 hover:text-primary-300 transition-colors"
               >
                 <Download className="w-4 h-4" />
-                {locale === "ko" ? "이력서 다운로드" : "Download Resume"}
+                {locale === "ko" ? "PDF 다운로드" : "Download PDF"}
               </a>
             </motion.nav>
           )}

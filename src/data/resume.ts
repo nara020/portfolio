@@ -1,4 +1,4 @@
-import type { Experience, Project, Skill, Contact, Award, Education } from "./types";
+import type { Experience, Project, Skill, Contact, Award, Education, Paper } from "./types";
 
 export const personalInfo = {
   name: { ko: "김진혁", en: "Jinhyeok Kim" },
@@ -1070,6 +1070,145 @@ export const contact: Contact = {
   linkedin: "https://www.linkedin.com/in/jinhyeok1228",
   location: { ko: "서울 서초구", en: "Seocho, Seoul" },
 };
+
+export const papers: Paper[] = [
+  {
+    id: "icbta-2025",
+    title: {
+      ko: "Breaking the Throughput Barrier: 27-Fold Performance Improvement for Hyperledger Besu Through Service-Layer Optimization",
+      en: "Breaking the Throughput Barrier: 27-Fold Performance Improvement for Hyperledger Besu Through Service-Layer Optimization",
+    },
+    venue: {
+      ko: "ICBTA 2025 (국제 블록체인 기술 및 응용 학술대회)",
+      en: "ICBTA 2025 (Int'l Conf. on Blockchain Technology and Applications)",
+    },
+    publisher: "Springer LNNS",
+    date: "2025.12",
+    type: "conference",
+    isFirstAuthor: true,
+    abstract: {
+      ko: "Hyperledger Besu와 백엔드 서비스 통합 시 발생하는 I/O 블로킹 문제를 해결하기 위한 3계층 최적화 방법론을 제시합니다. Java 21 Virtual Threads, Transaction Isolation Pattern, PM2 Cluster Mode, Besu JVM 튜닝을 통해 기존 25 TPS에서 678 TPS로 27배 성능 향상을 달성했습니다.",
+      en: "We present a holistic three-layer optimization methodology to address I/O blocking challenges when backend services integrate with Hyperledger Besu. Through Java 21 Virtual Threads, Transaction Isolation Pattern, PM2 Cluster Mode, and Besu JVM tuning, we achieved 27-fold improvement from 25 TPS to 678 TPS.",
+    },
+    links: {
+      linkedin: "https://www.linkedin.com/in/jinhyeok1228",
+    },
+  },
+  {
+    id: "kips-2025-zkp",
+    title: {
+      ko: "블록체인 기반 B2B 거래 및 영지식 증명 시스템: DPP규제 대응을 위한 투명성과 기밀성 확보",
+      en: "Blockchain-based B2B Trading and Zero-Knowledge Proof System: Ensuring Transparency and Confidentiality for DPP Regulation Compliance",
+    },
+    venue: {
+      ko: "한국정보처리학회 2025년 추계학술대회",
+      en: "KIPS 2025 Fall Conference",
+    },
+    publisher: "KCI",
+    date: "2025.11",
+    type: "conference",
+    isFirstAuthor: true,
+    abstract: {
+      ko: "EU DPP 규제(2030년 의무화)에 대응하기 위한 기술적 체계를 제시합니다. Hyperledger Besu 기반 프라이빗 블록체인으로 투명성을, IPFS 클러스터로 영속성을, Groth16 기반 ZKP로 기밀성을 동시에 확보하여 B2B 거래의 투명성과 기밀성 문제를 해결합니다. 단일 스레드 기준 ZK 증명서 생성 평균 0.54초, 하루 최대 16만 건 처리 가능.",
+      en: "We present a technical framework for EU DPP regulation compliance (mandatory by 2030). Using Hyperledger Besu for transparency, IPFS clusters for persistence, and Groth16-based ZKP for confidentiality, we solve the dual challenge of transparency and confidentiality in B2B transactions. Single-thread ZK proof generation averages 0.54 seconds, enabling up to 160K daily transactions.",
+    },
+    links: {
+      linkedin: "https://www.linkedin.com/in/jinhyeok1228",
+    },
+  },
+  {
+    id: "kcis-2022",
+    title: {
+      ko: "블록체인 기반 조작불가능한 확률제어 시스템",
+      en: "Blockchain-based Non-manipulable Probability Control System",
+    },
+    venue: {
+      ko: "한국컴퓨터정보학회",
+      en: "Korean Computer Information Society (KCIS)",
+    },
+    publisher: "KCI",
+    date: "2022.07",
+    type: "journal",
+    isFirstAuthor: true,
+    award: {
+      ko: "우수논문상 수상",
+      en: "Best Paper Award",
+    },
+    abstract: {
+      ko: "블록체인 기반의 투명성/신뢰성을 제공하는 조작 불가능한 확률 제어 시스템을 제안합니다. Private/Permissioned 블록체인 네트워크에서 확률값을 산출하고, Public Blockchain의 미래 블록 정보를 Seed로 활용하여 Non-deterministic 환경을 제공합니다.",
+      en: "We propose a blockchain-based non-manipulable probability control system providing transparency and reliability. The system generates probability values on a Private/Permissioned blockchain network and uses future block information from Public Blockchain as seeds to provide a non-deterministic environment.",
+    },
+    links: {
+      linkedin: "https://www.linkedin.com/in/jinhyeok1228",
+    },
+  },
+  {
+    id: "kips-2021-drone",
+    title: {
+      ko: "딥러닝 기반 객체 인식과 최적 경로 탐색을 통한 멀티 재난 드론 시스템 설계 및 구현에 대한 연구",
+      en: "Design and Implementation of Multi-Disaster Drone System Using Deep Learning Object Detection and Optimal Path Planning",
+    },
+    venue: {
+      ko: "정보처리학회논문지: 컴퓨터 및 통신 시스템",
+      en: "KIPS Transactions on Computer and Communication Systems",
+    },
+    publisher: "KCI",
+    date: "2021.04",
+    type: "journal",
+    isFirstAuthor: true,
+    abstract: {
+      ko: "재난 상황 감시 및 대처를 위한 인공지능 기반 재난 드론 시스템을 설계 및 개발했습니다. 딥러닝 기반 객체 인식 알고리즘과 ACO(Ant Colony Optimization) 기반 최적 경로 탐색을 적용하여 효율적인 탐색을 실시합니다. 산불 상황에 적용하여 산불지도 생성 및 시각화 기능을 구현했습니다.",
+      en: "We designed and developed an AI-based disaster drone system for disaster monitoring and response. Using deep learning object detection and ACO-based optimal path planning, drones efficiently search areas. Applied to wildfire scenarios, the system creates and visualizes fire maps for firefighters.",
+    },
+    links: {
+      linkedin: "https://www.linkedin.com/in/jinhyeok1228",
+    },
+  },
+  {
+    id: "ieee-2020",
+    title: {
+      ko: "Optimization of Sensor Nodes Deployment Based on An Improved Differential Evolution Algorithm for Coverage Area Maximization",
+      en: "Optimization of Sensor Nodes Deployment Based on An Improved Differential Evolution Algorithm for Coverage Area Maximization",
+    },
+    venue: {
+      ko: "IEEE IAEAC 2020",
+      en: "IEEE IAEAC 2020",
+    },
+    publisher: "IEEE",
+    date: "2020.02",
+    type: "conference",
+    isFirstAuthor: false,
+    abstract: {
+      ko: "무선 센서 네트워크(WSN)에서 커버리지 최대화를 위한 센서 노드 배치 최적화 방법을 제안합니다. 개선된 차분 진화 알고리즘을 사용하여 토너먼트 선택 전략으로 선택된 두 개의 우수한 개체가 현재 개체의 진화 방향을 안내합니다.",
+      en: "We propose an optimization method for sensor node deployment in WSN to maximize coverage area. The improved differential evolution method uses two better individuals selected through tournament selection strategy to guide the current individual's evolutionary direction.",
+    },
+    links: {
+      linkedin: "https://www.linkedin.com/in/jinhyeok1228",
+    },
+  },
+  {
+    id: "kips-2019-qr",
+    title: {
+      ko: "QR 코드를 이용한 다국어 전자 메뉴판과 맞춤형 현지 식당추천 알고리즘 및 앱개발에 관한 연구",
+      en: "Research on Multilingual Electronic Menu Using QR Code and Personalized Local Restaurant Recommendation Algorithm and App Development",
+    },
+    venue: {
+      ko: "한국정보처리학회 2019년 추계학술발표대회",
+      en: "KIPS 2019 Fall Conference",
+    },
+    publisher: "KCI",
+    date: "2019.10",
+    type: "conference",
+    isFirstAuthor: true,
+    abstract: {
+      ko: "외국인 관광객과 유학생이 한국 식당에서 겪는 언어 장벽 문제를 해결하기 위한 시스템을 제안합니다. QR 코드를 통해 다국어 메뉴판에 접근하고, 종교나 식습관에 따른 음식 필터링 기능을 제공합니다.",
+      en: "We propose a system to solve language barrier problems for foreign tourists and students at Korean restaurants. Users can access multilingual menus via QR code, with food filtering based on religious or dietary preferences.",
+    },
+    links: {
+      linkedin: "https://www.linkedin.com/in/jinhyeok1228",
+    },
+  },
+];
 
 // 핵심 성과 지표
 export const keyMetrics = {
