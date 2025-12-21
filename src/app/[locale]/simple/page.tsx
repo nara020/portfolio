@@ -207,9 +207,9 @@ export default function SimplePage() {
                   <div className="text-[10px] text-gray-500">35s→1s</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-primary-600">2</div>
+                  <div className="text-2xl font-bold text-primary-600">5</div>
                   <div className="text-xs text-gray-600">{locale === "ko" ? "1저자 논문" : "First Author Papers"}</div>
-                  <div className="text-[10px] text-gray-500">Springer · IEEE · KCI</div>
+                  <div className="text-[10px] text-gray-500">Springer · KCI</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-primary-600">3</div>
@@ -655,7 +655,7 @@ export default function SimplePage() {
             </div>
             <div className="flex items-center gap-4 text-xs text-gray-400 print:hidden">
               <span>
-                {locale === "ko" ? "최종 업데이트: 2024.12" : "Last updated: Dec 2024"}
+                {locale === "ko" ? "최종 업데이트: 2025.12" : "Last updated: Dec 2025"}
               </span>
               <a
                 href={contact.github}

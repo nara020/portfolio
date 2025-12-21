@@ -1214,7 +1214,7 @@ export const papers: Paper[] = [
 export const keyMetrics = {
   tpsImprovement: { value: "27x", desc: { ko: "TPS 성능 향상", en: "TPS Performance" } },
   papers: { value: "5+", desc: { ko: "논문 발표 (Springer, IEEE, KCI)", en: "Papers (Springer, IEEE, KCI)" } },
-  awards: { value: "10+", desc: { ko: "수상 실적", en: "Awards" } },
+  awards: { value: "9+", desc: { ko: "수상 실적", en: "Awards" } },
   projects: { value: "12+", desc: { ko: "프로젝트", en: "Projects" } },
   experience: {
     value: { ko: "3+", en: "3+" },
