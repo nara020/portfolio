@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Jinhyeok Kim",
   },
   description:
-    "Blockchain Developer specialized in Hyperledger, ZKP (Zero-Knowledge Proofs), and high-performance systems. Achieved 26x TPS optimization. 5+ IEEE/KCI papers published.",
+    "Blockchain Developer specialized in Hyperledger, ZKP (Zero-Knowledge Proofs), and high-performance systems. Achieved 27x TPS optimization (25→678 TPS). 5+ papers (Springer, IEEE, KCI).",
   keywords: [
     "Blockchain Developer",
     "Hyperledger Besu",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "Jinhyeok Kim Portfolio",
     title: "Jinhyeok Kim | Blockchain Developer",
     description:
-      "Blockchain Developer with 26x TPS optimization, 5+ papers (IEEE, KCI), and enterprise blockchain experience.",
+      "Blockchain Developer with 27x TPS optimization, 5+ papers (Springer, IEEE, KCI), and enterprise blockchain experience.",
     images: [
       {
         url: "/og-image.png",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Jinhyeok Kim | Blockchain Developer",
     description:
-      "Blockchain Developer with 26x TPS optimization and enterprise experience.",
+      "Blockchain Developer with 27x TPS optimization and enterprise blockchain experience.",
     images: ["/og-image.png"],
   },
   robots: {

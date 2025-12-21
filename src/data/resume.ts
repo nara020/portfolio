@@ -14,7 +14,7 @@ export const experiences: Experience[] = [
   {
     id: "creativecode",
     company: { ko: "㈜크리에이티브코드", en: "CreativeCode Inc." },
-    role: { ko: "블록체인 개발팀 / 연구원", en: "Blockchain Developer & Researcher" },
+    role: { ko: "블록체인 개발팀 / 대리", en: "Blockchain Developer (Assistant Manager)" },
     period: "2025.06 ~ Present",
     duration: { ko: "재직중", en: "Current" },
     current: true,
@@ -24,7 +24,7 @@ export const experiences: Experience[] = [
     },
     achievements: {
       ko: [
-        "Hyperledger Besu 성능 최적화 (25TPS → 650TPS, 26배 향상)",
+        "Hyperledger Besu 성능 최적화 (25TPS → 678TPS, 27배 향상)",
         "Groth16 기반 영지식증명(ZKP) 아키텍처 설계 및 구현",
         "한국정보처리학회 추계학술대회 논문 발표 (DPP 규제 대응 ZKP 시스템)",
         "TTA 클라우드 적격성 평가 진행 담당",
@@ -33,7 +33,7 @@ export const experiences: Experience[] = [
         "정부 데이터 API(틸코블렛) 연동 프로젝트 진행",
       ],
       en: [
-        "Achieved 26x TPS improvement on Hyperledger Besu (25 → 650 TPS)",
+        "Achieved 27x TPS improvement on Hyperledger Besu (25 → 678 TPS)",
         "Designed and implemented Groth16-based Zero-Knowledge Proof architecture",
         "Published paper at KIPS Fall Conference (ZKP system for EU DPP compliance)",
         "Led TTA cloud qualification assessment process",
@@ -43,6 +43,34 @@ export const experiences: Experience[] = [
       ],
     },
     tech: ["Hyperledger Besu", "Solidity", "ZKP/Groth16", "Node.js", "TypeScript", "IPFS", "SpringBoot", "Python", "Docker", "Jenkins"],
+  },
+  {
+    id: "global-experience",
+    company: { ko: "글로벌 역량 강화", en: "Global Competency Development" },
+    role: { ko: "어학연수 & 워킹홀리데이", en: "Language Study & Working Holiday" },
+    period: "2023.07 ~ 2025.05",
+    duration: { ko: "1년 11개월", en: "1 yr 11 mo" },
+    description: {
+      ko: "ChatGPT 시대, 영어 정보 접근성의 중요성을 체감하고 글로벌 역량 강화를 위해 해외 체류",
+      en: "Pursued global competency development recognizing the importance of English information access in the ChatGPT era",
+    },
+    achievements: {
+      ko: [
+        "필리핀 어학연수 → 호주 워킹홀리데이 → 동남아 6개국+ 체류",
+        "OPIC IH (Intermediate High) 취득 - 영어 커뮤니케이션 역량 입증",
+        "해외 인바운드 여행 사업 기획 및 운영 보조 (프리랜서)",
+        "블록체인 R&D 중 영어 논문/문서 독해 필요성 체감 → 환경 변화 결심",
+        "다양한 문화권 경험을 통한 글로벌 마인드셋 확립",
+      ],
+      en: [
+        "Philippines language study → Australia Working Holiday → 6+ Southeast Asian countries",
+        "Achieved OPIC IH (Intermediate High) - Proven English communication skills",
+        "Assisted inbound travel business planning and operations (Freelance)",
+        "Recognized need for English proficiency in blockchain R&D → Decided to change environment",
+        "Established global mindset through diverse cultural experiences",
+      ],
+    },
+    tech: ["English", "Global Networking", "Cross-cultural Communication"],
   },
   {
     id: "smartm2m",
@@ -79,7 +107,7 @@ export const experiences: Experience[] = [
   {
     id: "suwon-university",
     company: { ko: "수원대학교 산학협력단", en: "Suwon University Industry-Academia Cooperation" },
-    role: { ko: "TLO 부서 / 연구원", en: "Technology Licensing Researcher" },
+    role: { ko: "TLO 부서 / 연구원 (계약직)", en: "Technology Licensing Researcher (Contract)" },
     period: "2021.08 ~ 2022.02",
     duration: { ko: "7개월", en: "7 mo" },
     description: {
@@ -104,16 +132,17 @@ export const experiences: Experience[] = [
   },
   {
     id: "university",
-    company: { ko: "수원대학교 (학부 활동)", en: "Suwon University (Undergraduate)" },
-    role: { ko: "정보통신공학과 / 학부생", en: "ICT Engineering Student" },
+    company: { ko: "수원대학교 네트워크 연구실", en: "Suwon University Network Lab" },
+    role: { ko: "정보통신공학과 / 학부 연구생", en: "Undergraduate Researcher" },
     period: "2015.03 ~ 2021.08",
     duration: { ko: "6년", en: "6 yrs" },
     description: {
-      ko: "캡스톤 프로젝트, 공모전, 학술논문 발표 등 적극적인 학부 활동",
-      en: "Active undergraduate activities: capstone projects, competitions, academic papers",
+      ko: "네트워크/IoT 연구 참여, 캡스톤 프로젝트, 공모전, 학술논문 발표",
+      en: "Network/IoT research, capstone projects, competitions, academic publications",
     },
     achievements: {
       ko: [
+        "IEEE IAEAC 2019 국제학술대회 논문 공저자",
         "KCI 급 저널 논문 등재 (KTCCS) - 졸업논문",
         "정보처리학회 학부생 논문경진대회 대상",
         "한이음 ICT 공모전 장려상/입선 2회 수상",
@@ -122,6 +151,7 @@ export const experiences: Experience[] = [
         "교내 창업경진대회 금상",
       ],
       en: [
+        "Co-author at IEEE IAEAC 2019 International Conference",
         "Published in KCI-indexed journal KTCCS - graduation thesis",
         "Grand Prize at KIPS Undergraduate Paper Competition",
         "Hanium ICT Competition - 2 awards (Encouragement, Selection)",
@@ -130,12 +160,12 @@ export const experiences: Experience[] = [
         "Gold Award at University Startup Competition",
       ],
     },
-    tech: ["Python", "YOLO", "ROS", "Android", "Java", "PHP", "AWS"],
+    tech: ["Python", "YOLO", "ROS", "Android", "Java", "PHP", "AWS", "Sensor Networks"],
   },
   {
     id: "bns-soft",
     company: { ko: "㈜비에네스소프트", en: "BNS Soft Inc." },
-    role: { ko: "SSD 사업부 / 인턴", en: "Mobile Developer Intern" },
+    role: { ko: "SSD 사업부 / 팀원 (계약직)", en: "Mobile Developer (Contract)" },
     period: "2020.01 ~ 2020.06",
     duration: { ko: "6개월", en: "6 mo" },
     description: {
@@ -163,6 +193,46 @@ export const experiences: Experience[] = [
 ];
 
 export const projects: Project[] = [
+  {
+    id: "consensus-lab",
+    experienceId: "personal",
+    name: {
+      ko: "Consensus Lab",
+      en: "Consensus Lab",
+    },
+    description: {
+      ko: "블록체인 합의 알고리즘 3D 인터랙티브 시각화. PoW, PoS, RAFT, IBFT 2.0 4가지 합의 메커니즘을 Three.js로 시각화한 교육용 오픈소스 프로젝트.",
+      en: "Interactive 3D visualization of blockchain consensus mechanisms. Educational open-source project visualizing PoW, PoS, RAFT, IBFT 2.0 using Three.js.",
+    },
+    period: "2024.12 ~ Present",
+    team: { ko: "1인 (개인 프로젝트)", en: "Solo Project" },
+    role: { ko: "풀스택 개발 & 3D 시각화", en: "Full-Stack Development & 3D Visualization" },
+    highlights: {
+      ko: [
+        "4가지 합의 알고리즘 실시간 3D 시각화 (PoW, PoS, RAFT, IBFT)",
+        "Bitcoin SHA-256 마이닝, Ethereum Casper FFG 시뮬레이션",
+        "Hyperledger Fabric RAFT, Besu IBFT 2.0 BFT 합의 시각화",
+        "Three.js + React Three Fiber 기반 인터랙티브 3D 그래픽",
+        "오디오 피드백 (채굴, 투표, 확정 사운드 이펙트)",
+        "오픈소스 교육용 프로젝트로 공개",
+      ],
+      en: [
+        "Real-time 3D visualization of 4 consensus algorithms (PoW, PoS, RAFT, IBFT)",
+        "Bitcoin SHA-256 mining, Ethereum Casper FFG simulation",
+        "Hyperledger Fabric RAFT, Besu IBFT 2.0 BFT consensus visualization",
+        "Interactive 3D graphics with Three.js + React Three Fiber",
+        "Audio feedback (mining, voting, finalization sound effects)",
+        "Open-source educational project",
+      ],
+    },
+    tech: ["Next.js", "Three.js", "React Three Fiber", "TypeScript", "Framer Motion", "Tailwind CSS"],
+    status: "in_progress",
+    featured: true,
+    links: {
+      demo: "https://consensus-lab.vercel.app",
+      github: "https://github.com/nara020/consensus-lab",
+    },
+  },
   {
     id: "zk-private-lending",
     experienceId: "personal",
@@ -197,6 +267,7 @@ export const projects: Project[] = [
     },
     tech: ["Halo2", "arkworks", "Circom", "Rust", "Solidity", "BN254", "Groth16", "Next.js", "TypeScript"],
     status: "in_progress",
+    featured: true,
     links: {
       github: "https://github.com/nara020/zk-private-lending",
     },
@@ -217,25 +288,27 @@ export const projects: Project[] = [
     role: { ko: "블록체인 아키텍트 & 백엔드 개발", en: "Blockchain Architect & Backend Developer" },
     highlights: {
       ko: [
-        "Hyperledger Besu 26배 성능 최적화 (25TPS → 650TPS) - 합의 알고리즘, pm2 클러스터, Virtual Thread 도입",
+        "Hyperledger Besu 27배 성능 최적화 (25TPS → 678TPS) - Java 21 Virtual Threads, Transaction Isolation Pattern, PM2 Cluster Mode 적용",
         "Groth16 영지식증명 아키텍처 설계 - snarkjs, circom 기반 ZK 회로 구현",
         "한국정보처리학회 추계학술대회 논문 발표 (DPP 규제 대응 ZKP 시스템)",
-        "IEEE ICBTA 2024 논문 어셉 - 12월 13일 발표 예정",
+        "IEEE ICBTA 2025 논문 어셉 - 1월 발표",
         "Solidity 스마트컨트랙트 (UUPS Proxy 패턴, ZK 검증, IPFS CID 연동)",
         "Python 기반 Besu 네트워크 자동화 배포 도구 개발",
         "TTA 클라우드 적격성 평가 담당",
       ],
       en: [
-        "26x TPS optimization on Hyperledger Besu (25→650 TPS) - consensus tuning, pm2 cluster, Virtual Thread",
+        "27x TPS optimization on Hyperledger Besu (25→678 TPS) - Java 21 Virtual Threads, Transaction Isolation Pattern, PM2 Cluster Mode",
         "Designed Groth16 ZKP architecture - implemented ZK circuits using snarkjs and circom",
         "Published paper at KIPS Fall Conference (ZKP system for EU DPP compliance)",
-        "IEEE ICBTA 2024 paper accepted - presenting December 13th",
+        "IEEE ICBTA 2025 paper accepted - presenting January",
         "Solidity smart contracts with UUPS Proxy pattern, ZK verification, IPFS CID integration",
         "Built Python automation tool for Besu network deployment",
         "Led TTA cloud qualification assessment",
       ],
     },
     tech: ["Hyperledger Besu", "Solidity", "ZKP/Groth16", "snarkjs", "circom", "IPFS", "Node.js", "TypeScript", "Python", "Docker", "Jenkins"],
+    status: "in_progress",
+    featured: true,
   },
   {
     id: "b-space",
@@ -269,6 +342,8 @@ export const projects: Project[] = [
       ],
     },
     tech: ["Hyperledger Fabric", "Go", "TypeScript", "Node.js", "Docker", "React", "Grafana", "MariaDB", "Nginx", "JMeter"],
+    status: "completed",
+    featured: true,
     links: { demo: "https://www.b-space.kr/" },
   },
   {
@@ -303,6 +378,8 @@ export const projects: Project[] = [
       ],
     },
     tech: ["Python", "YOLO v3", "ROS", "Raspberry Pi", "JETSON NANO", "C++", "MAVLINK", "MAVROS", "OpenCV"],
+    status: "completed",
+    featured: true,
     links: {
       demo: "https://www.youtube.com/watch?v=3CGwitZjkCo",
       paper: "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002713076"
@@ -343,13 +420,464 @@ export const projects: Project[] = [
       paper: "https://koreascience.kr/article/CFKO201924664107123.page"
     },
   },
+  {
+    id: "iot-blockchain-mainnet",
+    experienceId: "smartm2m",
+    name: { ko: "IoT 블록체인 메인넷 R&D", en: "IoT Blockchain Mainnet R&D" },
+    description: {
+      ko: "IoT 데이터 추적/검증을 위한 자체 메인넷 연구개발. ZK Rollup, 합의 알고리즘, 네트워크 최적화 연구.",
+      en: "R&D for proprietary mainnet for IoT data tracking/verification. Research on ZK Rollup, consensus algorithms, and network optimization.",
+    },
+    period: "2022.04 ~ 2023.06",
+    team: { ko: "연구원 10인", en: "Team of 10 Researchers" },
+    role: { ko: "연구원 (3개년 국가 R&D 과제 중 1,2년차 참여)", en: "Researcher (Participated in Year 1-2 of 3-year National R&D Project)" },
+    highlights: {
+      ko: [
+        "이더리움 EVM 분석 및 세미나",
+        "Layer2 기술 조사/분석 및 세미나",
+        "Rollup(Optimistic Rollup, ZK Rollup) 기술 분석 및 세미나",
+        "영지식증명 메인넷 Mina Protocol 분석 및 세미나",
+        "정보처리학회 우수논문상 수상 (블록체인 기반 조작불가능한 확률제어 시스템)",
+      ],
+      en: [
+        "Ethereum EVM analysis and seminar",
+        "Layer2 technology research/analysis and seminar",
+        "Rollup (Optimistic Rollup, ZK Rollup) technology analysis and seminar",
+        "ZKP mainnet Mina Protocol analysis and seminar",
+        "Won Best Paper Award at KIPS (Blockchain-based tamper-proof probability control system)",
+      ],
+    },
+    tech: ["Ethereum", "Layer2", "ZK Rollup", "Optimistic Rollup", "Mina Protocol", "Research"],
+  },
+  {
+    id: "daegu-mainnet-isp",
+    experienceId: "smartm2m",
+    name: { ko: "대구 메인넷 ISP 프로젝트", en: "Daegu Mainnet ISP Project" },
+    description: {
+      ko: "대구광역시 NFT 메인넷 ISP 프로젝트. NFT 발행/전송 모듈 설계 및 스마트컨트랙트 개발.",
+      en: "NFT Mainnet ISP project for Daegu Metropolitan City. Designed NFT minting/transfer modules and smart contract development.",
+    },
+    period: "2022.11 ~ 2023.06",
+    team: { ko: "연구개발자 8인", en: "Team of 8 R&D Engineers" },
+    role: { ko: "연구 개발", en: "Research & Development" },
+    highlights: {
+      ko: [
+        "메인넷 미들웨어 중 NFT 모듈 설계",
+        "TTA 시험검증 방안 설계",
+        "헬스케어 분야 메인넷 활용 서비스 설계",
+      ],
+      en: [
+        "Designed NFT module for mainnet middleware",
+        "Designed TTA test verification methodology",
+        "Designed healthcare service utilizing mainnet",
+      ],
+    },
+    tech: ["Research", "NFT", "TTA", "Healthcare", "ISP"],
+  },
+  {
+    id: "amazon-crawling-shopify",
+    experienceId: "creativecode",
+    name: { ko: "대규모 아마존 쇼핑몰 크롤링 및 쇼피파이 업로드 플랫폼", en: "Large-scale Amazon Crawling & Shopify Upload Platform" },
+    description: {
+      ko: "Electron 기반 아마존 상품 크롤링 및 Shopify 대량 업로드 플랫폼. 최초 계약 대비 40배 규모 추가 개발 수주.",
+      en: "Electron-based Amazon product crawling and Shopify bulk upload platform. Secured 40x additional development contracts.",
+    },
+    period: "2025.11 ~ Present",
+    team: { ko: "1인", en: "Solo" },
+    role: { ko: "풀스택 개발 & 고객 커뮤니케이션", en: "Full-Stack Development & Client Communication" },
+    highlights: {
+      ko: [
+        "3번째 담당 개발사로서 기존 프로젝트 분석 및 환경설정",
+        "2번의 개발사에서 해결되지 않은 '크롤링' 고도화 및 '대량 업로드' 기능 에러 해결",
+        "분산된 인프라(AWS + Cafe24) 분석 및 분리 성공",
+        "빠른 디버깅과 고객사 소통으로 서비스 핵심 에러 일주일 내 해결",
+        "최초 계약 대비 약 40배 규모의 추가 개발 계약 수주 성공",
+      ],
+      en: [
+        "Took over as 3rd development company, analyzed existing project",
+        "Resolved crawling and bulk upload errors unresolved by 2 previous vendors",
+        "Successfully separated distributed infrastructure (AWS + Cafe24)",
+        "Resolved critical service errors within one week through quick debugging",
+        "Secured 40x additional development contracts compared to initial contract",
+      ],
+    },
+    tech: ["Electron", "TypeScript", "CloudFlare", "PostgreSQL", "AWS"],
+    status: "in_progress",
+    featured: true,
+  },
+  {
+    id: "gov-data-api",
+    experienceId: "creativecode",
+    name: { ko: "정부 데이터 API 연동", en: "Government Data API Integration" },
+    description: {
+      ko: "틸코블렛 기반 정부 데이터 API 연동 프로젝트. 재활용 원료 공급망 검증을 위한 공공 데이터 연동.",
+      en: "Government data API integration using Tilco Blet. Public data integration for recycled material supply chain verification.",
+    },
+    period: "2025.08 ~ Present",
+    team: { ko: "2인", en: "Team of 2" },
+    role: { ko: "API 연동 개발", en: "API Integration Development" },
+    highlights: {
+      ko: [
+        "틸코블렛 정부 데이터 API 연동 (사업자 정보, 인증서 검증)",
+        "공급망 참여자 신원 검증 시스템 구축",
+        "API 응답 데이터 파싱 및 블록체인 연동 로직 개발",
+        "데이터 정합성 검증 및 에러 핸들링 구현",
+      ],
+      en: [
+        "Integrated Tilco Blet government data APIs (business info, certificate verification)",
+        "Built supply chain participant identity verification system",
+        "Developed API response parsing and blockchain integration logic",
+        "Implemented data integrity validation and error handling",
+      ],
+    },
+    tech: ["Node.js", "TypeScript", "REST API", "Hyperledger Besu", "Data Integration"],
+    status: "in_progress",
+  },
+  {
+    id: "elderly-care-app",
+    experienceId: "bns-soft",
+    name: { ko: "노인돌봄 서비스 앱", en: "Elderly Care Service App" },
+    description: {
+      ko: "노인 돌봄 서비스를 위한 안드로이드 앱. 음성 대화, TTS, 미디어 플레이어 기능 구현.",
+      en: "Android app for elderly care services. Implemented voice conversation, TTS, and media player features.",
+    },
+    period: "2020.02 ~ 2020.06",
+    team: { ko: "5인", en: "Team of 5" },
+    role: { ko: "안드로이드 개발", en: "Android Development" },
+    highlights: {
+      ko: [
+        "EXO PLAYER 라이브러리를 이용한 음악/동영상 플레이어 UI 및 기능 개발",
+        "기억력 테스트 게임 APP 전면 수정 (레거시 코드 기반 UI, 게임동작, 기능 수정)",
+        "음성인식 기능 구현",
+        "TTS(Text to Speak) 기능 구현",
+        "Google DialogFlow를 App과 접목한 대화 기능 구현",
+        "Broadcast를 이용한 APP 간 통신 구현",
+      ],
+      en: [
+        "Developed music/video player UI using EXO PLAYER library",
+        "Complete redesign of memory test game APP (legacy code-based UI, game logic, features)",
+        "Implemented voice recognition functionality",
+        "Implemented TTS (Text to Speech) functionality",
+        "Integrated Google DialogFlow for conversational AI in app",
+        "Implemented inter-app communication using Broadcast",
+      ],
+    },
+    tech: ["Android", "Java", "ExoPlayer", "Google TTS", "Dialogflow", "Spring"],
+  },
+  {
+    id: "shared-diary-app",
+    experienceId: "bns-soft",
+    name: { ko: "공유 다이어리 앱", en: "Shared Diary App" },
+    description: {
+      ko: "친구/가족과 일기를 공유하는 안드로이드 앱. 사진 첨부, 댓글, 푸시 알림 기능 구현.",
+      en: "Android app for sharing diaries with friends/family. Implemented photo attachments, comments, and push notifications.",
+    },
+    period: "2020.01 ~ 2020.01",
+    team: { ko: "2인", en: "Team of 2" },
+    role: { ko: "백엔드 개발", en: "Backend Development" },
+    highlights: {
+      ko: [
+        "Spring Framework 기반 RESTful API 설계 및 제작",
+        "DB 설계 및 구현 (MySQL)",
+        "회원가입, 로그인, 글쓰기/수정/삭제, 좋아요/싫어요, 신고하기, 댓글작성, 소셜 SNS 기능 개발",
+      ],
+      en: [
+        "Designed and built RESTful API based on Spring Framework",
+        "Designed and implemented MySQL database",
+        "Developed signup, login, CRUD posts, likes/dislikes, report, comments, social SNS features",
+      ],
+    },
+    tech: ["Spring Framework", "Java", "JavaScript", "MySQL"],
+  },
+  {
+    id: "blockchain-maintenance",
+    experienceId: "creativecode",
+    name: { ko: "블록체인 서비스 유지보수", en: "Blockchain Service Maintenance" },
+    description: {
+      ko: "C# 기반 블록체인 시스템(Polygon, BSC) 유지보수. 레거시 코드 분석 및 에러 해결.",
+      en: "Maintenance of C#-based blockchain system (Polygon, BSC). Legacy code analysis and error resolution.",
+    },
+    period: "2025.06 ~ Present",
+    role: { ko: "유지보수 담당", en: "Maintenance Lead" },
+    highlights: {
+      ko: [
+        "기존 개발자 퇴사로 인한 C# 기반 블록체인 시스템 인수",
+        "백엔드 로그 분석 및 RPC 노드 문제 특정",
+        "DB 저장 시 트랜잭션 보장 누락 문제 발견 및 해결",
+        "데이터 정합성 수정 및 트랜잭션 보호 로직 추가",
+      ],
+      en: [
+        "Took over C# blockchain system after developer departure",
+        "Analyzed backend logs and identified RPC node issues",
+        "Discovered and resolved missing transaction guarantee in DB saves",
+        "Fixed data integrity and added transaction protection logic",
+      ],
+    },
+    tech: ["C#", "Web3.js", "Solidity", "Polygon", "BSC", "MS SQL"],
+    status: "in_progress",
+  },
+  {
+    id: "telemedicine",
+    experienceId: "smartm2m",
+    name: { ko: "비대면 진료 프로젝트", en: "Telemedicine Project" },
+    description: {
+      ko: "비대면 진료 서비스를 위한 미디어 서버 및 인증 시스템 구축.",
+      en: "Built media server and authentication system for telemedicine service.",
+    },
+    period: "2022.07 ~ 2022.09",
+    team: { ko: "2인", en: "Team of 2" },
+    role: { ko: "백엔드 개발", en: "Backend Development" },
+    highlights: {
+      ko: [
+        "TypeScript 기반 Multer를 활용한 미디어 서버 구축",
+        "JWT를 활용한 Access Token 및 Refresh Token 관리",
+        "사용자 인증 서버 구축",
+      ],
+      en: [
+        "Built media server using TypeScript and Multer",
+        "Implemented JWT-based Access Token and Refresh Token management",
+        "Developed user authentication server",
+      ],
+    },
+    tech: ["Node.js", "TypeScript", "Docker", "MariaDB", "JWT"],
+  },
+  {
+    id: "mqtt-blockchain-monitoring",
+    experienceId: "smartm2m",
+    name: { ko: "MQTT 블록체인 이벤트 모니터링", en: "MQTT Blockchain Event Monitoring" },
+    description: {
+      ko: "Hyperledger Fabric 블록 이벤트를 MQTT로 실시간 모니터링하는 시스템.",
+      en: "Real-time monitoring system for Hyperledger Fabric block events via MQTT.",
+    },
+    period: "2022.09 ~ 2022.09",
+    team: { ko: "1인", en: "Solo" },
+    role: { ko: "풀스택 개발", en: "Full-Stack Development" },
+    highlights: {
+      ko: [
+        "Hyperledger Fabric 네트워크 구축",
+        "Go 기반 CRUD 체인코드 개발 및 배포",
+        "BlockListener로 블록정보를 받아 MQTT Publishing하는 Client 개발",
+        "MQTT Subscriber 개발",
+      ],
+      en: [
+        "Deployed Hyperledger Fabric network",
+        "Developed and deployed Go-based CRUD chaincode",
+        "Built MQTT publishing client using BlockListener",
+        "Developed MQTT Subscriber",
+      ],
+    },
+    tech: ["Hyperledger Fabric", "Go", "Node.js", "MQTT", "Docker"],
+  },
+  {
+    id: "patient-jwt-server",
+    experienceId: "smartm2m",
+    name: { ko: "환자 신체신호 정보 처리 시스템 JWT 인증 서버", en: "Patient Vital Signs JWT Auth Server" },
+    description: {
+      ko: "환자 신체신호 정보 처리를 위한 JWT 기반 인증 서버 개발.",
+      en: "JWT-based authentication server for patient vital signs processing system.",
+    },
+    period: "2022.10 ~ 2023.06",
+    team: { ko: "1인", en: "Solo" },
+    role: { ko: "백엔드 개발", en: "Backend Development" },
+    highlights: {
+      ko: [
+        "JWT 기반 AccessToken 및 RefreshToken 관리",
+        "권한(Role)에 따른 요구사항 로직 구현",
+        "Jest 기반 테스트 코드 작성",
+        "서비스 유지보수",
+      ],
+      en: [
+        "Implemented JWT-based AccessToken and RefreshToken management",
+        "Developed role-based requirement logic",
+        "Wrote Jest-based test code",
+        "Service maintenance",
+      ],
+    },
+    tech: ["Node.js", "TypeScript", "Jest", "MariaDB", "Docker"],
+  },
+  {
+    id: "ai-iot-security",
+    experienceId: "university",
+    name: { ko: "AI IoT SW 개발 및 보안관제 인력양성 과정 프로젝트", en: "AI IoT SW Security Training Project" },
+    description: {
+      ko: "라즈베리파이 기반 IoT 신호등 시스템 및 CCTV 연동 개발.",
+      en: "Raspberry Pi based IoT traffic light system and CCTV integration development.",
+    },
+    period: "2019.07 ~ 2019.07",
+    team: { ko: "2인", en: "Team of 2" },
+    role: { ko: "개발", en: "Development" },
+    highlights: {
+      ko: [
+        "JavaScript - 신호등 자동 점등, Express 웹서버와 CCTV 조작 모터 연동",
+        "C 언어 - Serial 통신으로 모터 제어, 조도/온습도 센서 기반 우산 제어",
+        "Python - CCTV 스냅샷 프로그램, 적색 신호등 및 초음파 센서 연동",
+        "취업브리지 수기 공모전 최우수상",
+      ],
+      en: [
+        "JavaScript - Traffic light auto-control, Express server with CCTV motor integration",
+        "C - Motor control via Serial communication, umbrella control with sensors",
+        "Python - CCTV snapshot program with traffic light and ultrasonic sensor integration",
+        "Grand Prize at Employment Bridge Essay Competition",
+      ],
+    },
+    tech: ["Raspberry Pi", "Node.js", "Python", "C", "Serial Communication"],
+  },
+  {
+    id: "inbound-travel-booking",
+    experienceId: "personal",
+    name: { ko: "인바운드 여행사 예약 웹페이지", en: "Inbound Travel Agency Booking Website" },
+    description: {
+      ko: "WhatsApp 연동 인바운드 여행사 예약 및 관리자 시스템.",
+      en: "WhatsApp integrated inbound travel agency booking and admin system.",
+    },
+    period: "2025.05 ~ 2025.05",
+    team: { ko: "1인", en: "Solo" },
+    role: { ko: "풀스택 개발", en: "Full-Stack Development" },
+    highlights: {
+      ko: [
+        "웹 페이지 설계 및 구현",
+        "WhatsApp 연동",
+        "예약 서비스 및 관리자 페이지 개발",
+        "DB 설계 및 구현",
+        "SEO 최적화 연구 및 적용",
+      ],
+      en: [
+        "Web page design and implementation",
+        "WhatsApp integration",
+        "Booking service and admin page development",
+        "DB design and implementation",
+        "SEO optimization research and application",
+      ],
+    },
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Nginx", "Docker", "Claude Code"],
+  },
+  {
+    id: "audio-to-text",
+    experienceId: "personal",
+    name: { ko: "Audio To Text 프로그램", en: "Audio To Text Program" },
+    description: {
+      ko: "오디오 파일을 텍스트로 변환하는 STT 프로그램.",
+      en: "STT program that converts audio files to text.",
+    },
+    period: "2025.02 ~ 2025.02",
+    team: { ko: "1인", en: "Solo" },
+    role: { ko: "개발", en: "Development" },
+    highlights: {
+      ko: [
+        "오디오 파일 전처리 기능 구현",
+        "STT 모델 기반 텍스트 변환 기능 구현",
+      ],
+      en: [
+        "Implemented audio file preprocessing",
+        "Implemented STT model-based text conversion",
+      ],
+    },
+    tech: ["Python", "GPT", "STT"],
+  },
+  {
+    id: "crypto-analysis-web",
+    experienceId: "personal",
+    name: { ko: "암호화폐 시세 및 데이터 분석 웹", en: "Cryptocurrency Price & Data Analysis Web" },
+    description: {
+      ko: "바이낸스 API 연동 암호화폐 시세 및 데이터 분석 웹 서비스.",
+      en: "Cryptocurrency price and data analysis web service with Binance API integration.",
+    },
+    period: "2024.12 ~ 2024.12",
+    team: { ko: "1인", en: "Solo" },
+    role: { ko: "풀스택 개발", en: "Full-Stack Development" },
+    highlights: {
+      ko: [
+        "Flask 기반 웹 설계",
+        "바이낸스 API 연동",
+        "프론트엔드 및 백엔드 구현",
+      ],
+      en: [
+        "Flask-based web design",
+        "Binance API integration",
+        "Frontend and backend implementation",
+      ],
+    },
+    tech: ["Python", "Flask", "Binance API", "HTML"],
+  },
+  {
+    id: "pdf-image-to-text",
+    experienceId: "personal",
+    name: { ko: "PDF/Image to Text 추출 프로그램", en: "PDF/Image to Text Extraction Program" },
+    description: {
+      ko: "OpenCV와 Tesseract OCR을 활용한 이미지/PDF 텍스트 추출 프로그램.",
+      en: "Image/PDF text extraction program using OpenCV and Tesseract OCR.",
+    },
+    period: "2024.08 ~ 2024.08",
+    team: { ko: "1인", en: "Solo" },
+    role: { ko: "개발", en: "Development" },
+    highlights: {
+      ko: [
+        "이미지 전처리 (OpenCV)",
+        "특정 영역 감지",
+        "Tesseract OCR 연동",
+        "Flask 기반 웹 구현",
+      ],
+      en: [
+        "Image preprocessing with OpenCV",
+        "Specific region detection",
+        "Tesseract OCR integration",
+        "Flask-based web implementation",
+      ],
+    },
+    tech: ["Python", "OpenCV", "Tesseract OCR", "Flask"],
+  },
+  {
+    id: "teachable-machine-web",
+    experienceId: "personal",
+    name: { ko: "Teachable Machine 활용 웹 서비스", en: "Teachable Machine Web Services" },
+    description: {
+      ko: "Teachable Machine으로 학습한 AI 모델 기반 다양한 웹 서비스 개발.",
+      en: "Various web services using AI models trained with Teachable Machine.",
+    },
+    period: "2024.03 ~ 2024.05",
+    team: { ko: "1인", en: "Solo" },
+    role: { ko: "풀스택 개발", en: "Full-Stack Development" },
+    highlights: {
+      ko: [
+        "데이터 수집을 위한 웹 크롤링",
+        "수집 데이터 기반 AI 모델 학습",
+        "다양한 웹 서비스 개발 (닮은꼴 찾기, 심리 테스트 등)",
+        "Netlify 배포",
+      ],
+      en: [
+        "Web crawling for data collection",
+        "AI model training with collected data",
+        "Various web services (look-alike finder, psychology tests, etc.)",
+        "Netlify deployment",
+      ],
+    },
+    tech: ["Node.js", "TypeScript", "Python", "Selenium", "Teachable Machine", "Netlify"],
+  },
 ];
 
 export const awards: Award[] = [
   {
+    id: "icbta-2025",
+    name: { ko: "ICBTA 2025 1저자 논문 게재", en: "ICBTA 2025 First Author Paper" },
+    issuer: { ko: "Springer LNNS (국제학술대회)", en: "Springer LNNS (International Conference)" },
+    date: "2025.01",
+    type: "paper",
+    description: {
+      ko: "27-Fold Performance Improvement for Hyperledger Besu",
+      en: "27-Fold Performance Improvement for Hyperledger Besu",
+    },
+  },
+  {
+    id: "kips-2025",
+    name: { ko: "KIPS 2025 추계학술대회 1저자 논문 게재", en: "KIPS 2025 Fall Conference First Author Paper" },
+    issuer: { ko: "한국정보처리학회", en: "Korea Information Processing Society" },
+    date: "2025.11",
+    type: "paper",
+  },
+  {
     id: "opic",
     name: { ko: "OPIC IH (Intermediate High)", en: "OPIc IH (Intermediate High)" },
-    issuer: { ko: "영어", en: "ACTFL" },
+    issuer: { ko: "ACTFL", en: "ACTFL" },
     date: "2025.02",
     type: "certification",
   },
@@ -368,16 +896,16 @@ export const awards: Award[] = [
     type: "certification",
   },
   {
-    id: "ieee-wsn-2020",
+    id: "ieee-iaeac-2019",
     name: {
-      ko: "IEEE WSN 센서 노드 배치 최적화 논문",
-      en: "IEEE WSN Sensor Node Optimization Paper"
+      ko: "IEEE IAEAC 2019 논문 게재",
+      en: "IEEE IAEAC 2019 Paper Published"
     },
     issuer: {
-      ko: "IEEE (국제학술대회)",
-      en: "IEEE International Conference"
+      ko: "IEEE",
+      en: "IEEE"
     },
-    date: "2020.02",
+    date: "2019.12",
     type: "paper",
     description: {
       ko: "차분 진화 알고리즘 기반 센서 노드 배치 최적화를 통한 커버리지 최대화 연구",
@@ -419,6 +947,27 @@ export const awards: Award[] = [
     date: "2019.12",
     type: "award",
   },
+  {
+    id: "ict-mentoring",
+    name: { ko: "ICT 멘토링 최우수상", en: "Grand Prize" },
+    issuer: { ko: "정보통신산업진흥원 (NIPA)", en: "ICT Mentoring Program (NIPA)" },
+    date: "2020.12",
+    type: "award",
+  },
+  {
+    id: "g-hop",
+    name: { ko: "G-HOP 최우수상", en: "Grand Prize" },
+    issuer: { ko: "수원시", en: "G-HOP Startup Program (Suwon City)" },
+    date: "2020.08",
+    type: "award",
+  },
+  {
+    id: "employment-bridge",
+    name: { ko: "취업브리지 수기 공모전 최우수상", en: "Grand Prize" },
+    issuer: { ko: "수원대학교 취업센터", en: "Employment Bridge Essay Competition" },
+    date: "2019.12",
+    type: "award",
+  },
 ];
 
 export const education: Education[] = [
@@ -441,30 +990,75 @@ export const skills: Skill[] = [
     category: "Blockchain",
     items: [
       { name: "Hyperledger Fabric", level: 85 },
-      { name: "Hyperledger Besu", level: 80 },
-      { name: "Solidity", level: 75 },
-      { name: "ZKP (Halo2/arkworks/Circom)", level: 70 },
+      { name: "Hyperledger Besu", level: 85 },
+      { name: "Solidity", level: 80 },
+      { name: "Smart Contract", level: 80 },
+      { name: "ZKP/Zero-Knowledge Proof", level: 75 },
+      { name: "Groth16/snarkjs/circom", level: 75 },
+      { name: "Hardhat", level: 80 },
+      { name: "ethers.js/Web3.js", level: 80 },
       { name: "IPFS", level: 75 },
+      { name: "EVM", level: 75 },
+      { name: "Layer2/Rollup", level: 65 },
     ],
   },
   {
     category: "Backend",
     items: [
-      { name: "Node.js", level: 80 },
-      { name: "TypeScript", level: 80 },
-      { name: "Go", level: 70 },
-      { name: "Java/Spring", level: 65 },
+      { name: "Node.js", level: 85 },
+      { name: "Express.js", level: 85 },
+      { name: "TypeScript", level: 85 },
+      { name: "JavaScript", level: 85 },
+      { name: "Java", level: 70 },
+      { name: "SpringBoot", level: 70 },
+      { name: "Go/Golang", level: 70 },
       { name: "Python", level: 75 },
+      { name: "REST API", level: 85 },
+      { name: "MSA", level: 65 },
     ],
   },
   {
-    category: "Infra & DevOps",
+    category: "Database",
     items: [
-      { name: "Docker", level: 80 },
-      { name: "Linux", level: 75 },
-      { name: "Jenkins CI/CD", level: 70 },
-      { name: "Nginx", level: 70 },
-      { name: "AWS/NCP", level: 65 },
+      { name: "PostgreSQL", level: 80 },
+      { name: "MySQL", level: 75 },
+      { name: "MariaDB", level: 75 },
+      { name: "CouchDB", level: 65 },
+      { name: "MS SQL", level: 60 },
+    ],
+  },
+  {
+    category: "DevOps & Infra",
+    items: [
+      { name: "Docker", level: 85 },
+      { name: "Linux/Ubuntu/CentOS", level: 80 },
+      { name: "Jenkins", level: 75 },
+      { name: "CI/CD", level: 75 },
+      { name: "Nginx", level: 75 },
+      { name: "AWS", level: 70 },
+      { name: "NCP (Naver Cloud)", level: 70 },
+      { name: "CloudFlare", level: 70 },
+      { name: "Git/GitHub", level: 85 },
+    ],
+  },
+  {
+    category: "Frontend",
+    items: [
+      { name: "React", level: 70 },
+      { name: "Next.js", level: 70 },
+      { name: "HTML/CSS", level: 75 },
+      { name: "Tailwind CSS", level: 70 },
+    ],
+  },
+  {
+    category: "Testing & Tools",
+    items: [
+      { name: "Swagger", level: 80 },
+      { name: "JMeter", level: 75 },
+      { name: "k6", level: 70 },
+      { name: "Jest", level: 65 },
+      { name: "Grafana", level: 65 },
+      { name: "Prometheus", level: 65 },
     ],
   },
 ];
@@ -479,10 +1073,10 @@ export const contact: Contact = {
 
 // 핵심 성과 지표
 export const keyMetrics = {
-  tpsImprovement: { value: "26x", desc: { ko: "TPS 성능 향상", en: "TPS Performance" } },
-  papers: { value: "5+", desc: { ko: "논문 발표 (IEEE, KCI)", en: "Papers (IEEE, KCI)" } },
-  awards: { value: "8+", desc: { ko: "수상 실적", en: "Awards" } },
-  projects: { value: "4+", desc: { ko: "상용 프로젝트", en: "Production Projects" } },
+  tpsImprovement: { value: "27x", desc: { ko: "TPS 성능 향상", en: "TPS Performance" } },
+  papers: { value: "5+", desc: { ko: "논문 발표 (Springer, IEEE, KCI)", en: "Papers (Springer, IEEE, KCI)" } },
+  awards: { value: "10+", desc: { ko: "수상 실적", en: "Awards" } },
+  projects: { value: "12+", desc: { ko: "프로젝트", en: "Projects" } },
   experience: {
     value: { ko: "3+", en: "3+" },
     desc: { ko: "년 경력", en: "Years Exp." }

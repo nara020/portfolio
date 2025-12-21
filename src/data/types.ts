@@ -32,6 +32,7 @@ export interface Project {
   highlights: Localized<string[]>;
   tech: string[];
   status?: "completed" | "in_progress"; // 프로젝트 상태
+  featured?: boolean; // 핵심 프로젝트 여부
   links?: {
     github?: string;
     demo?: string;
