@@ -168,6 +168,33 @@ export const experiences: Experience[] = [
     type: "research",
   },
   {
+    id: "military",
+    company: { ko: "대한민국 해병대", en: "Republic of Korea Marine Corps" },
+    role: { ko: "유/무선 통신운용병", en: "Signal Communications Operator" },
+    period: "2016.03 ~ 2017.12",
+    duration: { ko: "1년 10개월", en: "1 yr 10 mo" },
+    description: {
+      ko: "전방 부대 유무선 통신망 구축 및 운용, 지휘통제 통신 지원",
+      en: "Wired/Wireless communication network operation and command control support at forward bases",
+    },
+    achievements: {
+      ko: [
+        "DDU/RLI 등 통신장비 활용 유무선 통신망 구축 및 운용",
+        "전방 초소 전화선/인터넷 망 가설 및 수리",
+        "CCTV 감시 시스템 설치 및 유지보수",
+        "지휘통제실 무전/교환 근무 수행",
+      ],
+      en: [
+        "Built and operated wired/wireless communication networks using DDU/RLI equipment",
+        "Installed and repaired phone/internet lines at forward outposts",
+        "Installed and maintained CCTV surveillance systems",
+        "Performed radio/switchboard operations in command control center",
+      ],
+    },
+    tech: ["Military Communications", "DDU/RLI", "Network Infrastructure", "CCTV"],
+    type: "military",
+  },
+  {
     id: "bns-soft",
     company: { ko: "㈜비에네스소프트", en: "BNS Soft Inc." },
     role: { ko: "SSD 사업부 / 팀원 (계약직)", en: "Mobile Developer (Contract)" },

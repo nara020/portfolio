@@ -323,6 +323,43 @@ export default function SimplePage() {
           </section>
         )}
 
+        {/* Military Service */}
+        {experiences.filter(exp => exp.type === "military").length > 0 && (
+          <section className="mb-12">
+            <h2 className="text-xl font-bold mb-6 pb-2 border-b-2 border-gray-200">
+              {locale === "ko" ? "병역" : "Military Service"}
+            </h2>
+            <div className="space-y-6">
+              {experiences.filter(exp => exp.type === "military").map((exp) => (
+                <div key={exp.id} className="relative pl-6 border-l-2 border-green-700">
+                  <div className="absolute -left-2 top-0 w-4 h-4 bg-green-700 rounded-full" />
+                  <div className="mb-2">
+                    <h3 className="font-bold text-lg">{exp.company[locale]}</h3>
+                    <p className="text-green-700 font-medium">{exp.role[locale]}</p>
+                    <p className="text-sm text-gray-500 flex items-center gap-1">
+                      <Calendar className="w-3 h-3" />
+                      {exp.period} ({exp.duration?.[locale]})
+                    </p>
+                  </div>
+                  <p className="text-gray-600 mb-3">{exp.description[locale]}</p>
+                  <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                    {exp.achievements[locale].map((achievement, i) => (
+                      <li key={i}>{achievement}</li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {exp.tech.map((tech) => (
+                      <span key={tech} className="text-xs bg-green-50 text-green-700 px-2 py-1 rounded">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Featured Projects */}
         <section className="mb-12">
           <h2 className="text-xl font-bold mb-6 pb-2 border-b-2 border-gray-200 flex items-center gap-2">

@@ -19,7 +19,7 @@ export interface Experience {
   description: Localized<string>;
   achievements: Localized<string[]>;
   tech: string[];
-  type: "work" | "research" | "other"; // work: IT경력, research: 연구, other: 기타
+  type: "work" | "research" | "military" | "other"; // work: IT경력, research: 연구, military: 병역, other: 기타
 }
 
 export interface Project {
