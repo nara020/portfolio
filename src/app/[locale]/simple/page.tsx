@@ -425,7 +425,7 @@ export default function SimplePage() {
                   {expandedProjects.includes(project.id) && (
                     <div className="mb-3 p-3 bg-white rounded-lg border border-yellow-200">
                       <h4 className="text-xs font-bold text-gray-500 uppercase mb-2">
-                        {locale === "ko" ? "주요 성과 & 문제해결" : "Key Achievements & Problem Solving"}
+                        {locale === "ko" ? "주요 성과" : "Key Achievements"}
                       </h4>
                       <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
                         {project.highlights[locale].map((highlight, i) => (
