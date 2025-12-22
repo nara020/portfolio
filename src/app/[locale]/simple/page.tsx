@@ -224,7 +224,7 @@ export default function SimplePage() {
                   <div className="text-[10px] text-gray-500">Springer · KCI</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-primary-600">9+</div>
+                  <div className="text-2xl font-bold text-primary-600">10+</div>
                   <div className="text-xs text-gray-600">{locale === "ko" ? "수상 실적" : "Awards"}</div>
                   <div className="text-[10px] text-gray-500">{locale === "ko" ? "우수논문상 · 대상" : "Best Paper · Grand Prize"}</div>
                 </div>

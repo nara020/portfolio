@@ -3,7 +3,17 @@
     "allow": [
       "Bash(ls -la \"C:\\Users\\Kimjinhyeok\\Project\\github.com\\nara020\\portfolio\\private\"\" 2>/dev/null || dir \"C:UsersKimjinhyeokProjectgithub.comnara020portfolioprivate \")",
       "Bash(dir:*)",
-      "WebFetch(domain:jinhyeok.vercel.app)"
+      "WebFetch(domain:jinhyeok.vercel.app)",
+      "Bash(timeout 15 npm run dev:*)",
+      "Bash(timeout 20 npm run dev:*)",
+      "Bash(timeout 25 npm run dev)",
+      "Bash(cat:*)",
+      "Bash(curl:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run lint)",
+      "Bash(ls:*)",
+      "WebFetch(domain:ieeexplore.ieee.org)",
+      "Bash(git diff:*)"
     ]
   }
 }
