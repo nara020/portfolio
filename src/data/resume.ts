@@ -995,6 +995,13 @@ export const awards: Award[] = [
     type: "award",
   },
   {
+    id: "university-startup",
+    name: { ko: "대학 창업경진대회 금상", en: "Gold Award" },
+    issuer: { ko: "수원대학교", en: "University Startup Competition (Suwon Univ.)" },
+    date: "2020.06",
+    type: "award",
+  },
+  {
     id: "employment-bridge",
     name: { ko: "취업브리지 수기 공모전 최우수상", en: "Grand Prize" },
     issuer: { ko: "수원대학교 취업센터", en: "Employment Bridge Essay Competition" },
