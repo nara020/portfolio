@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useLocale } from "next-intl";
 import Link from "next/link";
+import { getHireStatusConfig } from "@/config/site";
 import {
   Mail,
   Github,
@@ -72,16 +73,25 @@ export default function SimplePage() {
           {/* Top bar - Availability & Actions */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-700 print:hidden">
             {/* Availability Status */}
-            <div className="flex items-center gap-2 text-sm">
-              <span className="flex items-center gap-1.5 text-green-400">
-                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                {locale === "ko" ? "채용 가능" : "Available for Hire"}
-              </span>
-              <span className="text-gray-500">|</span>
-              <span className="text-gray-400">
-                {locale === "ko" ? "서울 (원격 가능)" : "Seoul (Remote OK)"}
-              </span>
-            </div>
+            {(() => {
+              const hireConfig = getHireStatusConfig();
+              return (
+                <div className="flex items-center gap-2 text-sm">
+                  {hireConfig.show && (
+                    <>
+                      <span className={`flex items-center gap-1.5 ${hireConfig.color}`}>
+                        <span className={`w-2 h-2 ${hireConfig.bgColor} rounded-full animate-pulse`} />
+                        {locale === "ko" ? hireConfig.label.ko : hireConfig.label.en}
+                      </span>
+                      <span className="text-gray-500">|</span>
+                    </>
+                  )}
+                  <span className="text-gray-400">
+                    {locale === "ko" ? "서울 (원격 가능)" : "Seoul (Remote OK)"}
+                  </span>
+                </div>
+              );
+            })()}
 
             {/* Actions */}
             <div className="flex items-center gap-2">

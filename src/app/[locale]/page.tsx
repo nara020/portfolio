@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { getHireStatusConfig } from "@/config/site";
 import Link from "next/link";
 import {
   Box,
@@ -423,10 +424,18 @@ export default function Home() {
           >
             <div className="flex flex-wrap items-center justify-center md:justify-between gap-4 text-sm">
               {/* Status */}
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                <span className="text-green-400 font-medium">Available for Hire</span>
-              </div>
+              {(() => {
+                const hireConfig = getHireStatusConfig();
+                if (!hireConfig.show) return null;
+                return (
+                  <div className="flex items-center gap-2">
+                    <span className={`w-2 h-2 ${hireConfig.bgColor} rounded-full animate-pulse`} />
+                    <span className={`${hireConfig.color} font-medium`}>
+                      {locale === "ko" ? hireConfig.label.ko : hireConfig.label.en}
+                    </span>
+                  </div>
+                );
+              })()}
 
               <div className="hidden md:block w-px h-4 bg-gray-700" />
 
