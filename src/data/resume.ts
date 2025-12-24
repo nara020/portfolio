@@ -147,7 +147,7 @@ export const experiences: Experience[] = [
     achievements: {
       ko: [
         "IEEE IAEAC 2019 국제학술대회 논문 공저자",
-        "KCI 급 저널 논문 등재 (KTCCS) - 졸업논문",
+        "KCI 등재 저널 논문 게재 (KTCCS) - 졸업논문",
         "정보처리학회 학부생 논문경진대회 대상",
         "한이음 ICT 공모전 장려상/입선 2회 수상",
         "한이음 학술대회 최우수상",
@@ -384,7 +384,7 @@ export const projects: Project[] = [
     experienceId: "university",
     name: { ko: "AI 재난 군집드론", en: "AI-Powered Disaster Response Swarm Drone" },
     description: {
-      ko: "딥러닝 기반 산불 감지 및 군집 드론 시스템. 졸업작품으로 KCI 급 논문 등재 및 다수 수상.",
+      ko: "딥러닝 기반 산불 감지 및 군집 드론 시스템. 졸업작품으로 KCI 등재 저널 게재 및 다수 수상.",
       en: "Deep learning based wildfire detection with swarm drone system. Graduation project with KCI journal publication and multiple awards.",
     },
     period: "2020.04 ~ 2020.11",
@@ -397,7 +397,7 @@ export const projects: Project[] = [
         "YOLO v3 기반 산불 감지 딥러닝 모델 학습 및 적용 (정확도 92%)",
         "ROS (Robot Operating System) 기반 드론 제어 소프트웨어 개발",
         "한이음 ICT 공모전 장려상 수상 (과학기술정보통신부)",
-        "KCI 급 논문 KTCCS 등재 - 졸업논문",
+        "KCI 등재 저널(KTCCS) 논문 게재 - 졸업논문",
         "정보처리학회 학부생 논문경진대회 대상 수상",
       ],
       en: [
@@ -1019,7 +1019,7 @@ export const education: Education[] = [
     status: { ko: "졸업", en: "Graduated" },
     gpa: "3.73/4.5",
     thesis: {
-      ko: "딥러닝 기반 객체 인식과 최적 경로 탐색을 통한 멀티 재난 드론 시스템 설계 및 구현 (KCI 급 저널 등재)",
+      ko: "딥러닝 기반 객체 인식과 최적 경로 탐색을 통한 멀티 재난 드론 시스템 설계 및 구현 (KCI 등재 저널 게재)",
       en: "Multi-Disaster Drone System with Deep Learning Object Detection and Optimal Path Planning (Published in KCI Journal)",
     },
   },
@@ -1144,7 +1144,7 @@ export const papers: Paper[] = [
       ko: "한국정보처리학회 2025년 추계학술대회",
       en: "KIPS 2025 Fall Conference",
     },
-    publisher: "KCI",
+    publisher: "KIPS",
     date: "2025.11",
     type: "conference",
     isFirstAuthor: true,
@@ -1163,12 +1163,12 @@ export const papers: Paper[] = [
       en: "Blockchain-based Non-manipulable Probability Control System",
     },
     venue: {
-      ko: "한국컴퓨터정보학회",
-      en: "Korean Computer Information Society (KCIS)",
+      ko: "한국컴퓨터정보학회 2022년 하계학술대회",
+      en: "KCIS 2022 Summer Conference",
     },
-    publisher: "KCI",
+    publisher: "KCIS",
     date: "2022.07",
-    type: "journal",
+    type: "conference",
     isFirstAuthor: true,
     award: {
       ko: "우수논문상 수상",
@@ -1233,10 +1233,10 @@ export const papers: Paper[] = [
       en: "Research on Multilingual Electronic Menu Using QR Code and Personalized Local Restaurant Recommendation Algorithm and App Development",
     },
     venue: {
-      ko: "한국정보처리학회 2019년 추계학술발표대회",
+      ko: "한국정보처리학회 2019년 추계학술대회",
       en: "KIPS 2019 Fall Conference",
     },
-    publisher: "KCI",
+    publisher: "KIPS",
     date: "2019.10",
     type: "conference",
     isFirstAuthor: true,
