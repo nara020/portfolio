@@ -668,27 +668,34 @@ export default function SimplePage() {
         </section>
 
         {/* Explore More - Interactive Portfolios (Hide on print) */}
+        {/* 배경 오버레이 */}
+        <div
+          className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-500 ${
+            isAtBottom ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
+        />
         <section
           ref={exploreRef}
-          className={`print:hidden transition-all duration-700 ease-out origin-center ${
+          className={`print:hidden mb-12 transition-all duration-500 ease-out ${
             isAtBottom
-              ? "fixed inset-4 z-50 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 overflow-y-auto border-2 border-primary-500"
-              : "mb-12"
+              ? "fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[90vw] max-w-4xl max-h-[85vh] bg-white rounded-2xl shadow-2xl p-8 overflow-y-auto scale-100"
+              : "relative scale-100"
           }`}
+          style={{
+            transformOrigin: "center center",
+          }}
         >
-          <h2 className={`font-bold pb-2 border-b-2 border-gray-200 transition-all duration-500 ${
-            isAtBottom ? "text-3xl mb-8 text-center" : "text-xl mb-6"
+          <h2 className={`font-bold pb-2 border-b-2 border-gray-200 transition-all duration-300 ${
+            isAtBottom ? "text-2xl mb-6 text-center" : "text-xl mb-6"
           }`}>
             {locale === "ko" ? "더 알아보기" : "Explore More"}
             {isAtBottom && (
-              <span className="block text-sm font-normal text-gray-500 mt-2">
-                {locale === "ko" ? "스크롤을 올리면 닫힙니다" : "Scroll up to close"}
+              <span className="block text-sm font-normal text-gray-500 mt-2 animate-pulse">
+                ↑ {locale === "ko" ? "스크롤 올려서 닫기" : "Scroll up to close"}
               </span>
             )}
           </h2>
-          <div className={`grid gap-4 transition-all duration-500 ${
-            isAtBottom ? "md:grid-cols-2 max-w-4xl mx-auto" : "md:grid-cols-2"
-          }`}>
+          <div className="grid md:grid-cols-2 gap-4">
             {/* Etherscan Style Portfolio */}
             <Link
               href={`/${locale}`}
