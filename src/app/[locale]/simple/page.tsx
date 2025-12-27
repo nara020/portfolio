@@ -64,7 +64,9 @@ export default function SimplePage() {
     return getYear(b.period) - getYear(a.period);
   };
   const featuredProjects = projects.filter(p => p.featured).sort(sortByPeriod);
-  const otherProjects = projects.filter(p => !p.featured).sort(sortByPeriod);
+  // 개인 프로젝트: Career Break 기간 개발 증명용 (블록체인 관련 프로젝트만)
+  const showPersonalProjectIds = ["inbound-travel-booking"];
+  const otherProjects = projects.filter(p => !p.featured && showPersonalProjectIds.includes(p.id)).sort(sortByPeriod);
 
   return (
     <div className="min-h-screen bg-white text-gray-900 print:bg-white">
@@ -210,8 +212,8 @@ export default function SimplePage() {
             </p>
             <p className="text-gray-500 text-sm italic">
               {locale === "ko"
-                ? "* 중학생 때 첫 프로그램을 만들며 개발에 입문, 이후 꾸준히 성장해왔습니다."
-                : "* Started programming in middle school, continuously growing ever since."}
+                ? "* 15년 이상의 프로그래밍 경험 (2009년, 중학생 시절 첫 프로그램 개발 시작)"
+                : "* 15+ years of programming experience (first program in 2009, middle school)"}
             </p>
             {/* 핵심 성과 하이라이트 */}
             <div className="mt-6 p-4 bg-gradient-to-r from-primary-50 to-blue-50 border border-primary-200 rounded-lg">
@@ -304,9 +306,15 @@ export default function SimplePage() {
                     </p>
                   </div>
                   <p className="text-gray-500 mb-3 text-sm">{exp.description[locale]}</p>
-                  <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                    {exp.achievements[locale].slice(0, 3).map((achievement, i) => (
-                      <li key={i}>{achievement}</li>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    {exp.achievements[locale].map((achievement, i) => (
+                      achievement.startsWith("──") ? (
+                        <li key={i} className="list-none font-semibold text-gray-700 mt-3 first:mt-0 text-xs uppercase tracking-wide">
+                          {achievement.replace(/──/g, "").trim()}
+                        </li>
+                      ) : (
+                        <li key={i} className="list-disc list-inside">{achievement}</li>
+                      )
                     ))}
                   </ul>
                 </div>
@@ -472,7 +480,7 @@ export default function SimplePage() {
           >
             <h2 className="text-xl font-bold flex items-center gap-2">
               <FolderOpen className="w-5 h-5 text-gray-500" />
-              {locale === "ko" ? "기타 프로젝트" : "Other Projects"}
+              {locale === "ko" ? "개인 프로젝트" : "Personal Projects"}
               <span className="text-sm font-normal text-gray-500 ml-2">({otherProjects.length})</span>
             </h2>
             <div className="flex items-center gap-2 text-gray-500">
