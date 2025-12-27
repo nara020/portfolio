@@ -22,6 +22,19 @@ export interface Experience {
   type: "work" | "research" | "military" | "other"; // work: IT경력, research: 연구, military: 병역, other: 기타
 }
 
+// STAR 방법론 기반 문제해결 과정
+export interface ProblemSolving {
+  situation: Localized<string>;  // 상황: 어떤 문제/배경이 있었는가
+  task: Localized<string>;       // 과제: 해결해야 할 구체적 목표
+  action: Localized<string[]>;   // 행동: 문제 해결을 위해 취한 구체적 조치들
+  result: Localized<string[]>;   // 결과: 정량적/정성적 성과
+  metrics?: {                    // 핵심 성과 지표 (선택)
+    before?: string;
+    after?: string;
+    improvement?: string;
+  };
+}
+
 export interface Project {
   id: string;
   experienceId: string; // 어느 블록(경력)에 속하는지
@@ -34,6 +47,7 @@ export interface Project {
   tech: string[];
   status?: "completed" | "in_progress"; // 프로젝트 상태
   featured?: boolean; // 핵심 프로젝트 여부
+  problemSolving?: ProblemSolving; // STAR 방법론 기반 문제해결 과정
   links?: {
     github?: string;
     demo?: string;

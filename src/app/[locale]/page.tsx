@@ -265,8 +265,8 @@ export default function Home() {
                 </div>
                 {/* Resume Download */}
                 <a
-                  href={locale === "ko" ? "/resume/JinhyeokKim_Resume_KR.pdf" : "/resume/JinhyeokKim_Resume_EN.pdf"}
-                  download
+                  href={locale === "ko" ? "/resume/resume_kr.pdf" : "/resume/resume_en.pdf"}
+                  download={locale === "ko" ? "김진혁_이력서.pdf" : "Jinhyeok_Kim_Resume.pdf"}
                   className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-lg hover:from-primary-700 hover:to-purple-700 transition-all text-sm font-medium shadow-lg shadow-primary-500/25"
                 >
                   <Download className="w-4 h-4" />
@@ -385,7 +385,7 @@ export default function Home() {
                   <div className="text-[9px] text-gray-600">35s→1s</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl font-bold text-blue-400">5+</div>
+                  <div className="text-xl font-bold text-blue-400">7</div>
                   <div className="text-[10px] text-gray-500">{locale === "ko" ? "논문 게재" : "Papers"}</div>
                   <div className="text-[9px] text-gray-600">Springer · IEEE · KCI</div>
                 </div>
@@ -442,7 +442,7 @@ export default function Home() {
               {/* Papers - 강조 */}
               <div className="flex items-center gap-2">
                 <BookOpen className="w-4 h-4 text-blue-400" />
-                <span className="text-white font-medium">5+</span>
+                <span className="text-white font-medium">7</span>
                 <span className="text-gray-400">Papers</span>
                 <span className="px-1.5 py-0.5 text-[10px] bg-blue-500/20 text-blue-400 rounded border border-blue-500/30">
                   Springer · IEEE · KCI

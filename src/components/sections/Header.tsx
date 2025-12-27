@@ -159,8 +159,8 @@ export default function Header() {
 
               {/* Resume Download */}
               <a
-                href={locale === "ko" ? "/resume/JinhyeokKim_Resume_KR.pdf" : "/resume/JinhyeokKim_Resume_EN.pdf"}
-                download
+                href={locale === "ko" ? "/resume/resume_kr.pdf" : "/resume/resume_en.pdf"}
+                download={locale === "ko" ? "김진혁_이력서.pdf" : "Jinhyeok_Kim_Resume.pdf"}
                 className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-primary-600 hover:bg-primary-500 text-white rounded-lg transition-colors"
               >
                 <Download className="w-3.5 h-3.5" />
@@ -253,8 +253,8 @@ export default function Header() {
                 {locale === "ko" ? "이력서 보기" : "View Resume"}
               </Link>
               <a
-                href={locale === "ko" ? "/resume/JinhyeokKim_Resume_KR.pdf" : "/resume/JinhyeokKim_Resume_EN.pdf"}
-                download
+                href={locale === "ko" ? "/resume/resume_kr.pdf" : "/resume/resume_en.pdf"}
+                download={locale === "ko" ? "김진혁_이력서.pdf" : "Jinhyeok_Kim_Resume.pdf"}
                 className="flex items-center gap-2 px-4 py-2 text-primary-400 hover:text-primary-300 transition-colors"
               >
                 <Download className="w-4 h-4" />

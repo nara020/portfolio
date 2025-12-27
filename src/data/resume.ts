@@ -1,4 +1,4 @@
-import type { Experience, Project, Skill, Contact, Award, Education, Paper } from "./types";
+import type { Experience, Project, Skill, Contact, Award, Education, Paper, ProblemSolving } from "./types";
 
 export const personalInfo = {
   name: { ko: "김진혁", en: "Jinhyeok Kim" },
@@ -265,6 +265,55 @@ export const projects: Project[] = [
       demo: "https://consensus-lab.vercel.app",
       github: "https://github.com/nara020/consensus-lab",
     },
+    problemSolving: {
+      situation: {
+        ko: "블록체인 합의 알고리즘은 개념적으로 복잡하여 텍스트나 2D 다이어그램으로는 직관적 이해가 어려움. 특히 비잔틴 장애 허용(BFT) 합의 과정이나 스테이킹 기반 검증 과정은 동적인 상호작용을 시각화해야 제대로 이해할 수 있음. 기존 교육 자료의 한계를 극복하는 인터랙티브 도구가 필요했음.",
+        en: "Blockchain consensus algorithms are conceptually complex, making intuitive understanding difficult with text or 2D diagrams alone. Byzantine Fault Tolerant (BFT) consensus and staking-based validation processes require dynamic visualization for proper understanding. Needed an interactive tool to overcome limitations of existing educational materials.",
+      },
+      task: {
+        ko: "PoW, PoS, RAFT, IBFT 2.0 4가지 합의 알고리즘을 실시간 3D로 시각화하고, 사용자가 직접 상호작용하며 학습할 수 있는 교육용 오픈소스 플랫폼 개발이 목표였음.",
+        en: "Develop an educational open-source platform with real-time 3D visualization of 4 consensus algorithms (PoW, PoS, RAFT, IBFT 2.0) enabling interactive learning.",
+      },
+      action: {
+        ko: [
+          "3D 그래픽 엔진 선정: Three.js + React Three Fiber 조합으로 React 생태계와 통합",
+          "합의 알고리즘 모델링: 각 알고리즘의 핵심 메커니즘을 상태 기계로 추상화 및 구현",
+          "인터랙티브 시각화: 노드 간 메시지 전달, 블록 생성, 투표 과정을 실시간 애니메이션으로 구현",
+          "오디오 피드백 시스템: 채굴 성공, 투표, 블록 확정 등 주요 이벤트에 사운드 이펙트 적용",
+          "교육적 UX 설계: 각 알고리즘별 설명 패널, 속도 조절, 단계별 실행 기능 구현",
+          "오픈소스 공개: GitHub에 MIT 라이선스로 공개, 문서화 작성",
+        ],
+        en: [
+          "3D Engine Selection: Chose Three.js + React Three Fiber for React ecosystem integration",
+          "Algorithm Modeling: Abstracted core mechanisms of each algorithm as state machines",
+          "Interactive Visualization: Implemented real-time animations for node messaging, block creation, voting",
+          "Audio Feedback System: Applied sound effects for mining success, voting, block finalization events",
+          "Educational UX Design: Built explanation panels, speed controls, step-by-step execution",
+          "Open Source Release: Published on GitHub with MIT license and documentation",
+        ],
+      },
+      result: {
+        ko: [
+          "4가지 합의 알고리즘 3D 시각화 성공적 구현",
+          "실시간 인터랙티브 시뮬레이션으로 교육 효과 극대화",
+          "오픈소스 프로젝트로 커뮤니티 기여",
+          "블록체인 기술 깊이에 대한 포트폴리오 증명",
+          "Vercel 배포로 즉시 접근 가능한 데모 제공",
+        ],
+        en: [
+          "Successfully implemented 3D visualization of 4 consensus algorithms",
+          "Maximized educational effectiveness through real-time interactive simulation",
+          "Community contribution as open-source project",
+          "Portfolio proof of blockchain technology depth",
+          "Instant access demo via Vercel deployment",
+        ],
+      },
+      metrics: {
+        before: "Static 2D diagrams only",
+        after: "Interactive 3D simulation",
+        improvement: "4 algorithms visualized",
+      },
+    },
   },
   {
     id: "zk-private-lending",
@@ -304,6 +353,55 @@ export const projects: Project[] = [
     links: {
       github: "https://github.com/nara020/zk-private-lending",
     },
+    problemSolving: {
+      situation: {
+        ko: "기존 DeFi 대출 프로토콜은 담보 정보, LTV 비율, 청산 조건 등 민감한 금융 정보가 온체인에 공개되어 프라이버시 문제가 있음. 또한 ZKP 기술 스택(Halo2, arkworks, Circom)별 장단점에 대한 실무적 비교 자료가 부족하여 기술 선택에 어려움이 있었음.",
+        en: "Existing DeFi lending protocols expose sensitive financial information (collateral, LTV ratios, liquidation conditions) on-chain, causing privacy issues. Also, practical comparison materials for ZKP technology stacks (Halo2, arkworks, Circom) were lacking, making technology selection difficult.",
+      },
+      task: {
+        ko: "프라이버시를 보호하면서 담보 검증이 가능한 DeFi 대출 프로토콜 설계, 그리고 3가지 ZKP 스택(Halo2, arkworks, Circom)으로 동일 회로를 구현하여 실무적 비교 분석 수행이 목표였음.",
+        en: "Design a privacy-preserving DeFi lending protocol with collateral verification, and implement identical circuits in 3 ZKP stacks (Halo2, arkworks, Circom) for practical comparative analysis.",
+      },
+      action: {
+        ko: [
+          "회로 설계: CollateralProof(담보 검증), LTVProof(대출 비율 검증), LiquidationProof(청산 조건 검증) 3개 핵심 회로 설계",
+          "ZK 삼위일체 구현: 동일 비즈니스 로직을 Halo2, arkworks, Circom 3가지 스택으로 각각 구현",
+          "Halo2 심화 학습: PLONKish 산술화, Lookup table, Custom gate 활용한 효율적 회로 최적화",
+          "R1CS vs PLONKish 비교: 제약 시스템 패러다임별 장단점 분석 및 문서화",
+          "온체인 검증: Solidity Verifier 개발로 ~200K gas 검증 비용 달성 (L2에서 $0.01 수준)",
+          "풀스택 구현: Rust/Axum 백엔드 + Next.js 프론트엔드로 완전한 프로토타입 개발",
+        ],
+        en: [
+          "Circuit Design: Designed 3 core circuits - CollateralProof, LTVProof, LiquidationProof",
+          "ZK Trinity Implementation: Implemented same business logic in Halo2, arkworks, Circom stacks",
+          "Halo2 Deep Dive: Optimized circuits using PLONKish arithmetization, lookup tables, custom gates",
+          "R1CS vs PLONKish Comparison: Analyzed and documented pros/cons of each constraint paradigm",
+          "On-chain Verification: Developed Solidity Verifier achieving ~200K gas cost ($0.01 on L2)",
+          "Full-stack Implementation: Complete prototype with Rust/Axum backend + Next.js frontend",
+        ],
+      },
+      result: {
+        ko: [
+          "3개 ZKP 스택(Halo2, arkworks, Circom) 동일 회로 구현 완료",
+          "R1CS vs PLONKish 패러다임 비교 분석 문서 작성",
+          "온체인 검증 비용 ~200K gas 달성 (L2에서 $0.01 수준)",
+          "프라이버시 보호 DeFi 프로토콜 프로토타입 완성",
+          "ZKP 기술 깊이에 대한 포트폴리오 증명",
+        ],
+        en: [
+          "Completed identical circuit implementation in 3 ZKP stacks (Halo2, arkworks, Circom)",
+          "Documented R1CS vs PLONKish paradigm comparative analysis",
+          "Achieved ~200K gas on-chain verification cost ($0.01 on L2)",
+          "Completed privacy-preserving DeFi protocol prototype",
+          "Portfolio proof of ZKP technology depth",
+        ],
+      },
+      metrics: {
+        before: "Public on-chain data exposure",
+        after: "ZKP-protected privacy",
+        improvement: "3 ZK stacks compared",
+      },
+    },
   },
   {
     id: "b2b-supply-chain",
@@ -342,6 +440,53 @@ export const projects: Project[] = [
     tech: ["Hyperledger Besu", "Solidity", "ZKP/Groth16", "snarkjs", "circom", "IPFS", "Node.js", "TypeScript", "Python", "Docker", "Jenkins"],
     status: "in_progress",
     featured: true,
+    problemSolving: {
+      situation: {
+        ko: "기존 Hyperledger Besu 기반 시스템이 25 TPS 수준의 낮은 처리량을 보이며, 영지식증명(ZKP) 생성에 35초 이상 소요되어 엔터프라이즈 서비스 품질 요구사항을 충족하지 못하는 상황. TTA 성능 인증(쓰기 500+ TPS, 읽기 1000+ TPS) 통과가 필수였으며, EU DPP 규제 대응을 위한 투명성과 기밀성의 균형 확보가 필요했음.",
+        en: "Existing Hyperledger Besu system showed only 25 TPS throughput, with ZKP generation taking 35+ seconds, failing to meet enterprise SLA requirements. TTA certification (500+ write TPS, 1000+ read TPS) was mandatory, and balancing transparency with confidentiality for EU DPP compliance was required.",
+      },
+      task: {
+        ko: "TTA 성능 인증 통과를 위한 블록체인 성능 10배 이상 향상, ZKP 생성 시간을 서비스 가능 수준(1초 이내)으로 단축, 그리고 투명성과 기밀성을 동시에 확보하는 아키텍처 설계가 목표였음.",
+        en: "Achieve 10x+ blockchain performance improvement for TTA certification, reduce ZKP generation time to service-level (under 1 second), and design an architecture ensuring both transparency and confidentiality.",
+      },
+      action: {
+        ko: [
+          "성능 병목 분석: k6 부하 테스트로 백엔드 → Besu RPC 구간 I/O 블로킹 병목 특정",
+          "3계층 최적화 전략 수립: ① 백엔드 계층 - Java 21 Virtual Threads로 비동기 처리, ② 서비스 계층 - Transaction Isolation Pattern으로 트랜잭션 분리, ③ 인프라 계층 - PM2 Cluster Mode + Besu JVM GC 튜닝",
+          "ZKP 아키텍처 재설계: Groth16 증명 시스템 선택, snarkjs + circom으로 회로 구현, 증명 생성 파이프라인 최적화",
+          "하이브리드 아키텍처 설계: 블록체인(투명성) + IPFS(영속성) + ZKP(기밀성) 3계층 구조로 EU DPP 규제 대응",
+          "연구 결과 학술 논문화: Springer ICBTA 2025, KIPS 추계학술대회 논문 2편 발표",
+        ],
+        en: [
+          "Bottleneck Analysis: Identified I/O blocking between backend and Besu RPC using k6 load testing",
+          "3-Layer Optimization Strategy: ① Backend - Java 21 Virtual Threads for async processing, ② Service - Transaction Isolation Pattern, ③ Infra - PM2 Cluster Mode + Besu JVM GC tuning",
+          "ZKP Architecture Redesign: Selected Groth16 proving system, implemented circuits with snarkjs + circom, optimized proof generation pipeline",
+          "Hybrid Architecture Design: 3-tier structure with blockchain (transparency) + IPFS (persistence) + ZKP (confidentiality) for EU DPP compliance",
+          "Academic Publication: Published 2 papers at Springer ICBTA 2025 and KIPS Fall Conference",
+        ],
+      },
+      result: {
+        ko: [
+          "블록체인 성능 27배 향상: 25 TPS → 678 TPS (TTA 인증 기준 500+ TPS 초과 달성)",
+          "읽기 성능 2,200 TPS 달성 (TTA 인증 기준 1,000+ TPS 초과 달성)",
+          "ZKP 생성 시간 35배 단축: 35초 → 평균 0.54초 (일일 최대 16만 건 처리 가능)",
+          "Springer LNNS 국제학술대회 1저자 논문 게재 확정",
+          "한국정보처리학회 추계학술대회 1저자 논문 발표 완료",
+        ],
+        en: [
+          "27x blockchain performance improvement: 25 TPS → 678 TPS (exceeded TTA certification 500+ TPS)",
+          "Read performance: 2,200 TPS (exceeded TTA certification 1,000+ TPS)",
+          "35x ZKP generation time reduction: 35s → 0.54s average (160K daily transactions possible)",
+          "First-author paper accepted at Springer LNNS international conference",
+          "First-author paper presented at KIPS Fall Conference",
+        ],
+      },
+      metrics: {
+        before: "25 TPS, 35s ZKP",
+        after: "678 TPS, 0.54s ZKP",
+        improvement: "27x TPS, 35x ZKP speed",
+      },
+    },
   },
   {
     id: "b-space",
@@ -378,6 +523,55 @@ export const projects: Project[] = [
     status: "completed",
     featured: true,
     links: { demo: "https://www.b-space.kr/" },
+    problemSolving: {
+      situation: {
+        ko: "부산시 블록체인 특화 벤처컨벤션 B-SPACE 플랫폼 개발 프로젝트에서, 기존에 블록체인 네트워크 구축 경험이 없는 상태로 Hyperledger Fabric 기반 시스템을 설계하고 TTA 성능 인증을 통과해야 하는 상황. 개발/테스트/교육용 3개의 독립된 네트워크가 필요했으며, 서비스 상용화까지 책임져야 했음.",
+        en: "In the B-SPACE blockchain convention platform project for Busan City, I needed to design and deploy a Hyperledger Fabric system with no prior blockchain network experience. TTA performance certification was required, along with 3 independent networks (dev/test/education), and I was responsible for service commercialization.",
+      },
+      task: {
+        ko: "Hyperledger Fabric 네트워크 아키텍처 설계 및 3개 독립 환경 구축, TTA 성능 인증 통과(쓰기 400 TPS, 읽기 1000 TPS 이상), 그리고 프로덕션 레벨 서비스 개발 및 운영이 목표였음.",
+        en: "Design Hyperledger Fabric network architecture, deploy 3 independent environments, achieve TTA certification (400+ write TPS, 1000+ read TPS), and develop production-level service.",
+      },
+      action: {
+        ko: [
+          "Fabric 네트워크 아키텍처 학습 및 설계: Docker Compose 기반 3개 독립 네트워크 구축 (개발/테스트/교육용)",
+          "ChainCode 개발: Go 언어로 회의실/장치 예약 CRUD 및 권한 검증 로직 구현",
+          "백엔드 API 설계: TypeScript + Fabric SDK로 JWT 인증, RBAC 권한 시스템 구축",
+          "성능 최적화: JMeter 부하 테스트 기반 병목 분석 및 튜닝, TTA 인증 준비",
+          "문서화 및 협업: Swagger API 문서 제작, 프론트엔드 팀과 연동 지원",
+          "연구 성과: 블록체인 기반 확률제어 시스템 논문 작성 및 학회 발표",
+        ],
+        en: [
+          "Fabric Network Architecture: Designed and deployed 3 independent Docker Compose-based networks",
+          "ChainCode Development: Implemented room/device reservation CRUD and permission validation in Go",
+          "Backend API Design: Built JWT authentication and RBAC permission system with TypeScript + Fabric SDK",
+          "Performance Optimization: Bottleneck analysis and tuning via JMeter load testing for TTA certification",
+          "Documentation & Collaboration: Created Swagger API docs, supported frontend team integration",
+          "Research Output: Wrote paper on blockchain-based probability control system for conference",
+        ],
+      },
+      result: {
+        ko: [
+          "TTA 성능 인증 통과: 쓰기 400 TPS, 읽기 1000 TPS 달성",
+          "3개 독립 Fabric 네트워크 성공적 구축 및 운영",
+          "한국컴퓨터정보학회 하계학술대회 우수논문상 수상",
+          "서비스 상용화 성공: 현재까지 운영 중 (b-space.kr)",
+          "1년 5개월간 안정적 운영 및 유지보수 수행",
+        ],
+        en: [
+          "TTA Certification Passed: 400 TPS write, 1000 TPS read achieved",
+          "Successfully deployed and operated 3 independent Fabric networks",
+          "Won Best Paper Award at KCIS Summer Conference",
+          "Successful service commercialization: Currently in operation (b-space.kr)",
+          "Stable operation and maintenance for 1 year 5 months",
+        ],
+      },
+      metrics: {
+        before: "No blockchain experience",
+        after: "400/1000 TPS certified",
+        improvement: "TTA certified + Best Paper Award",
+      },
+    },
   },
   {
     id: "disaster-drone",
@@ -416,6 +610,59 @@ export const projects: Project[] = [
     links: {
       demo: "https://www.youtube.com/watch?v=3CGwitZjkCo",
       paper: "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002713076"
+    },
+    problemSolving: {
+      situation: {
+        ko: "산불 발생 시 기존 유인 헬기 방식은 조종사 안전 위험, 고비용, 야간 운용 제한 등의 문제가 있었음. 특히 초기 진압이 중요한 산불에서 신속한 현장 탐색과 정보 수집이 어려웠음. 학부 졸업 프로젝트로 이 문제를 해결하는 시스템 개발이 필요했음.",
+        en: "Traditional manned helicopter approach for wildfire monitoring had issues: pilot safety risks, high costs, and night operation limitations. Quick field exploration and information gathering was difficult for wildfires where early suppression is critical. Needed to develop a solution as undergraduate graduation project.",
+      },
+      task: {
+        ko: "드론 군집 통신 시스템 설계, 딥러닝 기반 실시간 산불 감지 시스템 구현, 그리고 자율 비행 및 경로 최적화 알고리즘 개발이 목표였음. 팀장으로서 프로젝트 전체 관리 및 기술 통합 책임.",
+        en: "Design drone swarm communication system, implement deep learning-based real-time wildfire detection, and develop autonomous flight and path optimization algorithms. As team lead, responsible for overall project management and technical integration.",
+      },
+      action: {
+        ko: [
+          "하드웨어 설계: PIXHAWK 비행 컨트롤러 + JETSON NANO GPU 보드 조합으로 드론 플랫폼 구축",
+          "통신 시스템 개발: MAVLINK 프로토콜 기반 드론 간 군집 통신 시스템 구현",
+          "AI 모델 개발: YOLO v3 기반 산불 감지 모델 학습 (커스텀 데이터셋 3,000장 수집 및 라벨링)",
+          "자율 비행 시스템: ROS 기반 드론 제어 소프트웨어, ACO 알고리즘으로 최적 경로 탐색 구현",
+          "연구 성과화: KCI 등재 저널 논문 작성 및 게재, 다수 학술대회/공모전 참가",
+          "팀 리딩: 4인 팀 역할 분담 및 일정 관리, 주간 미팅 및 기술 검토 진행",
+        ],
+        en: [
+          "Hardware Design: Built drone platform with PIXHAWK flight controller + JETSON NANO GPU board",
+          "Communication System: Implemented swarm communication using MAVLINK protocol",
+          "AI Model Development: Trained YOLO v3 wildfire detection model (collected and labeled 3,000 custom images)",
+          "Autonomous Flight: ROS-based drone control software, ACO algorithm for optimal path planning",
+          "Research Output: Wrote and published KCI-indexed journal paper, participated in multiple conferences",
+          "Team Leadership: Managed 4-member team roles and schedules, conducted weekly meetings and tech reviews",
+        ],
+      },
+      result: {
+        ko: [
+          "YOLO v3 산불 감지 정확도 92% 달성",
+          "정보처리학회 학부생 논문경진대회 대상 수상",
+          "한이음 ICT 공모전 장려상 수상 (과학기술정보통신부)",
+          "한이음 학술대회 최우수상 수상",
+          "KCI 등재 저널(KTCCS) 1저자 논문 게재",
+          "학생 창업유망팀 300 선정 (교육부)",
+          "ICT 멘토링 최우수상, G-HOP 최우수상 등 총 6개 수상",
+        ],
+        en: [
+          "Achieved 92% accuracy in YOLO v3 wildfire detection",
+          "Grand Prize at KIPS Undergraduate Paper Competition",
+          "Hanium ICT Competition Award (Ministry of Science and ICT)",
+          "Grand Prize at Hanium Academic Conference",
+          "First-author paper published in KCI-indexed journal (KTCCS)",
+          "Selected for Top 300 Student Startup Team (MOE)",
+          "6 total awards including ICT Mentoring Grand Prize, G-HOP Grand Prize",
+        ],
+      },
+      metrics: {
+        before: "Manual helicopter monitoring",
+        after: "92% AI detection accuracy",
+        improvement: "6 awards + KCI journal publication",
+      },
     },
   },
   {
@@ -537,6 +784,55 @@ export const projects: Project[] = [
     tech: ["Electron", "TypeScript", "CloudFlare", "PostgreSQL", "AWS"],
     status: "in_progress",
     featured: true,
+    problemSolving: {
+      situation: {
+        ko: "2개의 이전 개발사가 해결하지 못한 레거시 프로젝트를 3번째 개발사로 인수. 크롤링 기능이 안정적으로 동작하지 않고, 대량 업로드 시 에러가 빈번하게 발생. 인프라가 AWS와 Cafe24에 분산되어 있어 시스템 구조 파악이 어려웠으며, 고객사는 서비스 중단으로 인한 매출 손실이 발생하는 상황.",
+        en: "Took over legacy project as 3rd development company after 2 previous vendors failed. Crawling was unstable, bulk uploads had frequent errors, infrastructure was scattered across AWS and Cafe24 making system analysis difficult, and client was losing revenue due to service disruption.",
+      },
+      task: {
+        ko: "서비스 핵심 에러를 최단 시간 내 해결하고, 레거시 코드베이스 분석 및 안정화, 그리고 고객 신뢰 회복을 통한 추가 개발 수주가 목표였음.",
+        en: "Resolve critical service errors in shortest time, analyze and stabilize legacy codebase, and recover client trust to secure additional development contracts.",
+      },
+      action: {
+        ko: [
+          "레거시 코드 분석: 문서화 없는 Electron + TypeScript 프로젝트 역공학 분석, 아키텍처 다이어그램 작성",
+          "인프라 분리: AWS와 Cafe24에 분산된 서비스 구조 파악 및 독립 운영 가능하도록 분리",
+          "크롤링 안정화: CloudFlare 우회 로직 개선, 요청 간격 최적화, 에러 핸들링 강화",
+          "대량 업로드 에러 해결: Shopify API Rate Limit 대응 로직 구현, 배치 처리 최적화",
+          "고객 커뮤니케이션: 매일 진행 상황 공유, 기술적 이슈를 비즈니스 언어로 설명",
+          "빠른 디버깅: 로그 분석 기반 핵심 에러 원인 특정 및 일주일 내 해결",
+        ],
+        en: [
+          "Legacy Code Analysis: Reverse-engineered undocumented Electron + TypeScript project, created architecture diagrams",
+          "Infrastructure Separation: Analyzed and separated services scattered across AWS and Cafe24",
+          "Crawling Stabilization: Improved CloudFlare bypass logic, optimized request intervals, enhanced error handling",
+          "Bulk Upload Fix: Implemented Shopify API rate limit handling, optimized batch processing",
+          "Client Communication: Daily progress updates, explained technical issues in business terms",
+          "Quick Debugging: Identified root causes through log analysis and resolved within one week",
+        ],
+      },
+      result: {
+        ko: [
+          "서비스 핵심 에러 일주일 내 해결",
+          "크롤링 안정성 95% 이상 달성",
+          "대량 업로드 성공률 99% 달성",
+          "고객 신뢰 회복: 최초 계약 대비 40배 규모 추가 개발 계약 수주",
+          "지속적인 유지보수 및 기능 개발 진행 중",
+        ],
+        en: [
+          "Resolved critical service errors within one week",
+          "Achieved 95%+ crawling stability",
+          "Achieved 99% bulk upload success rate",
+          "Recovered client trust: Secured 40x additional development contracts",
+          "Ongoing maintenance and feature development",
+        ],
+      },
+      metrics: {
+        before: "2 vendors failed, service down",
+        after: "95%+ stability, 99% upload success",
+        improvement: "40x additional contract secured",
+      },
+    },
   },
   {
     id: "gov-data-api",
@@ -1189,18 +1485,50 @@ export const papers: Paper[] = [
       en: "Design and Implementation of Multi-Disaster Drone System Using Deep Learning Object Detection and Optimal Path Planning",
     },
     venue: {
-      ko: "정보처리학회논문지: 컴퓨터 및 통신 시스템",
-      en: "KIPS Transactions on Computer and Communication Systems",
+      ko: "정보처리학회논문지: 컴퓨터 및 통신 시스템 (KTCCS)",
+      en: "KIPS Transactions on Computer and Communication Systems (KTCCS)",
     },
     publisher: "KCI",
     date: "2021.04",
     type: "journal",
     isFirstAuthor: true,
+    award: {
+      ko: "KIPS 2020 학부생 논문경진대회 대상 수상작 확장판",
+      en: "Extended from KIPS 2020 Undergraduate Competition (Grand Prize)",
+    },
     abstract: {
       ko: "재난 상황 감시 및 대처를 위한 인공지능 기반 재난 드론 시스템을 설계 및 개발했습니다. 딥러닝 기반 객체 인식 알고리즘과 ACO(Ant Colony Optimization) 기반 최적 경로 탐색을 적용하여 효율적인 탐색을 실시합니다. 산불 상황에 적용하여 산불지도 생성 및 시각화 기능을 구현했습니다.",
       en: "We designed and developed an AI-based disaster drone system for disaster monitoring and response. Using deep learning object detection and ACO-based optimal path planning, drones efficiently search areas. Applied to wildfire scenarios, the system creates and visualizes fire maps for firefighters.",
     },
     links: {
+      doi: "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002713076",
+      linkedin: "https://www.linkedin.com/in/jinhyeok1228",
+    },
+  },
+  {
+    id: "kips-2020-drone-conference",
+    title: {
+      ko: "딥러닝 기반 객체 인식과 최적 경로 탐색을 통한 멀티 재난 드론 시스템",
+      en: "Multi-Disaster Drone System Using Deep Learning Object Detection and Optimal Path Planning",
+    },
+    venue: {
+      ko: "한국정보처리학회 2020년 학부생 논문경진대회",
+      en: "KIPS 2020 Undergraduate Paper Competition",
+    },
+    publisher: "KIPS",
+    date: "2020.11",
+    type: "conference",
+    isFirstAuthor: true,
+    award: {
+      ko: "대상 수상 (KCI 저널 초청 게재)",
+      en: "Grand Prize (Invited to KCI Journal)",
+    },
+    abstract: {
+      ko: "산불 등 재난 상황에서 드론 군집을 활용한 효율적인 현장 탐색 시스템. YOLO v3 기반 산불 감지(92% 정확도)와 ACO 알고리즘 기반 최적 경로 탐색을 구현.",
+      en: "Efficient field exploration system using drone swarms for disaster situations like wildfires. Implemented YOLO v3-based fire detection (92% accuracy) and ACO algorithm-based optimal path planning.",
+    },
+    links: {
+      pdf: "https://scienceon.kisti.re.kr/srch/selectPORSrchArticle.do?cn=NPAP13663448&dbt=NPAP",
       linkedin: "https://www.linkedin.com/in/jinhyeok1228",
     },
   },
@@ -1253,7 +1581,7 @@ export const papers: Paper[] = [
 // 핵심 성과 지표
 export const keyMetrics = {
   tpsImprovement: { value: "27x", desc: { ko: "TPS 성능 향상", en: "TPS Performance" } },
-  papers: { value: "5+", desc: { ko: "논문 발표 (Springer, IEEE, KCI)", en: "Papers (Springer, IEEE, KCI)" } },
+  papers: { value: "7", desc: { ko: "논문 발표 (6편 1저자)", en: "Papers (6 First Author)" } },
   awards: { value: "10+", desc: { ko: "수상 실적", en: "Awards" } },
   projects: { value: "12+", desc: { ko: "프로젝트", en: "Projects" } },
   experience: {
