@@ -229,7 +229,7 @@ export default function SimplePage() {
                   <div className="text-[10px] text-gray-500">35s→1s</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-primary-600">6</div>
+                  <div className="text-2xl font-bold text-primary-600">5</div>
                   <div className="text-xs text-gray-600">{locale === "ko" ? "1저자 논문" : "First Author Papers"}</div>
                   <div className="text-[10px] text-gray-500">Springer · KCI</div>
                 </div>
