@@ -17,7 +17,6 @@ import {
   ChevronDown,
   ChevronUp,
   Star,
-  FolderOpen,
   Download,
   Globe,
   Printer,
@@ -37,7 +36,6 @@ export default function SimplePage() {
   const locale = useLocale() as "ko" | "en";
   const [expandedPapers, setExpandedPapers] = useState<string[]>([]);
   const [expandedProjects, setExpandedProjects] = useState<string[]>([]);
-  const [showOtherProjects, setShowOtherProjects] = useState(false);
 
   const togglePaper = (id: string) => {
     setExpandedPapers(prev =>
@@ -64,9 +62,6 @@ export default function SimplePage() {
     return getYear(b.period) - getYear(a.period);
   };
   const featuredProjects = projects.filter(p => p.featured).sort(sortByPeriod);
-  // 개인 프로젝트: Career Break 기간 개발 증명용 (블록체인 관련 프로젝트만)
-  const showPersonalProjectIds = ["inbound-travel-booking"];
-  const otherProjects = projects.filter(p => !p.featured && showPersonalProjectIds.includes(p.id)).sort(sortByPeriod);
 
   return (
     <div className="min-h-screen bg-white text-gray-900 print:bg-white">
@@ -470,101 +465,6 @@ export default function SimplePage() {
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Other Projects - Collapsible */}
-        <section className="mb-12">
-          <button
-            onClick={() => setShowOtherProjects(!showOtherProjects)}
-            className="w-full flex items-center justify-between pb-2 border-b-2 border-gray-200 hover:border-gray-300 transition-colors"
-          >
-            <h2 className="text-xl font-bold flex items-center gap-2">
-              <FolderOpen className="w-5 h-5 text-gray-500" />
-              {locale === "ko" ? "개인 프로젝트" : "Personal Projects"}
-              <span className="text-sm font-normal text-gray-500 ml-2">({otherProjects.length})</span>
-            </h2>
-            <div className="flex items-center gap-2 text-gray-500">
-              <span className="text-sm">
-                {showOtherProjects
-                  ? (locale === "ko" ? "접기" : "Collapse")
-                  : (locale === "ko" ? "펼치기" : "Expand")}
-              </span>
-              {showOtherProjects ? (
-                <ChevronUp className="w-5 h-5" />
-              ) : (
-                <ChevronDown className="w-5 h-5" />
-              )}
-            </div>
-          </button>
-          {showOtherProjects && (
-          <div className="space-y-3 mt-6">
-            {otherProjects.map((project) => (
-              <div key={project.id} className="border border-gray-200 rounded-lg overflow-hidden">
-                <button
-                  onClick={() => toggleProject(project.id)}
-                  className="w-full p-4 flex items-center justify-between hover:bg-gray-50 transition-colors text-left"
-                >
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2">
-                      <h3 className="font-medium text-gray-900">{project.name[locale]}</h3>
-                      {project.links?.github && (
-                        <a
-                          href={project.links.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-400 hover:text-gray-600"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <Github className="w-3.5 h-3.5" />
-                        </a>
-                      )}
-                    </div>
-                    <p className="text-xs text-gray-500">{project.period}</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="hidden sm:flex gap-1">
-                      {project.tech.slice(0, 3).map((tech) => (
-                        <span key={tech} className="text-[10px] bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded">
-                          {tech}
-                        </span>
-                      ))}
-                      {project.tech.length > 3 && (
-                        <span className="text-[10px] text-gray-400">+{project.tech.length - 3}</span>
-                      )}
-                    </div>
-                    {expandedProjects.includes(project.id) ? (
-                      <ChevronUp className="w-4 h-4 text-gray-400" />
-                    ) : (
-                      <ChevronDown className="w-4 h-4 text-gray-400" />
-                    )}
-                  </div>
-                </button>
-                {expandedProjects.includes(project.id) && (
-                  <div className="px-4 pb-4 border-t border-gray-100">
-                    <p className="text-sm text-gray-600 mt-3 mb-3">{project.description[locale]}</p>
-                    <div className="p-3 bg-gray-50 rounded-lg mb-3">
-                      <h4 className="text-xs font-bold text-gray-500 uppercase mb-2">
-                        {locale === "ko" ? "주요 성과" : "Highlights"}
-                      </h4>
-                      <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                        {project.highlights[locale].map((highlight, i) => (
-                          <li key={i}>{highlight}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech) => (
-                        <span key={tech} className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-          )}
         </section>
 
         {/* Skills */}
