@@ -768,14 +768,14 @@ export const projects: Project[] = [
     highlights: {
       ko: [
         "3번째 담당 개발사로서 기존 프로젝트 분석 및 환경설정",
-        "2번의 개발사에서 해결되지 않은 '크롤링' 고도화 및 '대량 업로드' 기능 에러 해결",
+        "2개 개발사 미해결 문제 전량 해결: 크롤링 안정화 + 대량 업로드 4배 확장 (2,500개→10,000개+)",
         "분산된 인프라(AWS + Cafe24) 분석 및 분리 성공",
         "빠른 디버깅과 고객사 소통으로 서비스 핵심 에러 일주일 내 해결",
         "최초 계약 대비 약 35배 규모의 추가 개발 계약 수주 성공",
       ],
       en: [
         "Took over as 3rd development company, analyzed existing project",
-        "Resolved crawling and bulk upload errors unresolved by 2 previous vendors",
+        "Resolved all issues from 2 vendors: Stabilized crawling + 4x bulk upload capacity (2,500→10,000+ items)",
         "Successfully separated distributed infrastructure (AWS + Cafe24)",
         "Resolved critical service errors within one week through quick debugging",
         "Secured 35x additional development contracts compared to initial contract",
