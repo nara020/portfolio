@@ -241,7 +241,7 @@ export default function Home() {
                 </div>
                 <p className="text-sm text-primary-400 font-medium mb-2">{t("role")}</p>
                 <p className="text-xs text-gray-400 mb-4">
-                  {keyMetrics.papers.value} Papers (Springer, IEEE, KCI) · {keyMetrics.awards.value} Awards · {keyMetrics.tpsImprovement.value} TPS · {keyMetrics.projects.value} {locale === "ko" ? "프로젝트" : "Projects"}
+                  {keyMetrics.tpsOptimization.value} {keyMetrics.tpsOptimization.desc[locale]} · {keyMetrics.papers.value} {keyMetrics.papers.desc[locale]} · {keyMetrics.contractExpansion.value} {keyMetrics.contractExpansion.desc[locale]}
                 </p>
                 <div className="flex gap-2 mb-3">
                   <a

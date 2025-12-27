@@ -148,7 +148,7 @@ export default function SimplePage() {
             <div>
               <h1 className="text-3xl font-bold tracking-tight">{personalInfo.name[locale]}</h1>
               <p className="text-primary-400 font-medium mt-1 print:text-primary-600">
-                {locale === "ko" ? "블록체인 & 백엔드 개발자" : "Blockchain & Backend Developer"}
+                Blockchain Infrastructure Engineer
               </p>
             </div>
             {/* Quick Stats - Print visible */}
@@ -192,23 +192,23 @@ export default function SimplePage() {
           <div className="space-y-4">
             <p className="text-gray-800 leading-relaxed font-medium">
               {locale === "ko"
-                ? "블록체인 네트워크 성능을 27배 향상시킨 백엔드/블록체인 개발자입니다."
-                : "Backend/Blockchain Developer who achieved 27x performance improvement on blockchain networks."}
+                ? "블록체인 네트워크 성능 병목을 분석하고 27배 최적화 방법론을 설계한 인프라 엔지니어입니다."
+                : "Blockchain Infrastructure Engineer who analyzed network bottlenecks and designed a 27x optimization methodology."}
             </p>
             <p className="text-gray-700 leading-relaxed">
               {locale === "ko"
-                ? "Hyperledger Besu 기반 B2B 플랫폼에서 25TPS→678TPS 최적화를 주도했습니다. Java 21 Virtual Threads, Transaction Isolation Pattern, PM2 Cluster Mode를 적용한 3-Layer 최적화 방법론을 설계하여 서비스 레이어 병목을 해결했으며, 이 연구 결과를 국제학술대회(ICBTA 2025, Springer LNNS)에 1저자로 게재했습니다."
-                : "Led optimization of B2B platform from 25TPS to 678TPS on Hyperledger Besu. Designed 3-Layer optimization methodology using Java 21 Virtual Threads, Transaction Isolation Pattern, and PM2 Cluster Mode to resolve service layer bottlenecks. Published as first author at ICBTA 2025 (Springer LNNS)."}
+                ? "Hyperledger Besu 기반 B2B 플랫폼에서 서비스 레이어 병목을 분석하고, Java 21 Virtual Threads + Transaction Isolation Pattern + PM2 Cluster Mode를 결합한 3-Layer 최적화 방법론을 설계했습니다. 이 방법론으로 25TPS→678TPS(27배) 성능 향상을 달성했으며, 연구 결과를 국제학술대회 ICBTA 2025(Springer LNNS)에 1저자로 게재했습니다."
+                : "Analyzed service layer bottlenecks in Hyperledger Besu B2B platform and designed a 3-Layer optimization methodology combining Java 21 Virtual Threads + Transaction Isolation Pattern + PM2 Cluster Mode. Achieved 27x performance improvement (25→678 TPS) and published findings as first author at ICBTA 2025 (Springer LNNS)."}
             </p>
             <p className="text-gray-700 leading-relaxed">
               {locale === "ko"
-                ? "CES Best Innovation Award 수상 기업(ZKP 전문)과 협업하며 영지식증명 기술을 습득했고, 이를 바탕으로 Groth16/snarkjs/circom 기반 개인 프로젝트를 설계·개발하고 있습니다. SpringBoot/Node.js 백엔드, Solidity 스마트컨트랙트, Private IPFS 클러스터 구축 등 블록체인 서비스 전 영역을 다룹니다."
-                : "Acquired ZKP expertise through collaboration with a CES Best Innovation Award-winning company, now designing and developing personal projects using Groth16/snarkjs/circom. Handle all areas of blockchain services including SpringBoot/Node.js backend, Solidity smart contracts, and Private IPFS cluster deployment."}
+                ? "Hyperledger Fabric 네트워크 3개 독립 구축 및 상용화, Groth16 기반 ZKP 복호화 35배 최적화, Solidity 스마트컨트랙트(UUPS Proxy, ZK 검증) 설계 등 블록체인 인프라 전 영역을 다룹니다. 합의 알고리즘(PoW, PoS, RAFT, IBFT)을 상태 기계로 모델링하고 시각화한 오픈소스 프로젝트도 운영 중입니다."
+                : "Experienced in deploying 3 Hyperledger Fabric networks to production, 35x ZKP decryption optimization with Groth16, and Solidity smart contract design (UUPS Proxy, ZK verification). Also developing an open-source project that models consensus algorithms (PoW, PoS, RAFT, IBFT) as state machines."}
             </p>
             <p className="text-gray-500 text-sm italic">
               {locale === "ko"
-                ? "* 15년 이상의 프로그래밍 경험 (2009년, 중학생 시절 첫 프로그램 개발 시작)"
-                : "* 15+ years of programming experience (first program in 2009, middle school)"}
+                ? "* Springer/KCI 1저자 논문 5편 | OPIC IH | Consensus Lab 오픈소스 운영"
+                : "* 5 first-author papers (Springer/KCI) | OPIC IH | Consensus Lab open-source maintainer"}
             </p>
             {/* 핵심 성과 하이라이트 */}
             <div className="mt-6 p-4 bg-gradient-to-r from-primary-50 to-blue-50 border border-primary-200 rounded-lg">
@@ -218,23 +218,23 @@ export default function SimplePage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div>
                   <div className="text-2xl font-bold text-primary-600">27x</div>
-                  <div className="text-xs text-gray-600">{locale === "ko" ? "TPS 성능 향상" : "TPS Improvement"}</div>
+                  <div className="text-xs text-gray-600">{locale === "ko" ? "TPS 최적화" : "TPS Optimization"}</div>
                   <div className="text-[10px] text-gray-500">25→678 TPS</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-primary-600">35x</div>
                   <div className="text-xs text-gray-600">{locale === "ko" ? "ZKP 복호화 최적화" : "ZKP Decrypt Speed"}</div>
-                  <div className="text-[10px] text-gray-500">35s→1s</div>
+                  <div className="text-[10px] text-gray-500">35s→1s (Groth16)</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-primary-600">5</div>
-                  <div className="text-xs text-gray-600">{locale === "ko" ? "1저자 논문" : "First Author Papers"}</div>
+                  <div className="text-xs text-gray-600">{locale === "ko" ? "1저자 논문" : "1st Author Papers"}</div>
                   <div className="text-[10px] text-gray-500">Springer · KCI</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-primary-600">10+</div>
-                  <div className="text-xs text-gray-600">{locale === "ko" ? "수상 실적" : "Awards"}</div>
-                  <div className="text-[10px] text-gray-500">{locale === "ko" ? "우수논문상 · 대상" : "Best Paper · Grand Prize"}</div>
+                  <div className="text-2xl font-bold text-primary-600">35x</div>
+                  <div className="text-xs text-gray-600">{locale === "ko" ? "계약 확대" : "Contract Expansion"}</div>
+                  <div className="text-[10px] text-gray-500">{locale === "ko" ? "200만→7,000만" : "$2K→$54K"}</div>
                 </div>
               </div>
             </div>
@@ -703,8 +703,8 @@ export default function SimplePage() {
               </div>
               <p className="relative z-10 text-sm text-gray-300">
                 {locale === "ko"
-                  ? "PoW, PoS, PBFT 등 블록체인 합의 알고리즘을 3D로 시각화하고 직접 비교해볼 수 있는 인터랙티브 시뮬레이터입니다."
-                  : "Interactive 3D visualization of blockchain consensus algorithms including PoW, PoS, and PBFT."}
+                  ? "PoW, PoS, RAFT, IBFT 2.0 합의 알고리즘을 상태 기계로 모델링하고 3D로 시각화. 실제 프로토콜 동작을 시뮬레이션합니다."
+                  : "State machine modeling of PoW, PoS, RAFT, IBFT 2.0 consensus with 3D visualization. Simulates actual protocol behavior."}
               </p>
               <div className="relative z-10 mt-3 flex items-center gap-1 text-xs text-yellow-400 font-medium">
                 <ExternalLink className="w-3 h-3" />
