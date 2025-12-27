@@ -241,7 +241,7 @@ export default function SimplePage() {
                 <div>
                   <div className="text-2xl font-bold text-primary-600">35x</div>
                   <div className="text-xs text-gray-600">{locale === "ko" ? "계약 확대" : "Contract Expansion"}</div>
-                  <div className="text-[10px] text-gray-500">{locale === "ko" ? "200만→7천만 (1주일)" : "$2K→$70K (1 week)"}</div>
+                  <div className="text-[10px] text-gray-500">{locale === "ko" ? "1주일 만에 달성" : "Achieved in 1 week"}</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-primary-600">65x</div>
