@@ -37,6 +37,7 @@ export default function SimplePage() {
   const locale = useLocale() as "ko" | "en";
   const [expandedPapers, setExpandedPapers] = useState<string[]>([]);
   const [expandedProjects, setExpandedProjects] = useState<string[]>([]);
+  const [showOtherProjects, setShowOtherProjects] = useState(false);
 
   const togglePaper = (id: string) => {
     setExpandedPapers(prev =>
@@ -261,9 +262,15 @@ export default function SimplePage() {
                   </p>
                 </div>
                 <p className="text-gray-600 mb-3">{exp.description[locale]}</p>
-                <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                <ul className="text-sm text-gray-700 space-y-1">
                   {exp.achievements[locale].map((achievement, i) => (
-                    <li key={i}>{achievement}</li>
+                    achievement.startsWith("──") ? (
+                      <li key={i} className="list-none font-semibold text-primary-700 mt-4 first:mt-0 text-xs uppercase tracking-wide">
+                        {achievement.replace(/──/g, "").trim()}
+                      </li>
+                    ) : (
+                      <li key={i} className="list-disc list-inside">{achievement}</li>
+                    )
                   ))}
                 </ul>
                 <div className="flex flex-wrap gap-2 mt-3">
@@ -457,14 +464,32 @@ export default function SimplePage() {
           </div>
         </section>
 
-        {/* Other Projects */}
+        {/* Other Projects - Collapsible */}
         <section className="mb-12">
-          <h2 className="text-xl font-bold mb-6 pb-2 border-b-2 border-gray-200 flex items-center gap-2">
-            <FolderOpen className="w-5 h-5 text-gray-500" />
-            {locale === "ko" ? "기타 프로젝트" : "Other Projects"}
-            <span className="text-sm font-normal text-gray-500 ml-2">({otherProjects.length})</span>
-          </h2>
-          <div className="space-y-3">
+          <button
+            onClick={() => setShowOtherProjects(!showOtherProjects)}
+            className="w-full flex items-center justify-between pb-2 border-b-2 border-gray-200 hover:border-gray-300 transition-colors"
+          >
+            <h2 className="text-xl font-bold flex items-center gap-2">
+              <FolderOpen className="w-5 h-5 text-gray-500" />
+              {locale === "ko" ? "기타 프로젝트" : "Other Projects"}
+              <span className="text-sm font-normal text-gray-500 ml-2">({otherProjects.length})</span>
+            </h2>
+            <div className="flex items-center gap-2 text-gray-500">
+              <span className="text-sm">
+                {showOtherProjects
+                  ? (locale === "ko" ? "접기" : "Collapse")
+                  : (locale === "ko" ? "펼치기" : "Expand")}
+              </span>
+              {showOtherProjects ? (
+                <ChevronUp className="w-5 h-5" />
+              ) : (
+                <ChevronDown className="w-5 h-5" />
+              )}
+            </div>
+          </button>
+          {showOtherProjects && (
+          <div className="space-y-3 mt-6">
             {otherProjects.map((project) => (
               <div key={project.id} className="border border-gray-200 rounded-lg overflow-hidden">
                 <button
@@ -531,6 +556,7 @@ export default function SimplePage() {
               </div>
             ))}
           </div>
+          )}
         </section>
 
         {/* Skills */}
@@ -538,26 +564,18 @@ export default function SimplePage() {
           <h2 className="text-xl font-bold mb-6 pb-2 border-b-2 border-gray-200">
             {locale === "ko" ? "기술 스택" : "Skills"}
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((category) => (
               <div key={category.category}>
-                <h3 className="font-bold text-sm text-gray-500 mb-3">{category.category}</h3>
-                <div className="space-y-2">
+                <h3 className="font-bold text-sm text-gray-700 mb-3 pb-1 border-b border-gray-200">{category.category}</h3>
+                <div className="flex flex-wrap gap-2">
                   {category.items.map((skill) => (
-                    <div key={skill.name} className="flex items-center gap-2">
-                      <div className="flex-1">
-                        <div className="flex justify-between text-sm mb-1">
-                          <span>{skill.name}</span>
-                          <span className="text-gray-400">{skill.level}%</span>
-                        </div>
-                        <div className="h-1.5 bg-gray-200 rounded-full">
-                          <div
-                            className="h-1.5 bg-primary-600 rounded-full"
-                            style={{ width: `${skill.level}%` }}
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    <span
+                      key={skill.name}
+                      className="text-sm bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors"
+                    >
+                      {skill.name}
+                    </span>
                   ))}
                 </div>
               </div>

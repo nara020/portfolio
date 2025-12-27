@@ -1088,7 +1088,7 @@ export const projects: Project[] = [
         "SEO optimization research and application",
       ],
     },
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Nginx", "Docker", "Claude Code"],
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Nginx", "Docker"],
   },
   {
     id: "audio-to-text",
