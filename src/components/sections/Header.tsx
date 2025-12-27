@@ -52,7 +52,7 @@ export default function Header() {
             <div className="flex items-center gap-1.5">
               <FileText className="w-3.5 h-3.5 text-blue-400" />
               <span>Papers:</span>
-              <span className="text-white font-medium">7</span>
+              <span className="text-white font-medium">5</span>
               <span className="text-gray-500">(5 First Author)</span>
             </div>
           </div>

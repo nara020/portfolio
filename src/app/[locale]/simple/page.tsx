@@ -202,8 +202,8 @@ export default function SimplePage() {
             </p>
             <p className="text-gray-700 leading-relaxed">
               {locale === "ko"
-                ? "Hyperledger Fabric 네트워크 3개 독립 구축 및 상용화, Groth16 기반 ZKP 복호화 35배 최적화, Solidity 스마트컨트랙트(UUPS Proxy, ZK 검증) 설계 등 블록체인 인프라 전 영역을 다룹니다. 합의 알고리즘(PoW, PoS, RAFT, IBFT)을 상태 기계로 모델링하고 시각화한 오픈소스 프로젝트도 운영 중입니다."
-                : "Experienced in deploying 3 Hyperledger Fabric networks to production, 35x ZKP decryption optimization with Groth16, and Solidity smart contract design (UUPS Proxy, ZK verification). Also developing an open-source project that models consensus algorithms (PoW, PoS, RAFT, IBFT) as state machines."}
+                ? "Hyperledger Fabric 네트워크 3개 독립 구축 및 상용화, Groth16 기반 ZKP 복호화 65배 최적화, Solidity 스마트컨트랙트(UUPS Proxy, ZK 검증) 설계 등 블록체인 인프라 전 영역을 다룹니다. 합의 알고리즘(PoW, PoS, RAFT, IBFT)을 상태 기계로 모델링하고 시각화한 오픈소스 프로젝트도 운영 중입니다."
+                : "Experienced in deploying 3 Hyperledger Fabric networks to production, 65x ZKP decryption optimization with Groth16, and Solidity smart contract design (UUPS Proxy, ZK verification). Also developing an open-source project that models consensus algorithms (PoW, PoS, RAFT, IBFT) as state machines."}
             </p>
             <p className="text-gray-500 text-sm italic">
               {locale === "ko"
@@ -222,9 +222,9 @@ export default function SimplePage() {
                   <div className="text-[10px] text-gray-500">25→678 TPS</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-primary-600">35x</div>
+                  <div className="text-2xl font-bold text-primary-600">65x</div>
                   <div className="text-xs text-gray-600">{locale === "ko" ? "ZKP 복호화 최적화" : "ZKP Decrypt Speed"}</div>
-                  <div className="text-[10px] text-gray-500">35s→1s (Groth16)</div>
+                  <div className="text-[10px] text-gray-500">35s→0.54s (Groth16)</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-primary-600">5</div>

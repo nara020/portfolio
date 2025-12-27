@@ -380,17 +380,17 @@ export default function Home() {
                   <div className="text-[9px] text-gray-600">25→678</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl font-bold text-purple-400">35x</div>
+                  <div className="text-xl font-bold text-purple-400">65x</div>
                   <div className="text-[10px] text-gray-500">{locale === "ko" ? "ZKP 최적화" : "ZKP Speed"}</div>
-                  <div className="text-[9px] text-gray-600">35s→1s</div>
+                  <div className="text-[9px] text-gray-600">35s→0.54s</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl font-bold text-blue-400">7</div>
-                  <div className="text-[10px] text-gray-500">{locale === "ko" ? "논문 게재" : "Papers"}</div>
-                  <div className="text-[9px] text-gray-600">Springer · IEEE · KCI</div>
+                  <div className="text-xl font-bold text-blue-400">5</div>
+                  <div className="text-[10px] text-gray-500">{locale === "ko" ? "1저자 논문" : "1st Author"}</div>
+                  <div className="text-[9px] text-gray-600">Springer · KCI</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl font-bold text-yellow-400">9+</div>
+                  <div className="text-xl font-bold text-yellow-400">10+</div>
                   <div className="text-[10px] text-gray-500">{locale === "ko" ? "수상 경력" : "Awards"}</div>
                   <div className="text-[9px] text-gray-600">Grand Prizes</div>
                 </div>
