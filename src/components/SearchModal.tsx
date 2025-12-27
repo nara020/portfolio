@@ -92,7 +92,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             id: skill.name,
             title: skill.name,
             subtitle: `${category.category} • ${skill.level}%`,
-            link: `/${locale}/address`,
+            link: `/${locale}/simple`,
           });
         }
       });
@@ -105,7 +105,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         id: "profile",
         title: locale === "ko" ? "김진혁" : "Jinhyeok Kim",
         subtitle: locale === "ko" ? "개발자 프로필" : "Developer Profile",
-        link: `/${locale}/address`,
+        link: `/${locale}/simple`,
       });
     }
 

@@ -150,14 +150,10 @@ export default function BlockDetailPage() {
                 <span className="text-gray-400 sm:w-40 flex-shrink-0">
                   Miner:
                 </span>
-                <Link
-                  href={`/${locale}/address`}
-                  className="flex items-center gap-2 text-primary-400 hover:text-primary-300"
-                >
-                  <User className="w-4 h-4" />
+                <div className="flex items-center gap-2 text-white">
+                  <User className="w-4 h-4 text-gray-500" />
                   {block.company[locale]}
-                  <ExternalLink className="w-3 h-3" />
-                </Link>
+                </div>
               </div>
 
               {/* Role */}

@@ -693,8 +693,9 @@ export default function SimplePage() {
               borderRadius: `${scrollProgress * 24}px`,
               boxShadow: scrollProgress > 0.1
                 ? `0 ${10 + scrollProgress * 40}px ${30 + scrollProgress * 60}px rgba(0, 0, 0, ${scrollProgress * 0.25}),
-                   0 0 ${scrollProgress * 60}px rgba(59, 130, 246, ${scrollProgress * 0.15}),
-                   inset 0 0 ${scrollProgress * 30}px rgba(59, 130, 246, ${scrollProgress * 0.05})`
+                   0 0 ${scrollProgress * 80}px rgba(255, 193, 7, ${scrollProgress * 0.25}),
+                   0 0 ${scrollProgress * 120}px rgba(255, 152, 0, ${scrollProgress * 0.15}),
+                   inset 0 0 ${scrollProgress * 40}px rgba(255, 193, 7, ${scrollProgress * 0.08})`
                 : "none",
             }}
           >
