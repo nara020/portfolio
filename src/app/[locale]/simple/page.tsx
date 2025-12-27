@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocale } from "next-intl";
 import Link from "next/link";
 import { getHireStatusConfig } from "@/config/site";
@@ -36,6 +36,24 @@ export default function SimplePage() {
   const locale = useLocale() as "ko" | "en";
   const [expandedPapers, setExpandedPapers] = useState<string[]>([]);
   const [expandedProjects, setExpandedProjects] = useState<string[]>([]);
+  const [isAtBottom, setIsAtBottom] = useState(false);
+  const exploreRef = useRef<HTMLElement>(null);
+
+  // 스크롤 끝 감지 - "더 알아보기" 확대 효과
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+
+      // 페이지 끝에서 100px 이내면 확대
+      const atBottom = scrollTop + windowHeight >= docHeight - 100;
+      setIsAtBottom(atBottom);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const togglePaper = (id: string) => {
     setExpandedPapers(prev =>
@@ -255,8 +273,13 @@ export default function SimplePage() {
                       <li key={i} className="list-none font-semibold text-primary-700 mt-4 first:mt-0 text-xs uppercase tracking-wide">
                         {achievement.replace(/──/g, "").trim()}
                       </li>
+                    ) : achievement.startsWith("  ") ? (
+                      <li key={i} className="list-none ml-5 text-gray-600 flex items-start gap-2">
+                        <span className="text-gray-400 mt-0.5">-</span>
+                        <span>{achievement.trim()}</span>
+                      </li>
                     ) : (
-                      <li key={i} className="list-disc list-inside">{achievement}</li>
+                      <li key={i} className="list-disc list-inside font-medium">{achievement}</li>
                     )
                   ))}
                 </ul>
@@ -297,8 +320,13 @@ export default function SimplePage() {
                         <li key={i} className="list-none font-semibold text-gray-700 mt-3 first:mt-0 text-xs uppercase tracking-wide">
                           {achievement.replace(/──/g, "").trim()}
                         </li>
+                      ) : achievement.startsWith("  ") ? (
+                        <li key={i} className="list-none ml-5 text-gray-500 flex items-start gap-2">
+                          <span className="text-gray-400 mt-0.5">-</span>
+                          <span>{achievement.trim()}</span>
+                        </li>
                       ) : (
-                        <li key={i} className="list-disc list-inside">{achievement}</li>
+                        <li key={i} className="list-disc list-inside font-medium">{achievement}</li>
                       )
                     ))}
                   </ul>
@@ -327,9 +355,16 @@ export default function SimplePage() {
                     </p>
                   </div>
                   <p className="text-gray-600 mb-3">{exp.description[locale]}</p>
-                  <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  <ul className="text-sm text-gray-700 space-y-1">
                     {exp.achievements[locale].map((achievement, i) => (
-                      <li key={i}>{achievement}</li>
+                      achievement.startsWith("  ") ? (
+                        <li key={i} className="list-none ml-5 text-gray-600 flex items-start gap-2">
+                          <span className="text-gray-400 mt-0.5">-</span>
+                          <span>{achievement.trim()}</span>
+                        </li>
+                      ) : (
+                        <li key={i} className="list-disc list-inside font-medium">{achievement}</li>
+                      )
                     ))}
                   </ul>
                   <div className="flex flex-wrap gap-2 mt-3">
@@ -364,9 +399,16 @@ export default function SimplePage() {
                     </p>
                   </div>
                   <p className="text-gray-600 mb-3">{exp.description[locale]}</p>
-                  <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  <ul className="text-sm text-gray-700 space-y-1">
                     {exp.achievements[locale].map((achievement, i) => (
-                      <li key={i}>{achievement}</li>
+                      achievement.startsWith("  ") ? (
+                        <li key={i} className="list-none ml-5 text-gray-600 flex items-start gap-2">
+                          <span className="text-gray-400 mt-0.5">-</span>
+                          <span>{achievement.trim()}</span>
+                        </li>
+                      ) : (
+                        <li key={i} className="list-disc list-inside font-medium">{achievement}</li>
+                      )
                     ))}
                   </ul>
                   <div className="flex flex-wrap gap-2 mt-3">
@@ -487,7 +529,7 @@ export default function SimplePage() {
             <FileText className="w-5 h-5 text-primary-600" />
             {locale === "ko" ? "논문 발표" : "Publications"}
             <span className="text-sm font-normal text-gray-500 ml-2">
-              ({papers.filter(p => p.isFirstAuthor).length} {locale === "ko" ? "편 1저자" : "First Author"})
+              ({papers.length}{locale === "ko" ? "편, 1저자 " : " papers, "}{papers.filter(p => p.isFirstAuthor).length}{locale === "ko" ? "편" : " 1st"})
             </span>
           </h2>
           <div className="space-y-4">
@@ -626,11 +668,27 @@ export default function SimplePage() {
         </section>
 
         {/* Explore More - Interactive Portfolios (Hide on print) */}
-        <section className="mb-12 print:hidden">
-          <h2 className="text-xl font-bold mb-6 pb-2 border-b-2 border-gray-200">
+        <section
+          ref={exploreRef}
+          className={`print:hidden transition-all duration-700 ease-out origin-center ${
+            isAtBottom
+              ? "fixed inset-4 z-50 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 overflow-y-auto border-2 border-primary-500"
+              : "mb-12"
+          }`}
+        >
+          <h2 className={`font-bold pb-2 border-b-2 border-gray-200 transition-all duration-500 ${
+            isAtBottom ? "text-3xl mb-8 text-center" : "text-xl mb-6"
+          }`}>
             {locale === "ko" ? "더 알아보기" : "Explore More"}
+            {isAtBottom && (
+              <span className="block text-sm font-normal text-gray-500 mt-2">
+                {locale === "ko" ? "스크롤을 올리면 닫힙니다" : "Scroll up to close"}
+              </span>
+            )}
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className={`grid gap-4 transition-all duration-500 ${
+            isAtBottom ? "md:grid-cols-2 max-w-4xl mx-auto" : "md:grid-cols-2"
+          }`}>
             {/* Etherscan Style Portfolio */}
             <Link
               href={`/${locale}`}

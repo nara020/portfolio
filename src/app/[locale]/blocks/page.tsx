@@ -190,10 +190,21 @@ export default function BlocksPage() {
                   </div>
                   <ul className="space-y-1">
                     {block.achievements[locale].map((achievement, i) => (
-                      <li key={i} className="text-sm text-gray-400 flex items-start gap-2">
-                        <span className="text-primary-500 mt-1">•</span>
-                        {achievement}
-                      </li>
+                      achievement.startsWith("──") ? (
+                        <li key={i} className="text-xs text-primary-400 font-semibold mt-3 first:mt-0 uppercase tracking-wide">
+                          {achievement.replace(/──/g, "").trim()}
+                        </li>
+                      ) : achievement.startsWith("  ") ? (
+                        <li key={i} className="text-sm text-gray-500 flex items-start gap-2 ml-4">
+                          <span className="text-gray-600 mt-1">-</span>
+                          <span>{achievement.trim()}</span>
+                        </li>
+                      ) : (
+                        <li key={i} className="text-sm text-gray-400 flex items-start gap-2">
+                          <span className="text-primary-500 mt-1">•</span>
+                          {achievement}
+                        </li>
+                      )
                     ))}
                   </ul>
 

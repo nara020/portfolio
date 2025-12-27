@@ -698,7 +698,7 @@ export default function Home() {
                 {locale === "ko" ? "논문 발표" : "Publications"}
               </h2>
               <span className="text-xs text-gray-500">
-                {papers.filter(p => p.isFirstAuthor).length} {locale === "ko" ? "편 1저자" : "First Author"} · {papers.length} {locale === "ko" ? "편 총" : "Total"}
+                {papers.length}{locale === "ko" ? "편, 1저자 " : " papers, "}{papers.filter(p => p.isFirstAuthor).length}{locale === "ko" ? "편" : " 1st"}
               </span>
             </div>
 

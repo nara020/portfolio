@@ -282,13 +282,26 @@ export default function BlockDetailPage() {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 + index * 0.05 }}
-                className="px-6 py-4 flex items-start gap-4"
+                className={`px-6 py-4 flex items-start gap-4 ${
+                  achievement.startsWith("──") ? "bg-gray-800/50" :
+                  achievement.startsWith("  ") ? "ml-8 border-l-2 border-gray-700" : ""
+                }`}
               >
-                <div className="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0 text-sm text-gray-400 font-mono">
-                  {String(index).padStart(2, "0")}
+                <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-mono ${
+                  achievement.startsWith("──") ? "bg-primary-600 text-white" :
+                  achievement.startsWith("  ") ? "bg-gray-700 text-gray-500" : "bg-gray-800 text-gray-400"
+                }`}>
+                  {achievement.startsWith("──") ? "§" :
+                   achievement.startsWith("  ") ? "-" : String(index).padStart(2, "0")}
                 </div>
                 <div className="flex-1">
-                  <p className="text-gray-300">{achievement}</p>
+                  <p className={`${
+                    achievement.startsWith("──") ? "text-primary-400 font-semibold uppercase tracking-wide" :
+                    achievement.startsWith("  ") ? "text-gray-400" : "text-gray-300"
+                  }`}>
+                    {achievement.startsWith("──") ? achievement.replace(/──/g, "").trim() :
+                     achievement.startsWith("  ") ? achievement.trim() : achievement}
+                  </p>
                 </div>
               </motion.div>
             ))}
