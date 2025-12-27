@@ -96,7 +96,7 @@ export default function SimplePage() {
               {/* PDF Downloads */}
               <div className="flex items-center bg-gray-800 rounded-lg overflow-hidden">
                 <a
-                  href="/resume/resume_kr.pdf"
+                  href="/resume/jinhyeok_resume_2025_KR.pdf"
                   download="김진혁_이력서.pdf"
                   className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium transition-colors ${
                     locale === "ko"
@@ -109,7 +109,7 @@ export default function SimplePage() {
                   🇰🇷 PDF
                 </a>
                 <a
-                  href="/resume/resume_en.pdf"
+                  href="/resume/jinhyeok_resume_2025_EN.pdf"
                   download="Jinhyeok_Kim_Resume.pdf"
                   className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium transition-colors ${
                     locale === "en"

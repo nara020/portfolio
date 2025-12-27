@@ -265,7 +265,7 @@ export default function Home() {
                 </div>
                 {/* Resume Download */}
                 <a
-                  href={locale === "ko" ? "/resume/resume_kr.pdf" : "/resume/resume_en.pdf"}
+                  href={locale === "ko" ? "/resume/jinhyeok_resume_2025_KR.pdf" : "/resume/jinhyeok_resume_2025_EN.pdf"}
                   download={locale === "ko" ? "김진혁_이력서.pdf" : "Jinhyeok_Kim_Resume.pdf"}
                   className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-lg hover:from-primary-700 hover:to-purple-700 transition-all text-sm font-medium shadow-lg shadow-primary-500/25"
                 >
