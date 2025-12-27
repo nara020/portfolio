@@ -685,14 +685,16 @@ export default function SimplePage() {
             {locale === "ko" ? "더 알아보기" : "Explore More"}
           </h2>
           <div
-            className="grid md:grid-cols-2 gap-4 transition-all duration-300 ease-out origin-center"
+            className={`grid md:grid-cols-2 gap-4 transition-all duration-300 ease-out origin-center ${scrollProgress > 0.9 ? "animate-pulse-subtle" : ""}`}
             style={{
-              transform: `scale(${1 + scrollProgress * 0.15})`,
-              padding: `${scrollProgress * 16}px`,
-              backgroundColor: scrollProgress > 0.3 ? `rgba(255, 255, 255, ${scrollProgress})` : "transparent",
-              borderRadius: `${scrollProgress * 20}px`,
-              boxShadow: scrollProgress > 0.2
-                ? `0 ${10 + scrollProgress * 30}px ${30 + scrollProgress * 50}px rgba(0, 0, 0, ${scrollProgress * 0.2}), 0 0 ${scrollProgress * 40}px rgba(59, 130, 246, ${scrollProgress * 0.1})`
+              transform: `scale(${1 + scrollProgress * 0.5})`,
+              padding: `${scrollProgress * 24}px`,
+              backgroundColor: scrollProgress > 0.2 ? `rgba(255, 255, 255, ${Math.min(scrollProgress * 1.2, 1)})` : "transparent",
+              borderRadius: `${scrollProgress * 24}px`,
+              boxShadow: scrollProgress > 0.1
+                ? `0 ${10 + scrollProgress * 40}px ${30 + scrollProgress * 60}px rgba(0, 0, 0, ${scrollProgress * 0.25}),
+                   0 0 ${scrollProgress * 60}px rgba(59, 130, 246, ${scrollProgress * 0.15}),
+                   inset 0 0 ${scrollProgress * 30}px rgba(59, 130, 246, ${scrollProgress * 0.05})`
                 : "none",
             }}
           >
