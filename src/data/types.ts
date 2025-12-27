@@ -87,6 +87,8 @@ export interface Education {
   period: string;
   status: Localized<string>;
   gpa?: string;
+  majorGpa?: string;
+  credits?: Localized<string>;
   thesis?: Localized<string>;
 }
 

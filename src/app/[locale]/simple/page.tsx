@@ -203,7 +203,7 @@ export default function SimplePage() {
             {/* 핵심 성과 하이라이트 */}
             <div className="mt-6 p-4 bg-gradient-to-r from-primary-50 to-blue-50 border border-primary-200 rounded-lg">
               <h3 className="font-bold text-primary-700 mb-3">
-                {locale === "ko" ? "📊 핵심 성과" : "📊 Key Achievements"}
+                {locale === "ko" ? "핵심 성과" : "Key Achievements"}
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div>
@@ -612,7 +612,9 @@ export default function SimplePage() {
             <div key={edu.id}>
               <h3 className="font-bold">{edu.school[locale]}</h3>
               <p className="text-primary-600">{edu.major[locale]}</p>
-              <p className="text-sm text-gray-500">{edu.period} | GPA: {edu.gpa}</p>
+              <p className="text-sm text-gray-500">
+                {edu.period} | GPA: {edu.gpa} | {locale === "ko" ? "전공" : "Major"}: {edu.majorGpa} | {locale === "ko" ? "이수학점" : "Credits"}: {edu.credits?.[locale]}
+              </p>
               {edu.thesis && (
                 <p className="text-sm text-gray-600 mt-2">
                   <span className="font-medium">{locale === "ko" ? "졸업논문: " : "Thesis: "}</span>

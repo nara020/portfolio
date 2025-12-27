@@ -1340,6 +1340,8 @@ export const education: Education[] = [
     period: "2015.03 ~ 2021.08",
     status: { ko: "졸업", en: "Graduated" },
     gpa: "3.73/4.5",
+    majorGpa: "4.15/4.5",
+    credits: { ko: "140/130 (+10 초과이수)", en: "140/130 (+10 extra)" },
     thesis: {
       ko: "딥러닝 기반 객체 인식과 최적 경로 탐색을 통한 멀티 재난 드론 시스템 설계 및 구현 (KCI 등재 저널 게재)",
       en: "Multi-Disaster Drone System with Deep Learning Object Detection and Optimal Path Planning (Published in KCI Journal)",
