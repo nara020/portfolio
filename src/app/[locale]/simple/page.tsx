@@ -148,7 +148,7 @@ export default function SimplePage() {
             <div>
               <h1 className="text-3xl font-bold tracking-tight">{personalInfo.name[locale]}</h1>
               <p className="text-primary-400 font-medium mt-1 print:text-primary-600">
-                Blockchain Infrastructure Engineer
+                Blockchain Backend Engineer
               </p>
             </div>
             {/* Quick Stats - Print visible */}
@@ -192,23 +192,13 @@ export default function SimplePage() {
           <div className="space-y-4">
             <p className="text-gray-800 leading-relaxed font-medium">
               {locale === "ko"
-                ? "블록체인 네트워크 성능 병목을 분석하고 27배 최적화 방법론을 설계한 인프라 엔지니어입니다."
-                : "Blockchain Infrastructure Engineer who analyzed network bottlenecks and designed a 27x optimization methodology."}
+                ? "27배 성능 최적화(25→678 TPS), 1주일 만에 계약 35배 확대를 이끈 블록체인 백엔드 엔지니어입니다."
+                : "Backend Engineer who achieved 27x performance optimization (25→678 TPS) and expanded contracts 35x by resolving legacy issues within 1 week."}
             </p>
             <p className="text-gray-700 leading-relaxed">
               {locale === "ko"
-                ? "Hyperledger Besu 기반 B2B 플랫폼에서 서비스 레이어 병목을 분석하고, Java 21 Virtual Threads + Transaction Isolation Pattern + PM2 Cluster Mode를 결합한 3-Layer 최적화 방법론을 설계했습니다. 이 방법론으로 25TPS→678TPS(27배) 성능 향상을 달성했으며, 연구 결과를 국제학술대회 ICBTA 2025(Springer LNNS)에 1저자로 게재했습니다."
-                : "Analyzed service layer bottlenecks in Hyperledger Besu B2B platform and designed a 3-Layer optimization methodology combining Java 21 Virtual Threads + Transaction Isolation Pattern + PM2 Cluster Mode. Achieved 27x performance improvement (25→678 TPS) and published findings as first author at ICBTA 2025 (Springer LNNS)."}
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              {locale === "ko"
-                ? "Hyperledger Fabric 네트워크 3개 독립 구축 및 상용화, Groth16 기반 ZKP 복호화 65배 최적화, Solidity 스마트컨트랙트(UUPS Proxy, ZK 검증) 설계 등 블록체인 인프라 전 영역을 다룹니다. 합의 알고리즘(PoW, PoS, RAFT, IBFT)을 상태 기계로 모델링하고 시각화한 오픈소스 프로젝트도 운영 중입니다."
-                : "Experienced in deploying 3 Hyperledger Fabric networks to production, 65x ZKP decryption optimization with Groth16, and Solidity smart contract design (UUPS Proxy, ZK verification). Also developing an open-source project that models consensus algorithms (PoW, PoS, RAFT, IBFT) as state machines."}
-            </p>
-            <p className="text-gray-500 text-sm italic">
-              {locale === "ko"
-                ? "* Springer/KCI 1저자 논문 5편 | OPIC IH | Consensus Lab 오픈소스 운영"
-                : "* 5 first-author papers (Springer/KCI) | OPIC IH | Consensus Lab open-source maintainer"}
+                ? "Hyperledger Besu/Fabric 네트워크 구축부터 스마트컨트랙트, 백엔드 API까지 End-to-End 개발. Groth16 기반 ZKP 복호화 65배 개선(35초→0.54초). Springer ICBTA 2025 1저자, 논문 7편(1저자 5편)."
+                : "End-to-End blockchain development: Hyperledger Besu/Fabric network, smart contracts, backend APIs. Improved ZKP decryption 65x (35s→0.54s) with Groth16 architecture. Springer ICBTA 2025 1st author, 7 papers (5 as 1st author)."}
             </p>
             {/* 핵심 성과 하이라이트 */}
             <div className="mt-6 p-4 bg-gradient-to-r from-primary-50 to-blue-50 border border-primary-200 rounded-lg">
@@ -218,23 +208,23 @@ export default function SimplePage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div>
                   <div className="text-2xl font-bold text-primary-600">27x</div>
-                  <div className="text-xs text-gray-600">{locale === "ko" ? "TPS 최적화" : "TPS Optimization"}</div>
-                  <div className="text-[10px] text-gray-500">25→678 TPS</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary-600">65x</div>
-                  <div className="text-xs text-gray-600">{locale === "ko" ? "ZKP 복호화 최적화" : "ZKP Decrypt Speed"}</div>
-                  <div className="text-[10px] text-gray-500">35s→0.54s (Groth16)</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary-600">5</div>
-                  <div className="text-xs text-gray-600">{locale === "ko" ? "1저자 논문" : "1st Author Papers"}</div>
-                  <div className="text-[10px] text-gray-500">Springer · KCI</div>
+                  <div className="text-xs text-gray-600">{locale === "ko" ? "성능 최적화" : "Performance"}</div>
+                  <div className="text-[10px] text-gray-500">{locale === "ko" ? "25→678 TPS (13억 규모)" : "25→678 TPS ($1M)"}</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-primary-600">35x</div>
                   <div className="text-xs text-gray-600">{locale === "ko" ? "계약 확대" : "Contract Expansion"}</div>
-                  <div className="text-[10px] text-gray-500">{locale === "ko" ? "200만→7,000만" : "$2K→$54K"}</div>
+                  <div className="text-[10px] text-gray-500">{locale === "ko" ? "200만→7천만 (1주일)" : "$2K→$70K (1 week)"}</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-primary-600">65x</div>
+                  <div className="text-xs text-gray-600">{locale === "ko" ? "ZKP 개선" : "ZKP Improvement"}</div>
+                  <div className="text-[10px] text-gray-500">35s→0.54s (Groth16)</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-primary-600">Springer</div>
+                  <div className="text-xs text-gray-600">{locale === "ko" ? "1저자" : "1st Author"}</div>
+                  <div className="text-[10px] text-gray-500">{locale === "ko" ? "ICBTA 2025 (7편, 1저자 5편)" : "ICBTA 2025 (7 papers, 5 1st)"}</div>
                 </div>
               </div>
             </div>
