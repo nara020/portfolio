@@ -25,8 +25,9 @@ export const experiences: Experience[] = [
     achievements: {
       ko: [
         "Hyperledger Besu 성능 최적화 (25TPS → 678TPS, 27배 향상)",
+        "아마존 크롤링 & 쇼피파이 업로드: 2개 개발사 미해결 문제 해결 → 35배 규모 계약 확대",
         "Groth16 기반 영지식증명(ZKP) 아키텍처 설계 및 구현",
-        "한국정보처리학회 추계학술대회 논문 발표 (DPP 규제 대응 ZKP 시스템)",
+        "ICBTA 2025 국제학술대회 1저자 논문 게재 (Springer LNNS)",
         "TTA 클라우드 적격성 평가 진행 담당",
         "Solidity 스마트컨트랙트 개발 (Proxy 패턴, ZK 검증, IPFS CID 연동)",
         "Python 기반 Hyperledger Besu 구축 자동화 툴 개발",
@@ -34,8 +35,9 @@ export const experiences: Experience[] = [
       ],
       en: [
         "Achieved 27x TPS improvement on Hyperledger Besu (25 → 678 TPS)",
+        "Amazon Crawling & Shopify Upload: Resolved 2 vendors' issues → 35x contract scale",
         "Designed and implemented Groth16-based Zero-Knowledge Proof architecture",
-        "Published paper at KIPS Fall Conference (ZKP system for EU DPP compliance)",
+        "Published first-author paper at ICBTA 2025 (Springer LNNS)",
         "Led TTA cloud qualification assessment process",
         "Developed Solidity smart contracts with Proxy pattern and ZK verification",
         "Built Python automation tool for Hyperledger Besu network deployment",
