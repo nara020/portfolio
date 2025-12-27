@@ -677,53 +677,62 @@ export default function SimplePage() {
         </section>
 
         {/* Explore More - Interactive Portfolios (Hide on print) */}
-        {/* 배경 오버레이 - 진행률에 따라 점점 어두워짐 */}
+        {/* 배경 오버레이 - 부드러운 블러 효과 */}
         <div
-          className="fixed inset-0 bg-black z-40 pointer-events-none print:hidden"
+          className="fixed inset-0 z-40 pointer-events-none print:hidden transition-all duration-700 ease-out"
           style={{
-            opacity: scrollProgress * 0.7,
-            transition: "opacity 0.1s ease-out",
+            backgroundColor: `rgba(0, 0, 0, ${scrollProgress * 0.5})`,
+            backdropFilter: scrollProgress > 0.3 ? `blur(${scrollProgress * 8}px)` : "none",
+            opacity: scrollProgress > 0 ? 1 : 0,
           }}
         />
         <section
           ref={exploreRef}
-          className="print:hidden mb-12"
+          className="print:hidden mb-12 transition-all duration-700 ease-out"
           style={{
-            position: scrollProgress > 0 ? "fixed" : "relative",
-            left: scrollProgress > 0 ? "50%" : "auto",
-            bottom: scrollProgress > 0 ? `${20 + (scrollProgress * 30)}%` : "auto",
-            transform: scrollProgress > 0
-              ? `translateX(-50%) scale(${1 + scrollProgress * 0.1})`
-              : "none",
-            width: scrollProgress > 0 ? `${85 + scrollProgress * 5}vw` : "auto",
-            maxWidth: scrollProgress > 0 ? "900px" : "none",
-            zIndex: scrollProgress > 0 ? 50 : "auto",
+            position: scrollProgress > 0.5 ? "fixed" : "relative",
+            left: scrollProgress > 0.5 ? "50%" : "auto",
+            top: scrollProgress > 0.5 ? "50%" : "auto",
+            transform: scrollProgress > 0.5
+              ? `translate(-50%, -50%) scale(${0.9 + scrollProgress * 0.1})`
+              : `translateY(${-scrollProgress * 20}px) scale(${1 + scrollProgress * 0.02})`,
+            width: scrollProgress > 0.5 ? "min(90vw, 900px)" : "auto",
+            zIndex: scrollProgress > 0.5 ? 50 : 1,
             backgroundColor: scrollProgress > 0.3 ? "white" : "transparent",
-            borderRadius: `${scrollProgress * 16}px`,
-            padding: scrollProgress > 0.3 ? `${16 + scrollProgress * 16}px` : "0",
+            borderRadius: scrollProgress > 0.3 ? "24px" : "0",
+            padding: scrollProgress > 0.3 ? "32px" : "0",
             boxShadow: scrollProgress > 0.3
-              ? `0 ${25 * scrollProgress}px ${50 * scrollProgress}px rgba(0,0,0,${0.3 * scrollProgress})`
+              ? `0 25px 80px -20px rgba(0, 0, 0, ${scrollProgress * 0.4}), 0 0 ${scrollProgress * 60}px rgba(59, 130, 246, ${scrollProgress * 0.15})`
               : "none",
-            transition: "all 0.15s ease-out",
           }}
         >
           <h2
-            className="font-bold pb-2 border-b-2 border-gray-200"
+            className="font-bold pb-2 border-b-2 border-gray-200 transition-all duration-500"
             style={{
-              fontSize: `${1.25 + scrollProgress * 0.5}rem`,
-              marginBottom: `${1.5 + scrollProgress * 0.5}rem`,
-              textAlign: scrollProgress > 0.8 ? "center" : "left",
-              transition: "all 0.15s ease-out",
+              fontSize: scrollProgress > 0.5 ? "1.75rem" : "1.25rem",
+              marginBottom: scrollProgress > 0.5 ? "1.5rem" : "1.5rem",
+              textAlign: scrollProgress > 0.7 ? "center" : "left",
             }}
           >
             {locale === "ko" ? "더 알아보기" : "Explore More"}
-            {scrollProgress > 0.9 && (
-              <span className="block text-sm font-normal text-gray-500 mt-2 animate-pulse">
-                ↑ {locale === "ko" ? "스크롤 올려서 닫기" : "Scroll up to close"}
+            {scrollProgress > 0.8 && (
+              <span
+                className="block text-sm font-normal text-gray-400 mt-3"
+                style={{
+                  opacity: (scrollProgress - 0.8) * 5,
+                  transform: `translateY(${(1 - (scrollProgress - 0.8) * 5) * 10}px)`,
+                }}
+              >
+                ↑ {locale === "ko" ? "스크롤을 올리면 닫힙니다" : "Scroll up to close"}
               </span>
             )}
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div
+            className="grid md:grid-cols-2 gap-4 transition-all duration-500"
+            style={{
+              opacity: scrollProgress > 0.3 ? 1 : 1 - scrollProgress,
+            }}
+          >
             {/* Etherscan Style Portfolio */}
             <Link
               href={`/${locale}`}
