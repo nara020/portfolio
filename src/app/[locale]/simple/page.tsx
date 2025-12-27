@@ -677,60 +677,23 @@ export default function SimplePage() {
         </section>
 
         {/* Explore More - Interactive Portfolios (Hide on print) */}
-        {/* 배경 오버레이 - 부드러운 블러 효과 */}
-        <div
-          className="fixed inset-0 z-40 pointer-events-none print:hidden transition-all duration-700 ease-out"
-          style={{
-            backgroundColor: `rgba(0, 0, 0, ${scrollProgress * 0.5})`,
-            backdropFilter: scrollProgress > 0.3 ? `blur(${scrollProgress * 8}px)` : "none",
-            opacity: scrollProgress > 0 ? 1 : 0,
-          }}
-        />
         <section
           ref={exploreRef}
-          className="print:hidden mb-12 transition-all duration-700 ease-out"
-          style={{
-            position: scrollProgress > 0.5 ? "fixed" : "relative",
-            left: scrollProgress > 0.5 ? "50%" : "auto",
-            top: scrollProgress > 0.5 ? "50%" : "auto",
-            transform: scrollProgress > 0.5
-              ? `translate(-50%, -50%) scale(${0.9 + scrollProgress * 0.1})`
-              : `translateY(${-scrollProgress * 20}px) scale(${1 + scrollProgress * 0.02})`,
-            width: scrollProgress > 0.5 ? "min(90vw, 900px)" : "auto",
-            zIndex: scrollProgress > 0.5 ? 50 : 1,
-            backgroundColor: scrollProgress > 0.3 ? "white" : "transparent",
-            borderRadius: scrollProgress > 0.3 ? "24px" : "0",
-            padding: scrollProgress > 0.3 ? "32px" : "0",
-            boxShadow: scrollProgress > 0.3
-              ? `0 25px 80px -20px rgba(0, 0, 0, ${scrollProgress * 0.4}), 0 0 ${scrollProgress * 60}px rgba(59, 130, 246, ${scrollProgress * 0.15})`
-              : "none",
-          }}
+          className="print:hidden mb-12"
         >
-          <h2
-            className="font-bold pb-2 border-b-2 border-gray-200 transition-all duration-500"
-            style={{
-              fontSize: scrollProgress > 0.5 ? "1.75rem" : "1.25rem",
-              marginBottom: scrollProgress > 0.5 ? "1.5rem" : "1.5rem",
-              textAlign: scrollProgress > 0.7 ? "center" : "left",
-            }}
-          >
+          <h2 className="text-xl font-bold mb-6 pb-2 border-b-2 border-gray-200">
             {locale === "ko" ? "더 알아보기" : "Explore More"}
-            {scrollProgress > 0.8 && (
-              <span
-                className="block text-sm font-normal text-gray-400 mt-3"
-                style={{
-                  opacity: (scrollProgress - 0.8) * 5,
-                  transform: `translateY(${(1 - (scrollProgress - 0.8) * 5) * 10}px)`,
-                }}
-              >
-                ↑ {locale === "ko" ? "스크롤을 올리면 닫힙니다" : "Scroll up to close"}
-              </span>
-            )}
           </h2>
           <div
-            className="grid md:grid-cols-2 gap-4 transition-all duration-500"
+            className="grid md:grid-cols-2 gap-4 transition-all duration-300 ease-out origin-center"
             style={{
-              opacity: scrollProgress > 0.3 ? 1 : 1 - scrollProgress,
+              transform: `scale(${1 + scrollProgress * 0.15})`,
+              padding: `${scrollProgress * 16}px`,
+              backgroundColor: scrollProgress > 0.3 ? `rgba(255, 255, 255, ${scrollProgress})` : "transparent",
+              borderRadius: `${scrollProgress * 20}px`,
+              boxShadow: scrollProgress > 0.2
+                ? `0 ${10 + scrollProgress * 30}px ${30 + scrollProgress * 50}px rgba(0, 0, 0, ${scrollProgress * 0.2}), 0 0 ${scrollProgress * 40}px rgba(59, 130, 246, ${scrollProgress * 0.1})`
+                : "none",
             }}
           >
             {/* Etherscan Style Portfolio */}
