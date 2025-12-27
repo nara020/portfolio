@@ -36,19 +36,28 @@ export default function SimplePage() {
   const locale = useLocale() as "ko" | "en";
   const [expandedPapers, setExpandedPapers] = useState<string[]>([]);
   const [expandedProjects, setExpandedProjects] = useState<string[]>([]);
-  const [isAtBottom, setIsAtBottom] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const exploreRef = useRef<HTMLElement>(null);
 
-  // 스크롤 끝 감지 - "더 알아보기" 확대 효과
+  // 스크롤 진행률 계산 - "더 알아보기" 점진적 확대
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const windowHeight = window.innerHeight;
       const docHeight = document.documentElement.scrollHeight;
 
-      // 페이지 끝에서 100px 이내면 확대
-      const atBottom = scrollTop + windowHeight >= docHeight - 100;
-      setIsAtBottom(atBottom);
+      // 마지막 500px 구간에서 0~1로 진행률 계산
+      const triggerStart = docHeight - windowHeight - 500;
+      const triggerEnd = docHeight - windowHeight;
+
+      if (scrollTop < triggerStart) {
+        setScrollProgress(0);
+      } else if (scrollTop >= triggerEnd) {
+        setScrollProgress(1);
+      } else {
+        const progress = (scrollTop - triggerStart) / (triggerEnd - triggerStart);
+        setScrollProgress(Math.min(1, Math.max(0, progress)));
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -668,28 +677,47 @@ export default function SimplePage() {
         </section>
 
         {/* Explore More - Interactive Portfolios (Hide on print) */}
-        {/* 배경 오버레이 */}
+        {/* 배경 오버레이 - 진행률에 따라 점점 어두워짐 */}
         <div
-          className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-500 ${
-            isAtBottom ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-          }`}
+          className="fixed inset-0 bg-black z-40 pointer-events-none print:hidden"
+          style={{
+            opacity: scrollProgress * 0.7,
+            transition: "opacity 0.1s ease-out",
+          }}
         />
         <section
           ref={exploreRef}
-          className={`print:hidden mb-12 transition-all duration-500 ease-out ${
-            isAtBottom
-              ? "fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[90vw] max-w-4xl max-h-[85vh] bg-white rounded-2xl shadow-2xl p-8 overflow-y-auto scale-100"
-              : "relative scale-100"
-          }`}
+          className="print:hidden mb-12"
           style={{
-            transformOrigin: "center center",
+            position: scrollProgress > 0 ? "fixed" : "relative",
+            left: scrollProgress > 0 ? "50%" : "auto",
+            bottom: scrollProgress > 0 ? `${20 + (scrollProgress * 30)}%` : "auto",
+            transform: scrollProgress > 0
+              ? `translateX(-50%) scale(${1 + scrollProgress * 0.1})`
+              : "none",
+            width: scrollProgress > 0 ? `${85 + scrollProgress * 5}vw` : "auto",
+            maxWidth: scrollProgress > 0 ? "900px" : "none",
+            zIndex: scrollProgress > 0 ? 50 : "auto",
+            backgroundColor: scrollProgress > 0.3 ? "white" : "transparent",
+            borderRadius: `${scrollProgress * 16}px`,
+            padding: scrollProgress > 0.3 ? `${16 + scrollProgress * 16}px` : "0",
+            boxShadow: scrollProgress > 0.3
+              ? `0 ${25 * scrollProgress}px ${50 * scrollProgress}px rgba(0,0,0,${0.3 * scrollProgress})`
+              : "none",
+            transition: "all 0.15s ease-out",
           }}
         >
-          <h2 className={`font-bold pb-2 border-b-2 border-gray-200 transition-all duration-300 ${
-            isAtBottom ? "text-2xl mb-6 text-center" : "text-xl mb-6"
-          }`}>
+          <h2
+            className="font-bold pb-2 border-b-2 border-gray-200"
+            style={{
+              fontSize: `${1.25 + scrollProgress * 0.5}rem`,
+              marginBottom: `${1.5 + scrollProgress * 0.5}rem`,
+              textAlign: scrollProgress > 0.8 ? "center" : "left",
+              transition: "all 0.15s ease-out",
+            }}
+          >
             {locale === "ko" ? "더 알아보기" : "Explore More"}
-            {isAtBottom && (
+            {scrollProgress > 0.9 && (
               <span className="block text-sm font-normal text-gray-500 mt-2 animate-pulse">
                 ↑ {locale === "ko" ? "스크롤 올려서 닫기" : "Scroll up to close"}
               </span>
