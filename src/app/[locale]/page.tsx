@@ -667,25 +667,14 @@ export default function Home() {
                   <div className="text-xs text-gray-500 uppercase mb-3">
                     {category.category}
                   </div>
-                  <div className="space-y-2">
+                  <div className="flex flex-wrap gap-2">
                     {category.items.map((item) => (
-                      <div
+                      <span
                         key={item.name}
-                        className="flex items-center justify-between p-2 bg-gray-800/50 rounded-lg"
+                        className="text-sm bg-gray-800 text-gray-300 px-3 py-1.5 rounded-lg hover:bg-primary-500/20 hover:text-primary-400 transition-colors"
                       >
-                        <span className="text-sm text-white">{item.name}</span>
-                        <div className="flex items-center gap-2">
-                          <div className="w-20 h-1.5 bg-gray-700 rounded-full overflow-hidden">
-                            <div
-                              className="h-full bg-primary-500 rounded-full"
-                              style={{ width: `${item.level}%` }}
-                            />
-                          </div>
-                          <span className="text-xs text-primary-400 w-8">
-                            {item.level}%
-                          </span>
-                        </div>
-                      </div>
+                        {item.name}
+                      </span>
                     ))}
                   </div>
                 </div>
