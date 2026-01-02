@@ -41,3 +41,6 @@ next-env.d.ts
 # Private files
 private/
 /ui/
+
+# Claude Code
+.claude/
