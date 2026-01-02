@@ -134,11 +134,11 @@ npm start
 Create a `.env.local` file in the root directory:
 
 ```env
-# Optional: Analytics
-NEXT_PUBLIC_GA_ID=your-google-analytics-id
+# Hire Status: open | passive | closed
+NEXT_PUBLIC_HIRE_STATUS=open
 
-# Optional: Contact form
-NEXT_PUBLIC_CONTACT_API=your-contact-api-endpoint
+# Google Analytics (optional)
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 ```
 
 ### Customization
@@ -205,6 +205,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **If you found this project helpful, please consider giving it a star!**
 
-*Last Updated: 2026-01-01*
+*Last Updated: 2026-01-02*
 
 </div>
