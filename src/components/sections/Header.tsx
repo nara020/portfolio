@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Menu, X, Globe, TrendingUp, Search, Box, FileText, Download, Blocks } from "lucide-react";
 import { Button } from "@/components/ui";
 import SearchModal from "@/components/SearchModal";
+import { trackResumeDownload } from "@/lib/gtag";
 
 export default function Header() {
   const t = useTranslations("nav");
@@ -161,6 +162,7 @@ export default function Header() {
               <a
                 href={locale === "ko" ? "/resume/Jinhyeok_Kim_Resume_KO_25.pdf" : "/resume/Jinhyeok_Kim_Resume_EN_25.pdf"}
                 download={locale === "ko" ? "김진혁_이력서.pdf" : "Jinhyeok_Kim_Resume.pdf"}
+                onClick={() => trackResumeDownload(locale as "ko" | "en")}
                 className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-primary-600 hover:bg-primary-500 text-white rounded-lg transition-colors"
               >
                 <Download className="w-3.5 h-3.5" />
@@ -255,6 +257,7 @@ export default function Header() {
               <a
                 href={locale === "ko" ? "/resume/Jinhyeok_Kim_Resume_KO_25.pdf" : "/resume/Jinhyeok_Kim_Resume_EN_25.pdf"}
                 download={locale === "ko" ? "김진혁_이력서.pdf" : "Jinhyeok_Kim_Resume.pdf"}
+                onClick={() => trackResumeDownload(locale as "ko" | "en")}
                 className="flex items-center gap-2 px-4 py-2 text-primary-400 hover:text-primary-300 transition-colors"
               >
                 <Download className="w-4 h-4" />

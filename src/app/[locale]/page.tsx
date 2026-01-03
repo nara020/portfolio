@@ -34,6 +34,7 @@ import SearchModal from "@/components/SearchModal";
 import BackgroundParticles from "@/components/ui/BackgroundParticles";
 import BlockToast from "@/components/ui/BlockToast";
 import EmailCopy from "@/components/ui/EmailCopy";
+import { trackResumeDownload, trackContactClick } from "@/lib/gtag";
 
 export default function Home() {
   const t = useTranslations("hero");
@@ -248,6 +249,7 @@ export default function Home() {
                     href={contact.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackContactClick("linkedin")}
                     className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#0A66C2] text-white rounded-lg hover:bg-[#004182] transition-colors text-sm"
                   >
                     <Linkedin className="w-4 h-4" />
@@ -257,6 +259,7 @@ export default function Home() {
                     href={contact.github}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackContactClick("github")}
                     className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm"
                   >
                     <Github className="w-4 h-4" />
@@ -267,6 +270,7 @@ export default function Home() {
                 <a
                   href={locale === "ko" ? "/resume/Jinhyeok_Kim_Resume_KO_25.pdf" : "/resume/Jinhyeok_Kim_Resume_EN_25.pdf"}
                   download={locale === "ko" ? "김진혁_이력서.pdf" : "Jinhyeok_Kim_Resume.pdf"}
+                  onClick={() => trackResumeDownload(locale)}
                   className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-lg hover:from-primary-700 hover:to-purple-700 transition-all text-sm font-medium shadow-lg shadow-primary-500/25"
                 >
                   <Download className="w-4 h-4" />

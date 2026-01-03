@@ -31,6 +31,7 @@ import {
   education,
   papers,
 } from "@/data/resume";
+import { trackResumeDownload } from "@/lib/gtag";
 
 export default function SimplePage() {
   const locale = useLocale() as "ko" | "en";
@@ -125,6 +126,7 @@ export default function SimplePage() {
                 <a
                   href="/resume/Jinhyeok_Kim_Resume_KO_25.pdf"
                   download="김진혁_이력서.pdf"
+                  onClick={() => trackResumeDownload("ko")}
                   className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium transition-colors ${
                     locale === "ko"
                       ? "bg-primary-600 text-white"
@@ -138,6 +140,7 @@ export default function SimplePage() {
                 <a
                   href="/resume/Jinhyeok_Kim_Resume_EN_25.pdf"
                   download="Jinhyeok_Kim_Resume.pdf"
+                  onClick={() => trackResumeDownload("en")}
                   className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium transition-colors ${
                     locale === "en"
                       ? "bg-primary-600 text-white"
