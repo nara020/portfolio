@@ -74,25 +74,23 @@ export const experiences: Experience[] = [
     type: "work",
   },
   {
-    id: "global-experience",
-    company: { ko: "Side Projects & Global Experience", en: "Side Projects & Global Experience" },
+    id: "side-projects",
+    company: { ko: "Side Projects", en: "Side Projects" },
     role: { ko: "Freelance Development", en: "Freelance Development" },
     period: "2023.07 ~ 2025.05",
     duration: { ko: "1년 11개월", en: "1 yr 11 mo" },
     description: {
-      ko: "OPIC IH 취득 | Side Projects | 호주 워킹홀리데이",
-      en: "OPIC IH | Side Projects | Australia Working Holiday",
+      ko: "OPIC IH 취득 | Side Projects",
+      en: "OPIC IH | Side Projects",
     },
     achievements: {
       ko: [
         "OPIC IH 취득 — 영문 기술문서/API/논문 독해 역량",
         "Side Projects — Next.js 여행 플랫폼, Flask 암호화폐 분석, AI 웹 서비스",
-        "호주 워킹홀리데이 + 동남아 6개국",
       ],
       en: [
         "OPIC IH — English technical docs/API/paper reading capability",
         "Side Projects — Next.js travel platform, Flask crypto analysis, AI web services",
-        "Australia Working Holiday + 6 SE Asian countries",
       ],
     },
     tech: ["Technical English", "Next.js", "PostgreSQL", "Remote Collaboration", "Async Communication"],
