@@ -222,8 +222,8 @@ export default function SimplePage() {
           <div className="space-y-4">
             <p className="text-gray-800 leading-relaxed font-medium">
               {locale === "ko"
-                ? "27배 성능 최적화(25→678 TPS), 1주일 만에 계약 35배 확대를 이끈 블록체인 백엔드 엔지니어입니다."
-                : "Backend Engineer who achieved 27x performance optimization (25→678 TPS) and expanded contracts 35x by resolving legacy issues within 1 week."}
+                ? "27배 성능 최적화(25→678 TPS)와 레거시 시스템 안정화를 이끈 블록체인 백엔드 엔지니어입니다."
+                : "Backend Engineer who achieved 27x performance optimization (25→678 TPS) and stabilized legacy systems by resolving critical issues within 1 week."}
             </p>
             <p className="text-gray-700 leading-relaxed">
               {locale === "ko"
@@ -242,9 +242,9 @@ export default function SimplePage() {
                   <div className="text-[10px] text-gray-500">{locale === "ko" ? "25→678 TPS (13억 규모)" : "25→678 TPS ($1M)"}</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-primary-600">35x</div>
-                  <div className="text-xs text-gray-600">{locale === "ko" ? "계약 확대" : "Contract Expansion"}</div>
-                  <div className="text-[10px] text-gray-500">{locale === "ko" ? "1주일 만에 달성" : "Achieved in 1 week"}</div>
+                  <div className="text-2xl font-bold text-primary-600">4x</div>
+                  <div className="text-xs text-gray-600">{locale === "ko" ? "대량 업로드 확장" : "Bulk Upload"}</div>
+                  <div className="text-[10px] text-gray-500">{locale === "ko" ? "2,500→10,000+개" : "2,500→10,000+ items"}</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-primary-600">65x</div>
