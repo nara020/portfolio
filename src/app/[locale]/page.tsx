@@ -36,6 +36,9 @@ import BlockToast from "@/components/ui/BlockToast";
 import EmailCopy from "@/components/ui/EmailCopy";
 import { trackResumeDownload, trackContactClick } from "@/lib/gtag";
 
+// PDF 이력서 다운로드 버튼 노출 여부 (일단 숨김 — 되살리려면 true)
+const SHOW_PDF_DOWNLOAD = false;
+
 export default function Home() {
   const t = useTranslations("hero");
   const locale = useLocale() as "ko" | "en";
@@ -267,6 +270,7 @@ export default function Home() {
                   </a>
                 </div>
                 {/* Resume Download */}
+                {SHOW_PDF_DOWNLOAD && (
                 <a
                   href={locale === "ko" ? "/resume/Jinhyeok_Kim_Resume_KO_25.pdf" : "/resume/Jinhyeok_Kim_Resume_EN_25.pdf"}
                   download={locale === "ko" ? "김진혁_이력서.pdf" : "Jinhyeok_Kim_Resume.pdf"}
@@ -276,6 +280,7 @@ export default function Home() {
                   <Download className="w-4 h-4" />
                   {locale === "ko" ? "이력서 다운로드 (PDF)" : "Download Resume (PDF)"}
                 </a>
+                )}
               </motion.div>
             </div>
 

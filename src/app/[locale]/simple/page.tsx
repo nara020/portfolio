@@ -33,6 +33,9 @@ import {
 } from "@/data/resume";
 import { trackResumeDownload } from "@/lib/gtag";
 
+// PDF 이력서 다운로드 버튼 노출 여부 (일단 숨김 — 되살리려면 true)
+const SHOW_PDF_DOWNLOAD = false;
+
 export default function SimplePage() {
   const locale = useLocale() as "ko" | "en";
   const [expandedPapers, setExpandedPapers] = useState<string[]>([]);
@@ -122,6 +125,7 @@ export default function SimplePage() {
             {/* Actions */}
             <div className="flex items-center gap-2">
               {/* PDF Downloads */}
+              {SHOW_PDF_DOWNLOAD && (
               <div className="flex items-center bg-gray-800 rounded-lg overflow-hidden">
                 <a
                   href="/resume/Jinhyeok_Kim_Resume_KO_25.pdf"
@@ -152,6 +156,7 @@ export default function SimplePage() {
                   🇺🇸 PDF
                 </a>
               </div>
+              )}
 
               {/* Print Button */}
               <button
