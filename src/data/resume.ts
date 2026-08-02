@@ -774,7 +774,6 @@ export const projects: Project[] = [
     tech: ["Hyperledger Fabric", "Go", "TypeScript", "Node.js", "Docker", "React", "Grafana", "MariaDB", "Nginx", "JMeter"],
     status: "completed",
     featured: true,
-    links: { demo: "https://www.b-space.kr/" },
     problemSolving: {
       situation: {
         ko: "부산시 블록체인 특화 벤처컨벤션 B-SPACE 플랫폼 개발 프로젝트에서, 기존에 블록체인 네트워크 구축 경험이 없는 상태로 Hyperledger Fabric 기반 시스템을 설계하고 TTA 성능 인증을 통과해야 하는 상황. 개발/테스트/교육용 3개의 독립된 네트워크가 필요했으며, 서비스 상용화까지 책임져야 했음.",
@@ -807,14 +806,14 @@ export const projects: Project[] = [
           "TTA 성능 인증 통과: 쓰기 400 TPS, 읽기 1000 TPS 달성",
           "3개 독립 Fabric 네트워크 성공적 구축 및 운영",
           "한국컴퓨터정보학회 하계학술대회 우수논문상 수상",
-          "서비스 상용화 성공: 현재까지 운영 중 (b-space.kr)",
+          "서비스 상용화 성공 (부산시 블록체인 벤처컨벤션 플랫폼)",
           "1년 5개월간 안정적 운영 및 유지보수 수행",
         ],
         en: [
           "TTA Certification Passed: 400 TPS write, 1000 TPS read achieved",
           "Successfully deployed and operated 3 independent Fabric networks",
           "Won Best Paper Award at KCIS Summer Conference",
-          "Successful service commercialization: Currently in operation (b-space.kr)",
+          "Successful service commercialization (Busan blockchain venture convention platform)",
           "Stable operation and maintenance for 1 year 5 months",
         ],
       },

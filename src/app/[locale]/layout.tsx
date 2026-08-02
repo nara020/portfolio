@@ -8,7 +8,7 @@ import { locales, type Locale } from "@/config/i18n";
 // Google Analytics ID - 실제 ID로 변경하세요
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX";
 
-const siteUrl = "https://jinhyeok.dev"; // 실제 도메인으로 변경
+const siteUrl = "https://jinhyeok.vercel.app"; // 커스텀 도메인 연결 시 변경
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
