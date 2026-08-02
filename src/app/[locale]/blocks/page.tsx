@@ -31,7 +31,7 @@ export default function BlocksPage() {
       <header className="bg-gray-900 border-b border-gray-800">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <Link
-            href={`/${locale}`}
+            href={`/${locale}/explorer`}
             className="inline-flex items-center text-gray-400 hover:text-white transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
