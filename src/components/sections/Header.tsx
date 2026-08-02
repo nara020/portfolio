@@ -10,7 +10,7 @@ import { Button } from "@/components/ui";
 import SearchModal from "@/components/SearchModal";
 import { trackResumeDownload } from "@/lib/gtag";
 
-// PDF 이력서 다운로드 버튼 노출 여부 (일단 숨김 — 되살리려면 true)
+// PDF 이력서 다운로드 버튼 노출 여부 (일단 숨김, 되살리려면 true)
 const SHOW_PDF_DOWNLOAD = false;
 
 export default function Header() {

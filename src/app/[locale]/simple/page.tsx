@@ -33,7 +33,7 @@ import {
 } from "@/data/resume";
 import { trackResumeDownload } from "@/lib/gtag";
 
-// PDF 이력서 다운로드 버튼 노출 여부 (일단 숨김 — 되살리려면 true)
+// PDF 이력서 다운로드 버튼 노출 여부 (일단 숨김, 되살리려면 true)
 const SHOW_PDF_DOWNLOAD = false;
 
 export default function SimplePage() {
@@ -709,7 +709,7 @@ export default function SimplePage() {
           >
             {/* Etherscan Style Portfolio */}
             <Link
-              href={`/${locale}`}
+              href={`/${locale}/explorer`}
               className="group p-6 bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl border border-gray-700 hover:border-primary-500 transition-all hover:shadow-lg hover:shadow-primary-500/20"
             >
               <div className="flex items-center gap-3 mb-3">

@@ -109,15 +109,28 @@ export default function Experience() {
                         Input Data (Achievements):
                       </span>
                       <div className="mt-1.5 space-y-1">
-                        {exp.achievements[locale].map((achievement, i) => (
-                          <div
-                            key={i}
-                            className="flex items-start gap-2 text-xs font-mono"
-                          >
-                            <span className="text-green-500">[{i}]</span>
-                            <span className="text-gray-400">{achievement}</span>
-                          </div>
-                        ))}
+                        {exp.achievements[locale].map((achievement, i) => {
+                          if (achievement.startsWith("──")) {
+                            return (
+                              <div
+                                key={i}
+                                className="pt-2.5 pb-0.5 text-[11px] font-mono font-semibold uppercase tracking-wider text-primary-400"
+                              >
+                                {achievement.replace(/──/g, "").trim()}
+                              </div>
+                            );
+                          }
+                          const isSub = achievement.startsWith("  ");
+                          return (
+                            <div
+                              key={i}
+                              className={`flex items-start gap-2 text-xs font-mono ${isSub ? "ml-5" : ""}`}
+                            >
+                              <span className="text-green-500">{isSub ? "·" : `[${i}]`}</span>
+                              <span className="text-gray-400">{isSub ? achievement.trim() : achievement}</span>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
 
