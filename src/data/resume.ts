@@ -389,10 +389,10 @@ export const projects: Project[] = [
       en: "ZK-Private DeFi Lending",
     },
     description: {
-      ko: "영지식증명 기반 프라이버시 보호 DeFi 대출 프로토콜. Halo2 + arkworks + Circom 3스택으로 동일 회로 구현하여 각 스택 장단점 비교 분석.",
-      en: "Privacy-preserving DeFi lending protocol using Zero-Knowledge Proofs. Implementing identical circuits in Halo2 + arkworks + Circom to compare trade-offs across ZK stacks.",
+      ko: "영지식증명 기반 프라이버시 보호 DeFi 대출 프로토콜. Halo2 + arkworks + Circom 3스택으로 동일 회로 구현. 컨트랙트 4개 테스트넷 배포 + Rust/Axum 프루프 서비스 + React 프론트까지 풀스택 완성, 증명 생성→온체인 검증 엔드투엔드 동작.",
+      en: "Privacy-preserving DeFi lending protocol using Zero-Knowledge Proofs. Same circuit built across Halo2 + arkworks + Circom. Shipped full-stack and deployed to a testnet — 4 Solidity contracts on-chain, Rust/Axum proof service, React frontend; proof generation → on-chain verification working end-to-end.",
     },
-    period: "2025.12 ~ Present",
+    period: "2025.12 ~ 2026.08",
     team: { ko: "1인 (개인 프로젝트)", en: "Solo Project" },
     role: { ko: "ZK 회로 설계 & 풀스택 개발", en: "ZK Circuit Design & Full-Stack Development" },
     highlights: {
@@ -403,6 +403,7 @@ export const projects: Project[] = [
         "R1CS vs PLONKish 패러다임 비교 분석 문서화",
         "Solidity Verifier 온체인 검증 (~200K gas, L2 $0.01)",
         "Rust/Axum 백엔드 + Next.js 프론트엔드 풀스택",
+        "컨트랙트 4개 테스트넷 배포 + Postgres 연동, 증명 생성→온체인 검증 엔드투엔드 완성",
       ],
       en: [
         "ZK Trinity: Same circuit in Halo2 (Primary) + arkworks + Circom",
@@ -411,10 +412,11 @@ export const projects: Project[] = [
         "R1CS vs PLONKish paradigm comparison documentation",
         "Solidity Verifier for on-chain verification (~200K gas, $0.01 on L2)",
         "Full-stack: Rust/Axum backend + Next.js frontend",
+        "4 contracts deployed to testnet + Postgres; proof generation → on-chain verification end-to-end",
       ],
     },
     tech: ["Halo2", "arkworks", "Circom", "Rust", "Solidity", "BN254", "Groth16", "Next.js", "TypeScript"],
-    status: "in_progress",
+    status: "completed",
     featured: true,
     links: {
       github: "https://github.com/nara020/zk-private-lending",
